@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Five Journeys — Outcome Hybrid Above the Fold Wireframe</title>
+  <style>
+    :root {
+      --ink: #1a2e2a;
+      --ink-muted: #3d524c;
+      --surface: #f7f9f8;
+      --surface-alt: #eef3f1;
+      --surface-warm: #faf8f5;
+      --accent: #264540;
+      --accent-hover: #1d3531;
+      --accent-soft: #5da68a;
+      --wire: #b8c9c3;
+      --wire-label: #6b7f78;
+      --white: #ffffff;
+      --star: #c9a227;
+      --max-width: 1440px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.5;
+    }
+
+    .wireframe-banner {
+      background: var(--surface-alt);
+      border-bottom: 1px dashed var(--wire);
+      color: var(--wire-label);
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      padding: 0.5rem 1.5rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .site-header {
+      align-items: center;
+      border-bottom: 1px solid #e4ebe8;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: var(--max-width);
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      color: var(--accent);
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-placeholder {
+      color: var(--wire-label);
+      font-size: 0.8125rem;
+    }
+
+    .hero-wrapper {
+      margin: 0 auto;
+      max-width: var(--max-width);
+      min-height: calc(100vh - 7.5rem);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 9fr 11fr;
+    }
+
+    .hero-copy {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 3rem 2rem 2.5rem 2.5rem;
+    }
+
+    .trust-row {
+      align-items: center;
+      border: 1px dashed var(--wire);
+      border-radius: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+      padding: 0.75rem 1rem;
+    }
+
+    .trust-row .label {
+      color: var(--wire-label);
+      font-size: 0.6875rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      width: 100%;
+    }
+
+    .trust-insurance {
+      color: var(--ink-muted);
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .trust-rating {
+      align-items: center;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .stars {
+      color: var(--star);
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+    }
+
+    .rating-text {
+      color: var(--ink-muted);
+      font-size: 0.875rem;
+    }
+
+    .rating-text strong {
+      color: var(--ink);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 3vw, 2.85rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+      margin: 0;
+      max-width: 22ch;
+    }
+
+    h1 .accent {
+      color: var(--accent-soft);
+    }
+
+    .subhead {
+      color: var(--ink-muted);
+      font-size: clamp(1rem, 1.25vw, 1.0625rem);
+      line-height: 1.65;
+      margin: 0;
+      max-width: 54ch;
+    }
+
+    .cta-group {
+      align-items: flex-start;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.25rem;
+    }
+
+    .cta-primary-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-width: 100%;
+    }
+
+    .cta-helper-toggle {
+      align-self: flex-start;
+      background: none;
+      border: none;
+      color: var(--accent-soft);
+      cursor: pointer;
+      display: inline-flex;
+      font-family: inherit;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      gap: 0.35rem;
+      padding: 0.15rem 0;
+      text-align: left;
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+    }
+
+    .cta-helper-toggle:hover {
+      color: var(--accent);
+    }
+
+    .cta-helper-toggle .helper-icon {
+      align-items: center;
+      background: var(--surface-alt);
+      border: 1px solid var(--wire);
+      border-radius: 50%;
+      color: var(--accent);
+      display: inline-flex;
+      flex-shrink: 0;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      height: 1.125rem;
+      justify-content: center;
+      text-decoration: none;
+      width: 1.125rem;
+    }
+
+    .cta-helper-panel {
+      background: var(--surface);
+      border: 1px dashed var(--accent-soft);
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(38, 69, 64, 0.08);
+      margin-top: 0.35rem;
+      max-width: 22rem;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .cta-helper-panel[hidden] {
+      display: none;
+    }
+
+    .cta-helper-panel:not([hidden]) {
+      animation: helper-slide-in 0.22s ease-out;
+    }
+
+    @keyframes helper-slide-in {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .helper-panel-header {
+      align-items: center;
+      border-bottom: 1px solid #e4ebe8;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 1rem 0.65rem;
+    }
+
+    .helper-panel-header h2 {
+      color: var(--accent);
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .helper-close {
+      background: none;
+      border: none;
+      color: var(--wire-label);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1.125rem;
+      line-height: 1;
+      padding: 0.15rem 0.25rem;
+    }
+
+    .helper-close:hover {
+      color: var(--ink);
+    }
+
+    .helper-panel-body {
+      font-size: 0.8125rem;
+      line-height: 1.55;
+      padding: 0.75rem 1rem 1rem;
+    }
+
+    .helper-panel-body p {
+      color: var(--ink-muted);
+      margin: 0 0 0.75rem;
+    }
+
+    .helper-panel-body dl {
+      margin: 0;
+    }
+
+    .helper-panel-body dt {
+      color: var(--ink);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-top: 0.65rem;
+    }
+
+    .helper-panel-body dt:first-child {
+      margin-top: 0;
+    }
+
+    .helper-panel-body dd {
+      color: var(--ink-muted);
+      margin: 0.2rem 0 0;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border: none;
+      border-radius: 999px;
+      color: var(--white);
+      cursor: pointer;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      padding: 0.95rem 1.45rem;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--accent-soft);
+      border-radius: 999px;
+      color: var(--accent);
+      cursor: pointer;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      padding: 0.85rem 1.35rem;
+      text-decoration: none;
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface-alt);
+    }
+
+    .hero-media {
+      background: var(--surface-warm);
+      border-left: 1px dashed var(--wire);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      position: relative;
+    }
+
+    .media-frame {
+      align-items: center;
+      background:
+        linear-gradient(160deg, rgba(255, 248, 240, 0.95) 0%, rgba(93, 166, 138, 0.15) 100%),
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 14px,
+          rgba(184, 201, 195, 0.2) 14px,
+          rgba(184, 201, 195, 0.2) 28px
+        );
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 420px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .media-badge {
+      background: var(--white);
+      border: 1px dashed var(--wire);
+      border-radius: 999px;
+      color: var(--wire-label);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+      padding: 0.35rem 0.85rem;
+      text-transform: uppercase;
+    }
+
+    .media-title {
+      color: var(--ink);
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin: 0 0 0.75rem;
+      max-width: 30ch;
+    }
+
+    .media-notes {
+      color: var(--wire-label);
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin: 0;
+      max-width: 38ch;
+    }
+
+    .pillars-ribbon {
+      background: var(--surface);
+      border-top: 1px dashed var(--wire);
+      padding: 1.25rem 2rem 1.5rem;
+    }
+
+    .pillars-ribbon .ribbon-label {
+      color: var(--wire-label);
+      font-size: 0.6875rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .pillars-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .pillar-item {
+      align-items: center;
+      border: 1px dashed var(--wire);
+      border-radius: 999px;
+      color: var(--ink-muted);
+      display: flex;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+    }
+
+    .pillar-icon {
+      align-items: center;
+      background: var(--accent-soft);
+      border-radius: 50%;
+      color: var(--white);
+      display: flex;
+      flex-shrink: 0;
+      font-size: 0.625rem;
+      font-weight: 700;
+      height: 1.5rem;
+      justify-content: center;
+      width: 1.5rem;
+    }
+
+    .fold-line {
+      background: #fff8e6;
+      border-top: 2px dashed #e6c200;
+      color: #8a7200;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 0.35rem 1rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 2rem 1.5rem 1.25rem;
+      }
+
+      .hero-media {
+        border-left: none;
+        border-top: 1px dashed var(--wire);
+      }
+
+      .media-frame {
+        min-height: 300px;
+      }
+
+      h1 {
+        max-width: none;
+      }
+
+      .pillars-ribbon {
+        padding: 1rem 1.25rem 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wireframe-banner">Wireframe v4 — outcome hybrid · vitality promise + 5-pillar methodology</div>
+
+  <header class="site-header">
+    <div class="logo">[Five Journeys Logo]</div>
+    <div class="nav-placeholder">[ Nav: Services · Patient Portal · About · Contact · etc. (tbd)... ]</div>
+  </header>
+
+  <main class="hero-wrapper">
+    <div class="hero">
+      <section class="hero-copy" aria-labelledby="hero-headline">
+        <div class="trust-row">
+          <span class="label">Trust anchors</span>
+          <span class="trust-insurance">We accept most insurance plans</span>
+          <div class="trust-rating" aria-label="4.9 out of 5 stars">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span class="rating-text"><strong>4.9</strong> patient rating</span>
+          </div>
+        </div>
+
+        <h1 id="hero-headline">
+          <span class="accent">Total Vitality</span> Is When All 5 Pillars of Your Health Work as One.
+        </h1>
+
+        <p class="subhead">
+          At Five Journeys, we unite Chemical, Structural, Emotional, Social, and Spiritual care
+          into a single, personalized roadmap — so you move beyond symptom management and toward
+          lasting energy, clarity, and the joy of living life to the fullest.
+        </p>
+
+        <div class="cta-group">
+          <div class="cta-primary-stack">
+            <a class="btn-primary" href="#begin-transformation">Start Your Transformation</a>
+
+            <button
+              type="button"
+              class="cta-helper-toggle"
+              id="cta-helper-toggle"
+              aria-expanded="false"
+              aria-controls="cta-helper-panel"
+            >
+              <span class="helper-icon" aria-hidden="true">?</span>
+              What's the first step?
+            </button>
+
+            <div
+              id="cta-helper-panel"
+              class="cta-helper-panel"
+              role="region"
+              aria-labelledby="cta-helper-title"
+              hidden
+            >
+              <div class="helper-panel-header">
+                <h2 id="cta-helper-title">How your transformation begins</h2>
+                <button type="button" class="helper-close" aria-label="Close">×</button>
+              </div>
+              <div class="helper-panel-body">
+                <p>
+                  Starting your transformation doesn't mean signing up for a program today — it
+                  begins with a free Discovery Call.
+                </p>
+                <dl>
+                  <dt>The first step</dt>
+                  <dd>
+                    A Discovery Call to understand where you are today and what's standing between
+                    you and total vitality.
+                  </dd>
+                  <dt>What to expect</dt>
+                  <dd>
+                    An open conversation about your goals and challenges — and how our 5-pillar
+                    approach addresses root causes, not just symptoms.
+                  </dd>
+                  <dt>How long</dt>
+                  <dd>About 20–30 minutes, by phone or video.</dd>
+                  <dt>After the call</dt>
+                  <dd>
+                    Honest guidance on next steps — only if we're the right fit to support your
+                    transformation.
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+
+          <a class="btn-secondary" href="#five-pillars">Explore the 5 Pillars</a>
+        </div>
+      </section>
+
+      <aside class="hero-media" aria-label="Living vitality — hero media">
+        <div class="media-frame">
+          <span class="media-badge">Warm, real photograph · wireframe placeholder</span>
+          <p class="media-title">Vitality in motion — bright, human, premium</p>
+          <p class="media-notes">
+            Replace with a warm, authentic image or soft video loop: natural light, genuine
+            energy, real life in progress. Inspiring vision of what's possible — not clinical.
+          </p>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="pillars-ribbon" aria-label="Five pillars horizontal ribbon">
+      <p class="ribbon-label">The 5 pillars of your health</p>
+      <ul class="pillars-list">
+        <li class="pillar-item"><span class="pillar-icon" aria-hidden="true">C</span> Chemical</li>
+        <li class="pillar-item"><span class="pillar-icon" aria-hidden="true">S</span> Structural</li>
+        <li class="pillar-item"><span class="pillar-icon" aria-hidden="true">E</span> Emotional</li>
+        <li class="pillar-item"><span class="pillar-icon" aria-hidden="true">So</span> Social</li>
+        <li class="pillar-item"><span class="pillar-icon" aria-hidden="true">Sp</span> Spiritual</li>
+      </ul>
+    </footer>
+
+    <div class="fold-line">Above-the-fold boundary</div>
+  </main>
+
+  <script>
+    (function () {
+      const toggle = document.getElementById("cta-helper-toggle");
+      const panel = document.getElementById("cta-helper-panel");
+      const closeBtn = panel.querySelector(".helper-close");
+
+      function openPanel() {
+        panel.hidden = false;
+        toggle.setAttribute("aria-expanded", "true");
+      }
+
+      function closePanel() {
+        panel.hidden = true;
+        toggle.setAttribute("aria-expanded", "false");
+      }
+
+      toggle.addEventListener("click", function () {
+        if (toggle.getAttribute("aria-expanded") === "true") {
+          closePanel();
+        } else {
+          openPanel();
+        }
+      });
+
+      closeBtn.addEventListener("click", closePanel);
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+          closePanel();
+          toggle.focus();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

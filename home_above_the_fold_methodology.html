@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Five Journeys — Methodology Above the Fold Wireframe</title>
+  <style>
+    :root {
+      --ink: #1a2e2a;
+      --ink-muted: #3d524c;
+      --surface: #f7f9f8;
+      --surface-alt: #eef3f1;
+      --accent: #264540;
+      --accent-hover: #1d3531;
+      --accent-soft: #5da68a;
+      --wire: #b8c9c3;
+      --wire-label: #6b7f78;
+      --white: #ffffff;
+      --star: #c9a227;
+      --glow: rgba(93, 166, 138, 0.35);
+      --max-width: 1440px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.5;
+    }
+
+    .wireframe-banner {
+      background: var(--surface-alt);
+      border-bottom: 1px dashed var(--wire);
+      color: var(--wire-label);
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      padding: 0.5rem 1.5rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .site-header {
+      align-items: center;
+      border-bottom: 1px solid #e4ebe8;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: var(--max-width);
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      color: var(--accent);
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-placeholder {
+      color: var(--wire-label);
+      font-size: 0.8125rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      margin: 0 auto;
+      max-width: var(--max-width);
+      min-height: calc(100vh - 7.5rem);
+    }
+
+    .hero-copy {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 3rem 2rem 3rem 2.5rem;
+    }
+
+    h1 {
+      font-size: clamp(1.85rem, 2.8vw, 2.75rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.14;
+      margin: 0;
+      max-width: 22ch;
+    }
+
+    .subhead {
+      color: var(--ink-muted);
+      font-size: clamp(1rem, 1.25vw, 1.0625rem);
+      line-height: 1.65;
+      margin: 0;
+      max-width: 48ch;
+      transition: color 0.2s ease;
+    }
+
+    .subhead.is-pillar-active {
+      color: var(--ink);
+    }
+
+    .pillar-hint {
+      color: var(--wire-label);
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      margin: -0.75rem 0 0;
+      min-height: 1rem;
+      text-transform: uppercase;
+    }
+
+    .trust-row {
+      align-items: center;
+      border: 1px dashed var(--wire);
+      border-radius: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+      padding: 0.75rem 1rem;
+    }
+
+    .trust-row .label {
+      color: var(--wire-label);
+      font-size: 0.6875rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      width: 100%;
+    }
+
+    .trust-insurance {
+      color: var(--ink-muted);
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .trust-rating {
+      align-items: center;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .stars {
+      color: var(--star);
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+    }
+
+    .rating-text {
+      color: var(--ink-muted);
+      font-size: 0.875rem;
+    }
+
+    .rating-text strong {
+      color: var(--ink);
+    }
+
+    .cta-group {
+      align-items: flex-start;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.25rem;
+    }
+
+    .cta-primary-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-width: 100%;
+    }
+
+    .cta-helper-toggle {
+      align-self: flex-start;
+      background: none;
+      border: none;
+      color: var(--accent-soft);
+      cursor: pointer;
+      display: inline-flex;
+      font-family: inherit;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      gap: 0.35rem;
+      padding: 0.15rem 0;
+      text-align: left;
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+    }
+
+    .cta-helper-toggle:hover {
+      color: var(--accent);
+    }
+
+    .cta-helper-toggle .helper-icon {
+      align-items: center;
+      background: var(--surface-alt);
+      border: 1px solid var(--wire);
+      border-radius: 50%;
+      color: var(--accent);
+      display: inline-flex;
+      flex-shrink: 0;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      height: 1.125rem;
+      justify-content: center;
+      text-decoration: none;
+      width: 1.125rem;
+    }
+
+    .cta-helper-panel {
+      background: var(--surface);
+      border: 1px dashed var(--accent-soft);
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(38, 69, 64, 0.08);
+      margin-top: 0.35rem;
+      max-width: 22rem;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .cta-helper-panel[hidden] {
+      display: none;
+    }
+
+    .cta-helper-panel:not([hidden]) {
+      animation: helper-slide-in 0.22s ease-out;
+    }
+
+    @keyframes helper-slide-in {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .helper-panel-header {
+      align-items: center;
+      border-bottom: 1px solid #e4ebe8;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 1rem 0.65rem;
+    }
+
+    .helper-panel-header h2 {
+      color: var(--accent);
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .helper-close {
+      background: none;
+      border: none;
+      color: var(--wire-label);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1.125rem;
+      line-height: 1;
+      padding: 0.15rem 0.25rem;
+    }
+
+    .helper-close:hover {
+      color: var(--ink);
+    }
+
+    .helper-panel-body {
+      font-size: 0.8125rem;
+      line-height: 1.55;
+      padding: 0.75rem 1rem 1rem;
+    }
+
+    .helper-panel-body p {
+      color: var(--ink-muted);
+      margin: 0 0 0.75rem;
+    }
+
+    .helper-panel-body dl {
+      margin: 0;
+    }
+
+    .helper-panel-body dt {
+      color: var(--ink);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-top: 0.65rem;
+    }
+
+    .helper-panel-body dt:first-child {
+      margin-top: 0;
+    }
+
+    .helper-panel-body dd {
+      color: var(--ink-muted);
+      margin: 0.2rem 0 0;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border: none;
+      border-radius: 999px;
+      color: var(--white);
+      cursor: pointer;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      padding: 0.95rem 1.35rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      color: var(--accent);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
+
+    .hero-methodology {
+      background: var(--surface);
+      border-left: 1px dashed var(--wire);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 2.5rem 2rem 3rem;
+      position: relative;
+    }
+
+    .uvp-tagline {
+      color: var(--accent);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin: 0 0 1.5rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .constellation {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      min-height: 529px;
+      position: relative;
+      width: 100%;
+    }
+
+    .wheel {
+      aspect-ratio: 1;
+      margin: 0 auto;
+      max-width: 506px;
+      position: relative;
+      width: min(100%, 506px);
+    }
+
+    .wheel svg.connectors {
+      height: 100%;
+      left: 0;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    .wheel svg.connectors line {
+      stroke: var(--wire);
+      stroke-dasharray: 4 4;
+      stroke-width: 1.75;
+    }
+
+    .core {
+      align-items: center;
+      animation: core-pulse 3s ease-in-out infinite;
+      background: radial-gradient(circle at 30% 30%, #7bc4a8, var(--accent));
+      border: 2px solid var(--accent-soft);
+      border-radius: 50%;
+      box-shadow: 0 0 0 10px var(--glow), 0 14px 36px rgba(38, 69, 64, 0.2);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      font-size: clamp(1.09rem, 2.42vw, 1.32rem);
+      font-weight: 700;
+      height: 44%;
+      justify-content: center;
+      left: 50%;
+      letter-spacing: 0.02em;
+      line-height: 1.15;
+      padding: 0 0.86rem;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 44%;
+      z-index: 2;
+    }
+
+    .pillar-node {
+      animation: node-pulse 2.8s ease-in-out infinite;
+      background: var(--white);
+      border: 2px solid var(--accent-soft);
+      border-radius: 999px;
+      color: var(--accent);
+      cursor: pointer;
+      font-size: 0.79rem;
+      font-weight: 700;
+      left: var(--node-x);
+      letter-spacing: 0.05em;
+      padding: 0.63rem 0.98rem;
+      position: absolute;
+      text-align: center;
+      text-transform: uppercase;
+      top: var(--node-y);
+      transform: translate(-50%, -50%);
+      transition: background 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      white-space: nowrap;
+      z-index: 3;
+    }
+
+    .pillar-node:hover,
+    .pillar-node:focus-visible,
+    .pillar-node.is-active {
+      background: var(--accent);
+      box-shadow: 0 0 0 6px var(--glow);
+      color: var(--white);
+      filter: brightness(1.05);
+      outline: none;
+    }
+
+    .pillar-node[data-pillar="chemical"] { --node-x: 50%; --node-y: 6%; animation-delay: 0s; }
+    .pillar-node[data-pillar="structural"] { --node-x: 90%; --node-y: 36%; animation-delay: 0.4s; }
+    .pillar-node[data-pillar="emotional"] { --node-x: 74%; --node-y: 84%; animation-delay: 0.8s; }
+    .pillar-node[data-pillar="social"] { --node-x: 26%; --node-y: 84%; animation-delay: 1.2s; }
+    .pillar-node[data-pillar="spiritual"] { --node-x: 10%; --node-y: 36%; animation-delay: 1.6s; }
+
+    .diagram-label {
+      bottom: 0;
+      color: var(--wire-label);
+      font-size: 0.6875rem;
+      left: 0;
+      letter-spacing: 0.06em;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .fold-line {
+      background: #fff8e6;
+      border-top: 2px dashed #e6c200;
+      bottom: 0;
+      color: #8a7200;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      left: 0;
+      letter-spacing: 0.08em;
+      padding: 0.35rem 1rem;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    @keyframes core-pulse {
+      0%, 100% { box-shadow: 0 0 0 8px var(--glow), 0 12px 32px rgba(38, 69, 64, 0.18); }
+      50% { box-shadow: 0 0 0 14px rgba(93, 166, 138, 0.2), 0 12px 36px rgba(38, 69, 64, 0.22); }
+    }
+
+    @keyframes node-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(93, 166, 138, 0); }
+      50% { box-shadow: 0 0 0 4px rgba(93, 166, 138, 0.15); }
+    }
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-copy {
+        padding: 2rem 1.5rem 1.5rem;
+      }
+
+      .hero-methodology {
+        border-left: none;
+        border-top: 1px dashed var(--wire);
+        padding: 1.5rem;
+      }
+
+      h1 {
+        max-width: none;
+      }
+
+      .constellation {
+        min-height: 437px;
+      }
+
+      .wheel {
+        max-width: 391px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .core,
+      .pillar-node {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wireframe-banner">Wireframe v2 — methodology / 5 pillars UVP · preview for Design Mode</div>
+
+  <header class="site-header">
+    <div class="logo">[Five Journeys Logo]</div>
+    <div class="nav-placeholder">[ Nav: Services · Patient Portal · About · Contact · etc. (tbd)... ]</div>
+  </header>
+
+  <main class="hero">
+    <section class="hero-copy" aria-labelledby="hero-headline">
+      <h1 id="hero-headline">True Healing Begins When Providers See the Whole Picture.</h1>
+
+      <p class="subhead" id="dynamic-subhead">
+        Most medicine treats symptoms.<br />
+        At Five Journeys, we treat the whole person.<br />
+        Our proprietary methodology evaluates the 5 distinct pillars of your health to uncover the
+        root causes conventional care often overlooks.
+      </p>
+      <p class="pillar-hint" id="pillar-hint">Hover a pillar to explore →</p>
+
+      <div class="trust-row">
+        <span class="label">Trust anchors</span>
+        <span class="trust-insurance">We accept most insurance plans</span>
+        <div class="trust-rating" aria-label="4.9 out of 5 stars">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span class="rating-text"><strong>4.9</strong> patient rating</span>
+        </div>
+      </div>
+
+      <div class="cta-group">
+        <div class="cta-primary-stack">
+          <a class="btn-primary" href="#discovery-call">Schedule Your Discovery Call</a>
+
+          <button
+            type="button"
+            class="cta-helper-toggle"
+            id="cta-helper-toggle"
+            aria-expanded="false"
+            aria-controls="cta-helper-panel"
+          >
+            <span class="helper-icon" aria-hidden="true">?</span>
+            What is a Discovery Call?
+          </button>
+
+          <div
+            id="cta-helper-panel"
+            class="cta-helper-panel"
+            role="region"
+            aria-labelledby="cta-helper-title"
+            hidden
+          >
+            <div class="helper-panel-header">
+              <h2 id="cta-helper-title">About your Discovery Call</h2>
+              <button type="button" class="helper-close" aria-label="Close">×</button>
+            </div>
+            <div class="helper-panel-body">
+              <p>
+                The button above schedules your free Discovery Call — the entry point to our
+                5-pillar care.
+              </p>
+              <dl>
+                <dt>Purpose</dt>
+                <dd>
+                  To review the benefits of Five Journeys membership — including care
+                  access, wellness perks, and tier options — and see whether our
+                  whole-picture methodology is the right fit.
+                </dd>
+                <dt>What to expect</dt>
+                <dd>
+                  A focused conversation about your symptoms, history, and goals.
+                </dd>
+                <dt>How long</dt>
+                <dd>About 20–30 minutes, by Google Meet or phone.</dd>
+                <dt>After the call</dt>
+                <dd>Clear guidance on next steps — with no obligation to continue.</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <a class="btn-secondary" href="#five-journeys">Explore the 5-Journey Approach</a>
+      </div>
+    </section>
+
+    <aside class="hero-methodology" aria-label="Five pillars methodology diagram">
+      <p class="uvp-tagline">5 Interconnected Journeys. 1 Customized Plan.</p>
+
+      <div class="constellation" id="constellation">
+        <div class="wheel">
+          <svg class="connectors" aria-hidden="true" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+            <line x1="200" y1="112" x2="200" y2="24" />
+            <line x1="284" y1="173" x2="360" y2="148" />
+            <line x1="252" y1="231" x2="299" y2="336" />
+            <line x1="148" y1="231" x2="101" y2="336" />
+            <line x1="116" y1="173" x2="40" y2="148" />
+          </svg>
+
+          <div class="core" aria-hidden="true">Reclaimed<br />Vitality</div>
+
+          <button type="button" class="pillar-node" data-pillar="chemical" aria-describedby="dynamic-subhead">
+            1 · Chemical
+          </button>
+          <button type="button" class="pillar-node" data-pillar="structural">
+            2 · Structural
+          </button>
+          <button type="button" class="pillar-node" data-pillar="emotional">
+            3 · Emotional
+          </button>
+          <button type="button" class="pillar-node" data-pillar="social">
+            4 · Social
+          </button>
+          <button type="button" class="pillar-node" data-pillar="spiritual">
+            5 · Spiritual
+          </button>
+        </div>
+
+        <span class="diagram-label">Interactive hub-and-spoke · wireframe</span>
+      </div>
+
+      <div class="fold-line">Above-the-fold boundary</div>
+    </aside>
+  </main>
+
+  <script>
+    const defaultCopy =
+      "Most medicine treats symptoms.<br />At Five Journeys, we treat the whole person.<br />Our proprietary methodology evaluates the 5 distinct pillars of your health to uncover the root causes conventional care often overlooks.";
+
+    const pillarCopy = {
+      chemical:
+        "Advanced testing for hormones, toxins, and gut health — mapping the biochemical signals that drive fatigue, inflammation, and chronic imbalance.",
+      structural:
+        "Biomechanics, alignment, and tissue integrity — because pain and dysfunction often start in how your body is built and how it moves.",
+      emotional:
+        "Stress patterns, trauma, and nervous-system regulation — the mind-body bridge that standard care rarely measures or treats.",
+      social:
+        "Relationships, community, and daily environment — the external forces that shape recovery, resilience, and long-term health.",
+      spiritual:
+        "Purpose, meaning, and inner alignment — the often-overlooked dimension that sustains motivation and whole-person healing.",
+    };
+
+    const subhead = document.getElementById("dynamic-subhead");
+    const hint = document.getElementById("pillar-hint");
+    const nodes = document.querySelectorAll(".pillar-node");
+
+    function setDefault() {
+      subhead.innerHTML = defaultCopy;
+      subhead.classList.remove("is-pillar-active");
+      hint.textContent = "Hover a pillar to explore →";
+      nodes.forEach((node) => node.classList.remove("is-active"));
+    }
+
+    nodes.forEach((node) => {
+      const pillar = node.dataset.pillar;
+
+      node.addEventListener("mouseenter", () => {
+        subhead.textContent = pillarCopy[pillar];
+        subhead.classList.add("is-pillar-active");
+        hint.textContent = pillar.charAt(0).toUpperCase() + pillar.slice(1) + " journey";
+        nodes.forEach((n) => n.classList.remove("is-active"));
+        node.classList.add("is-active");
+      });
+
+      node.addEventListener("focus", () => {
+        node.dispatchEvent(new Event("mouseenter"));
+      });
+    });
+
+    document.getElementById("constellation").addEventListener("mouseleave", setDefault);
+
+    (function () {
+      const toggle = document.getElementById("cta-helper-toggle");
+      const panel = document.getElementById("cta-helper-panel");
+      const closeBtn = panel.querySelector(".helper-close");
+
+      function openPanel() {
+        panel.hidden = false;
+        toggle.setAttribute("aria-expanded", "true");
+      }
+
+      function closePanel() {
+        panel.hidden = true;
+        toggle.setAttribute("aria-expanded", "false");
+      }
+
+      toggle.addEventListener("click", function () {
+        if (toggle.getAttribute("aria-expanded") === "true") {
+          closePanel();
+        } else {
+          openPanel();
+        }
+      });
+
+      closeBtn.addEventListener("click", closePanel);
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+          closePanel();
+          toggle.focus();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

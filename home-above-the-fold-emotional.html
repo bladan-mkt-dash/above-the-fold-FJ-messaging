@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Five Journeys — Above the Fold Wireframe</title>
+  <style>
+    :root {
+      --ink: #1a2e2a;
+      --ink-muted: #3d524c;
+      --surface: #f7f9f8;
+      --surface-alt: #eef3f1;
+      --accent: #264540;
+      --accent-hover: #1d3531;
+      --accent-soft: #5da68a;
+      --wire: #b8c9c3;
+      --wire-label: #6b7f78;
+      --white: #ffffff;
+      --star: #c9a227;
+      --max-width: 1440px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.5;
+    }
+
+    .wireframe-banner {
+      background: var(--surface-alt);
+      border-bottom: 1px dashed var(--wire);
+      color: var(--wire-label);
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      padding: 0.5rem 1.5rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .site-header {
+      align-items: center;
+      border-bottom: 1px solid #e4ebe8;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: var(--max-width);
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      color: var(--accent);
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .logo span {
+      color: var(--accent-soft);
+      font-weight: 500;
+    }
+
+    .nav-placeholder {
+      color: var(--wire-label);
+      font-size: 0.8125rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: 0 auto;
+      max-width: var(--max-width);
+      min-height: calc(100vh - 7.5rem);
+    }
+
+    .hero-copy {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 3rem 2.5rem 3rem 2rem;
+    }
+
+    .trust-row {
+      align-items: center;
+      border: 1px dashed var(--wire);
+      border-radius: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+      padding: 0.75rem 1rem;
+    }
+
+    .trust-row .label {
+      color: var(--wire-label);
+      font-size: 0.6875rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      width: 100%;
+    }
+
+    .trust-insurance {
+      color: var(--ink-muted);
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .trust-rating {
+      align-items: center;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .stars {
+      color: var(--star);
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+    }
+
+    .rating-text {
+      color: var(--ink-muted);
+      font-size: 0.875rem;
+    }
+
+    .rating-text strong {
+      color: var(--ink);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+      margin: 0;
+      max-width: none;
+    }
+
+    h1 .accent {
+      color: var(--accent-soft);
+    }
+
+    .subhead {
+      color: var(--ink-muted);
+      font-size: clamp(1rem, 1.35vw, 1.125rem);
+      line-height: 1.65;
+      margin: 0;
+      max-width: 52ch;
+    }
+
+    .cta-group {
+      align-items: flex-start;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.25rem;
+    }
+
+    .cta-primary-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-width: 100%;
+    }
+
+    .discovery-helper-toggle {
+      align-self: flex-start;
+      background: none;
+      border: none;
+      color: var(--accent-soft);
+      cursor: pointer;
+      display: inline-flex;
+      font-family: inherit;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      gap: 0.35rem;
+      padding: 0.15rem 0;
+      text-align: left;
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+    }
+
+    .discovery-helper-toggle:hover {
+      color: var(--accent);
+    }
+
+    .discovery-helper-toggle .helper-icon {
+      align-items: center;
+      background: var(--surface-alt);
+      border: 1px solid var(--wire);
+      border-radius: 50%;
+      color: var(--accent);
+      display: inline-flex;
+      flex-shrink: 0;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      height: 1.125rem;
+      justify-content: center;
+      text-decoration: none;
+      width: 1.125rem;
+    }
+
+    .discovery-helper-panel {
+      background: var(--surface);
+      border: 1px dashed var(--accent-soft);
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(38, 69, 64, 0.08);
+      margin-top: 0.35rem;
+      max-width: 22rem;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .discovery-helper-panel[hidden] {
+      display: none;
+    }
+
+    .discovery-helper-panel.is-opening,
+    .discovery-helper-panel:not([hidden]) {
+      animation: helper-slide-in 0.22s ease-out;
+    }
+
+    @keyframes helper-slide-in {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .helper-panel-header {
+      align-items: center;
+      border-bottom: 1px solid #e4ebe8;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 1rem 0.65rem;
+    }
+
+    .helper-panel-header h2 {
+      color: var(--accent);
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .helper-close {
+      background: none;
+      border: none;
+      color: var(--wire-label);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1.125rem;
+      line-height: 1;
+      padding: 0.15rem 0.25rem;
+    }
+
+    .helper-close:hover {
+      color: var(--ink);
+    }
+
+    .helper-panel-body {
+      font-size: 0.8125rem;
+      line-height: 1.55;
+      padding: 0.75rem 1rem 1rem;
+    }
+
+    .helper-panel-body p {
+      color: var(--ink-muted);
+      margin: 0 0 0.75rem;
+    }
+
+    .helper-panel-body dl {
+      margin: 0;
+    }
+
+    .helper-panel-body dt {
+      color: var(--ink);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-top: 0.65rem;
+    }
+
+    .helper-panel-body dt:first-child {
+      margin-top: 0;
+    }
+
+    .helper-panel-body dd {
+      color: var(--ink-muted);
+      margin: 0.2rem 0 0;
+    }
+
+    .helper-wireframe-note {
+      border-top: 1px dashed var(--wire);
+      color: var(--wire-label);
+      font-size: 0.6875rem;
+      letter-spacing: 0.04em;
+      margin-top: 0.75rem;
+      padding-top: 0.65rem;
+      text-transform: uppercase;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border: none;
+      border-radius: 999px;
+      color: var(--white);
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.95rem 1.5rem;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      color: var(--accent);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
+
+    .hero-media {
+      background: var(--surface);
+      border-left: 1px dashed var(--wire);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      position: relative;
+    }
+
+    .media-frame {
+      align-items: center;
+      background:
+        linear-gradient(135deg, rgba(38, 69, 64, 0.08) 0%, rgba(93, 166, 138, 0.12) 100%),
+        repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 12px,
+          rgba(184, 201, 195, 0.25) 12px,
+          rgba(184, 201, 195, 0.25) 24px
+        );
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 480px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .media-badge {
+      background: var(--white);
+      border: 1px dashed var(--wire);
+      border-radius: 999px;
+      color: var(--wire-label);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+      padding: 0.35rem 0.85rem;
+      text-transform: uppercase;
+    }
+
+    .media-title {
+      color: var(--ink);
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin: 0 0 0.75rem;
+      max-width: 28ch;
+    }
+
+    .media-notes {
+      color: var(--wire-label);
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin: 0;
+      max-width: 36ch;
+    }
+
+    .fold-line {
+      background: #fff8e6;
+      border-top: 2px dashed #e6c200;
+      bottom: 0;
+      color: #8a7200;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      left: 0;
+      letter-spacing: 0.08em;
+      padding: 0.35rem 1rem;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-copy {
+        padding: 2rem 1.5rem 1.5rem;
+      }
+
+      .hero-media {
+        border-left: none;
+        border-top: 1px dashed var(--wire);
+      }
+
+      .media-frame {
+        min-height: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wireframe-banner">Wireframe — above the fold only · preview for Design Mode</div>
+
+  <header class="site-header">
+    <div class="logo">[Five Journeys Logo]</div>
+    <div class="nav-placeholder">[ Nav: Services · Patient Portal · About · Contact · etc. (tbd)... ]</div>
+  </header>
+
+  <main class="hero">
+    <section class="hero-copy" aria-labelledby="hero-headline">
+      <div class="trust-row">
+        <span class="label">Trust anchors</span>
+        <span class="trust-insurance">We accept most insurance plans</span>
+        <div class="trust-rating" aria-label="4.9 out of 5 stars">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span class="rating-text"><strong>4.9</strong> patient rating</span>
+        </div>
+      </div>
+
+      <h1 id="hero-headline">Stop Managing Symptoms. Start Reclaiming <span class="accent">Your Vitality</span>.</h1>
+
+      <p class="subhead">
+        Traditional medicine looks at your symptoms. We look at your life. Through advanced
+        diagnostics and unhurried care, we uncover the root cause of your fatigue and pain, and address
+        imbalances across the 5 journeys of health: structural, chemical, emotional, social, and spiritual.
+      </p>
+
+      <div class="cta-group">
+        <div class="cta-primary-stack">
+          <a class="btn-primary" href="#discovery-call">Schedule a Free Discovery Call</a>
+
+          <button
+            type="button"
+            class="discovery-helper-toggle"
+            id="discovery-helper-toggle"
+            aria-expanded="false"
+            aria-controls="discovery-helper-panel"
+          >
+            <span class="helper-icon" aria-hidden="true">?</span>
+            What is a Discovery Call?
+          </button>
+
+          <div
+            id="discovery-helper-panel"
+            class="discovery-helper-panel"
+            role="region"
+            aria-labelledby="discovery-helper-title"
+            hidden
+          >
+            <div class="helper-panel-header">
+              <h2 id="discovery-helper-title">About your Discovery Call</h2>
+              <button type="button" class="helper-close" aria-label="Close">×</button>
+            </div>
+            <div class="helper-panel-body">
+              <p>A free, no-pressure conversation — not a sales pitch.</p>
+              <dl>
+                <dt>Purpose</dt>
+                <dd>
+                  To learn about your health story and see whether Five Journeys is the
+                  right fit for you.
+                </dd>
+                <dt>What to expect</dt>
+                <dd>
+                  You share what you are experiencing; we listen, ask thoughtful questions,
+                  and explain how our 5-pillar approach might apply to you.
+                </dd>
+                <dt>How long</dt>
+                <dd>About 20–30 minutes, by phone or video — your choice.</dd>
+                <dt>After the call</dt>
+                <dd>
+                  Clear next steps if we are a match — with no obligation to move forward.
+                </dd>
+              </dl>
+              <p class="helper-wireframe-note">Inline helper · click link again or × to close</p>
+            </div>
+          </div>
+        </div>
+
+        <a class="btn-secondary" href="#five-journeys">See Our 5-Journey Approach</a>
+      </div>
+    </section>
+
+    <aside class="hero-media" aria-label="Hero media placeholder">
+      <div class="media-frame">
+        <span class="media-badge">Hero media · wireframe placeholder</span>
+        <p class="media-title">Vibrant individual, 40s–50s, active &amp; energized</p>
+        <p class="media-notes">
+          Replace with looping video or hero photo: hiking, natural light, genuine laughter —
+          longevity &amp; vitality, not sick care. No stethoscopes or salad stock photos.
+        </p>
+      </div>
+      <div class="fold-line">Above-the-fold boundary</div>
+    </aside>
+  </main>
+
+  <script>
+    (function () {
+      const toggle = document.getElementById("discovery-helper-toggle");
+      const panel = document.getElementById("discovery-helper-panel");
+      const closeBtn = panel.querySelector(".helper-close");
+
+      function openPanel() {
+        panel.hidden = false;
+        toggle.setAttribute("aria-expanded", "true");
+      }
+
+      function closePanel() {
+        panel.hidden = true;
+        toggle.setAttribute("aria-expanded", "false");
+      }
+
+      function isOpen() {
+        return toggle.getAttribute("aria-expanded") === "true";
+      }
+
+      toggle.addEventListener("click", function () {
+        if (isOpen()) {
+          closePanel();
+        } else {
+          openPanel();
+        }
+      });
+
+      closeBtn.addEventListener("click", closePanel);
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && isOpen()) {
+          closePanel();
+          toggle.focus();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
