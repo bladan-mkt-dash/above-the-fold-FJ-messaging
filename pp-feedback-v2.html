@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Five Journeys — PP Feedback Wireframe V2 (Daisy)</title>
+  <style>
+    :root {
+      --ink: #1a2e2a;
+      --ink-muted: #3d524c;
+      --surface: #f7f9f8;
+      --surface-alt: #eef3f1;
+      --surface-warm: #faf8f5;
+      --accent: #264540;
+      --accent-hover: #1d3531;
+      --accent-soft: #5da68a;
+      --wire: #b8c9c3;
+      --wire-label: #6b7f78;
+      --white: #ffffff;
+      --star: #c9a227;
+      --glow: rgba(93, 166, 138, 0.35);
+      --max-width: 1440px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.5;
+    }
+
+    .wireframe-banner {
+      background: var(--surface-alt);
+      border-bottom: 1px dashed var(--wire);
+      color: var(--wire-label);
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      padding: 0.5rem 1.5rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .site-header {
+      align-items: center;
+      border-bottom: 1px solid #e4ebe8;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: var(--max-width);
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      color: var(--accent);
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-placeholder {
+      color: var(--wire-label);
+      font-size: 0.8125rem;
+    }
+
+    .hero-wrapper {
+      margin: 0 auto;
+      max-width: var(--max-width);
+      min-height: calc(100vh - 7.5rem);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 9fr 11fr;
+    }
+
+    .hero-copy {
+      align-self: center;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 3rem 2rem 2.5rem 2.5rem;
+    }
+
+    .trust-row {
+      align-items: center;
+      border: 1px dashed var(--wire);
+      border-radius: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+      padding: 0.75rem 1rem;
+    }
+
+    .trust-row .label {
+      color: var(--wire-label);
+      font-size: 0.6875rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      width: 100%;
+    }
+
+    .trust-insurance {
+      color: var(--ink-muted);
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .trust-rating {
+      align-items: center;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .stars {
+      color: var(--star);
+      font-size: 1.125rem;
+      letter-spacing: 0.08em;
+    }
+
+    .rating-text {
+      color: var(--ink-muted);
+      font-size: 1rem;
+    }
+
+    .rating-text strong {
+      color: var(--ink);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 3vw, 2.85rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+      margin: 0;
+      max-width: 22ch;
+    }
+
+    h1 .accent {
+      color: var(--accent-soft);
+    }
+
+    .subhead {
+      color: var(--ink-muted);
+      font-size: clamp(1rem, 1.25vw, 1.0625rem);
+      line-height: 1.65;
+      margin: 0;
+      max-width: 54ch;
+    }
+
+    .cta-group {
+      align-items: flex-start;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.25rem;
+    }
+
+    .cta-primary-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-width: 100%;
+    }
+
+    .cta-helper-toggle {
+      align-self: flex-start;
+      background: none;
+      border: none;
+      color: var(--accent-soft);
+      cursor: pointer;
+      display: inline-flex;
+      font-family: inherit;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      gap: 0.35rem;
+      padding: 0.15rem 0;
+      text-align: left;
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+    }
+
+    .cta-helper-toggle:hover {
+      color: var(--accent);
+    }
+
+    .cta-helper-toggle .helper-icon {
+      align-items: center;
+      background: var(--surface-alt);
+      border: 1px solid var(--wire);
+      border-radius: 50%;
+      color: var(--accent);
+      display: inline-flex;
+      flex-shrink: 0;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      height: 1.125rem;
+      justify-content: center;
+      text-decoration: none;
+      width: 1.125rem;
+    }
+
+    .cta-helper-panel {
+      background: var(--surface);
+      border: 1px dashed var(--accent-soft);
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(38, 69, 64, 0.08);
+      margin-top: 0.35rem;
+      max-width: 22rem;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .cta-helper-panel[hidden] {
+      display: none;
+    }
+
+    .cta-helper-panel:not([hidden]) {
+      animation: helper-slide-in 0.22s ease-out;
+    }
+
+    @keyframes helper-slide-in {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .helper-panel-header {
+      align-items: center;
+      border-bottom: 1px solid #e4ebe8;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 1rem 0.65rem;
+    }
+
+    .helper-panel-header h2 {
+      color: var(--accent);
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .helper-close {
+      background: none;
+      border: none;
+      color: var(--wire-label);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1.125rem;
+      line-height: 1;
+      padding: 0.15rem 0.25rem;
+    }
+
+    .helper-close:hover {
+      color: var(--ink);
+    }
+
+    .helper-panel-body {
+      font-size: 0.8125rem;
+      line-height: 1.55;
+      padding: 0.75rem 1rem 1rem;
+    }
+
+    .helper-panel-body p {
+      color: var(--ink-muted);
+      margin: 0 0 0.75rem;
+    }
+
+    .helper-panel-body dl {
+      margin: 0;
+    }
+
+    .helper-panel-body dt {
+      color: var(--ink);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-top: 0.65rem;
+    }
+
+    .helper-panel-body dt:first-child {
+      margin-top: 0;
+    }
+
+    .helper-panel-body dd {
+      color: var(--ink-muted);
+      margin: 0.2rem 0 0;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border: none;
+      border-radius: 999px;
+      color: var(--white);
+      cursor: pointer;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      padding: 0.95rem 1.45rem;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--accent-soft);
+      border-radius: 999px;
+      color: var(--accent);
+      cursor: pointer;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      padding: 0.85rem 1.35rem;
+      text-decoration: none;
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface-alt);
+    }
+
+    .hero-methodology {
+      background: var(--surface);
+      border-left: 1px dashed var(--wire);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: 2.5rem 2rem 3rem;
+      position: relative;
+    }
+
+    .uvp-tagline {
+      color: var(--accent);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin: 0 0 1.5rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .constellation {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      min-height: 529px;
+      position: relative;
+      width: 100%;
+    }
+
+    .wheel {
+      aspect-ratio: 1;
+      margin: 0 auto;
+      max-width: 506px;
+      position: relative;
+      width: min(100%, 506px);
+    }
+
+    /* V2 daisy: smaller vitality core + 5 overlapping petal circles */
+    .core {
+      align-items: center;
+      animation: core-pulse 3s ease-in-out infinite;
+      background: radial-gradient(circle at 30% 30%, #7bc4a8, var(--accent));
+      border: 2px solid var(--accent-soft);
+      border-radius: 50%;
+      box-shadow: 0 0 0 8px var(--glow), 0 14px 36px rgba(38, 69, 64, 0.2);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      font-size: clamp(0.82rem, 1.9vw, 1.05rem);
+      font-weight: 700;
+      height: 30%;
+      justify-content: center;
+      left: 50%;
+      letter-spacing: 0.02em;
+      line-height: 1.15;
+      padding: 0 0.55rem;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 30%;
+      z-index: 4;
+    }
+
+    .pillar-node {
+      align-items: center;
+      animation: node-pulse 2.8s ease-in-out infinite;
+      aspect-ratio: 1;
+      background: rgba(255, 255, 255, 0.88);
+      border: 2px solid var(--accent-soft);
+      border-radius: 50%;
+      box-shadow: 0 8px 22px rgba(38, 69, 64, 0.1);
+      color: var(--accent);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      font-size: clamp(0.68rem, 1.55vw, 0.82rem);
+      font-weight: 700;
+      height: 40%;
+      justify-content: center;
+      left: var(--node-x);
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      overflow: hidden;
+      padding: 0.55rem;
+      position: absolute;
+      text-align: center;
+      text-transform: uppercase;
+      top: var(--node-y);
+      transform: translate(-50%, -50%);
+      transition: background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, filter 0.2s ease, z-index 0s;
+      width: 40%;
+      z-index: 2;
+    }
+
+    .pillar-node .pillar-label {
+      position: relative;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 255, 255, 0.75);
+      z-index: 1;
+    }
+
+    .pillar-node .pillar-def {
+      color: rgba(255, 255, 255, 0.92);
+      display: none;
+      font-size: clamp(0.72rem, 1.4vw, 0.88rem);
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      line-height: 1.3;
+      max-width: 12.5em;
+      min-height: 3.9em;
+      position: relative;
+      text-shadow: none;
+      text-transform: none;
+      text-wrap: balance;
+      z-index: 1;
+    }
+
+    /* Photo petals: image centered behind label at 50% opacity */
+    .pillar-node.has-photo {
+      background: var(--white);
+      gap: 0.35rem;
+      transition:
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        color 0.25s ease,
+        filter 0.25s ease,
+        z-index 0s;
+    }
+
+    .pillar-node.has-photo::before {
+      background-image: var(--pillar-photo);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      content: "";
+      inset: 0;
+      opacity: 0.5;
+      pointer-events: none;
+      position: absolute;
+      transition: opacity 0.25s ease;
+      z-index: 0;
+    }
+
+    .pillar-node:hover,
+    .pillar-node:focus-visible,
+    .pillar-node.is-active {
+      background: var(--accent);
+      box-shadow: 0 0 0 6px var(--glow), 0 10px 24px rgba(38, 69, 64, 0.18);
+      color: var(--white);
+      filter: brightness(1.05);
+      outline: none;
+      z-index: 3;
+    }
+
+    /* Hover: photo fades out → dark definition panel (vertically centered stack) */
+    .pillar-node.has-photo:hover,
+    .pillar-node.has-photo:focus-visible,
+    .pillar-node.has-photo.is-active {
+      background: var(--accent-hover);
+      color: var(--white);
+      filter: none;
+      gap: 0.35rem;
+      justify-content: center;
+      padding: 1.15rem 0.8rem;
+    }
+
+    .pillar-node.has-photo:hover::before,
+    .pillar-node.has-photo:focus-visible::before,
+    .pillar-node.has-photo.is-active::before {
+      opacity: 0;
+    }
+
+    .pillar-node.has-photo:hover .pillar-label,
+    .pillar-node.has-photo:focus-visible .pillar-label,
+    .pillar-node.has-photo.is-active .pillar-label {
+      flex-shrink: 0;
+      text-shadow: none;
+    }
+
+    .pillar-node.has-photo:hover .pillar-def,
+    .pillar-node.has-photo:focus-visible .pillar-def,
+    .pillar-node.has-photo.is-active .pillar-def {
+      display: block;
+    }
+
+    /* Bottom petals: same title-above-def stack, optically lower so Vitality doesn't cover */
+    .pillar-node.petal-bottom.has-photo:hover,
+    .pillar-node.petal-bottom.has-photo:focus-visible,
+    .pillar-node.petal-bottom.has-photo.is-active {
+      justify-content: center;
+      padding: 2.35rem 0.8rem 0.95rem;
+    }
+
+    .pillar-node.petal-bottom .pillar-def {
+      max-width: 11.75em;
+    }
+
+    /* Petal centers at ~31.5% radius — less neighbor overlap than the original daisy
+       Order: 1 Physical (top), 2 Chemical, 3 Emotional, 4 Social, 5 Spiritual */
+    .pillar-node[data-pillar="physical"] {
+      --node-x: 50%;
+      --node-y: 18.5%;
+      --pillar-photo: url("assets/physical.png");
+      animation-delay: 0s;
+    }
+    .pillar-node[data-pillar="chemical"] {
+      --node-x: 79.9%;
+      --node-y: 40.3%;
+      --pillar-photo: url("assets/chemical.png");
+      animation-delay: 0.4s;
+    }
+
+    .pillar-node[data-pillar="chemical"].has-photo::before {
+      opacity: 0.35;
+    }
+    .pillar-node[data-pillar="emotional"] {
+      --node-x: 68.5%;
+      --node-y: 75.5%;
+      --pillar-photo: url("assets/emotional.png");
+      animation-delay: 0.8s;
+    }
+    .pillar-node[data-pillar="social"] {
+      --node-x: 31.5%;
+      --node-y: 75.5%;
+      --pillar-photo: url("assets/social.png");
+      animation-delay: 1.2s;
+    }
+    .pillar-node[data-pillar="spiritual"] {
+      --node-x: 20.1%;
+      --node-y: 40.3%;
+      --pillar-photo: url("assets/spiritual.png");
+      animation-delay: 1.6s;
+    }
+
+    .diagram-label {
+      bottom: 0;
+      color: var(--wire-label);
+      font-size: 0.6875rem;
+      left: 0;
+      letter-spacing: 0.06em;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    @keyframes core-pulse {
+      0%, 100% { box-shadow: 0 0 0 8px var(--glow), 0 12px 32px rgba(38, 69, 64, 0.18); }
+      50% { box-shadow: 0 0 0 14px rgba(93, 166, 138, 0.2), 0 12px 36px rgba(38, 69, 64, 0.22); }
+    }
+
+    @keyframes node-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(93, 166, 138, 0); }
+      50% { box-shadow: 0 0 0 4px rgba(93, 166, 138, 0.15); }
+    }
+
+    .testimonials-strip {
+      background: var(--surface);
+      border-top: 1px dashed var(--wire);
+      padding: 1.25rem 2rem 1.5rem;
+    }
+
+    .testimonials-strip .strip-label {
+      color: var(--wire-label);
+      font-size: 0.6875rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 1rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .testimonials-carousel {
+      margin: 0 auto;
+      max-width: 42rem;
+      position: relative;
+    }
+
+    .testimonials-viewport {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .testimonials-list {
+      list-style: none;
+      margin: 0;
+      min-height: 11.5rem;
+      padding: 0;
+      position: relative;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      border: 1px dashed var(--wire);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      inset: 0;
+      left: 0;
+      opacity: 0;
+      padding: 1rem 1.1rem;
+      pointer-events: none;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: opacity 0.45s ease;
+      visibility: hidden;
+    }
+
+    .testimonial-card.is-active {
+      opacity: 1;
+      pointer-events: auto;
+      position: relative;
+      visibility: visible;
+    }
+
+    .testimonials-dots {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .testimonial-dot {
+      background: var(--wire);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      height: 0.5rem;
+      padding: 0;
+      width: 0.5rem;
+    }
+
+    .testimonial-dot.is-active,
+    .testimonial-dot:hover {
+      background: var(--accent-soft);
+    }
+
+    .testimonial-dot:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .testimonial-headline {
+      color: var(--accent);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .testimonial-quote {
+      color: var(--ink-muted);
+      font-size: 0.8125rem;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .testimonial-quote p {
+      margin: 0;
+    }
+
+    .testimonial-attribution {
+      color: var(--ink);
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .testimonial-source {
+      color: var(--wire-label);
+      font-size: 0.6875rem;
+      margin: 0.35rem 0 0;
+    }
+
+    .fold-line {
+      background: #fff8e6;
+      border-top: 2px dashed #e6c200;
+      color: #8a7200;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 0.35rem 1rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 2rem 1.5rem 1.25rem;
+      }
+
+      .hero-methodology {
+        border-left: none;
+        border-top: 1px dashed var(--wire);
+        padding: 1.5rem;
+      }
+
+      .constellation {
+        min-height: 437px;
+      }
+
+      .wheel {
+        max-width: 391px;
+      }
+
+      h1 {
+        max-width: none;
+      }
+
+      .testimonials-list {
+        min-height: 13rem;
+      }
+
+      .testimonials-strip {
+        padding: 1rem 1.25rem 1.25rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .core,
+      .pillar-node {
+        animation: none;
+      }
+
+      .testimonial-card {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wireframe-banner">Wireframe V2 — daisy pillars · PP feedback · discovery call CTA</div>
+
+  <header class="site-header">
+    <div class="logo">[Five Journeys Logo]</div>
+    <div class="nav-placeholder">[ Nav: Services · Patient Portal · About · Contact · etc. (tbd)... ]</div>
+  </header>
+
+  <main class="hero-wrapper">
+    <div class="hero">
+      <section class="hero-copy" aria-labelledby="hero-headline">
+        <div class="trust-row">
+          <span class="label">Trust anchors</span>
+          <span class="trust-insurance">We accept most insurance plans</span>
+          <div class="trust-rating" aria-label="4.9 out of 5 stars from 300+ patient ratings">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span class="rating-text"><strong>4.9</strong> from 300+ patient ratings</span>
+          </div>
+        </div>
+
+        <h1 id="hero-headline">
+          <span class="accent">Total Vitality</span> Is When All 5 Pillars of Your Health Work as One.
+        </h1>
+
+        <p class="subhead">
+          At Five Journeys, we unite Physical, Chemical, Emotional, Social, and Spiritual care
+          into a single, personalized roadmap — so you move beyond symptom management and toward
+          lasting energy, clarity, and the joy of living life to the fullest.
+        </p>
+
+        <div class="cta-group">
+          <div class="cta-primary-stack">
+            <a class="btn-primary" href="#schedule-discovery">Schedule a Free Discovery Call</a>
+
+            <button
+              type="button"
+              class="cta-helper-toggle"
+              id="cta-helper-toggle"
+              aria-expanded="false"
+              aria-controls="cta-helper-panel"
+            >
+              <span class="helper-icon" aria-hidden="true">?</span>
+              What is a Discovery Call?
+            </button>
+
+            <div
+              id="cta-helper-panel"
+              class="cta-helper-panel"
+              role="region"
+              aria-labelledby="cta-helper-title"
+              hidden
+            >
+              <div class="helper-panel-header">
+                <h2 id="cta-helper-title">About your Discovery Call</h2>
+                <button type="button" class="helper-close" aria-label="Close">×</button>
+              </div>
+              <div class="helper-panel-body">
+                <p>A free, no-pressure conversation — not a sales pitch.</p>
+                <dl>
+                  <dt>Purpose</dt>
+                  <dd>
+                    To learn about your health story and see whether Five Journeys is the
+                    right fit for you.
+                  </dd>
+                  <dt>What to expect</dt>
+                  <dd>
+                    You share what you are experiencing; we listen, ask thoughtful questions,
+                    and explain how our 5-pillar approach might apply to you.
+                  </dd>
+                  <dt>How long</dt>
+                  <dd>About 20–30 minutes, by phone or video — your choice.</dd>
+                  <dt>After the call</dt>
+                  <dd>
+                    Clear next steps if we are a match — with no obligation to move forward.
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="hero-methodology" aria-label="Five pillars methodology diagram">
+        <p class="uvp-tagline">5 Interconnected Journeys. 1 Customized Plan.</p>
+
+        <div class="constellation" id="constellation">
+          <div class="wheel">
+            <button type="button" class="pillar-node has-photo" data-pillar="physical">
+              <span class="pillar-label">1 · Physical</span>
+              <span class="pillar-def">
+                Biomechanics, alignment, and tissue<br />
+                integrity — how your body is built<br />
+                and how it moves.
+              </span>
+            </button>
+            <button type="button" class="pillar-node has-photo" data-pillar="chemical">
+              <span class="pillar-label">2 · Chemical</span>
+              <span class="pillar-def">
+                Hormones, toxins, and gut health —<br />
+                mapping the biochemical signals that<br />
+                drive fatigue and imbalance.
+              </span>
+            </button>
+            <button type="button" class="pillar-node has-photo petal-bottom" data-pillar="emotional">
+              <span class="pillar-label">3 · Emotional</span>
+              <span class="pillar-def">
+                Stress, trauma, and nervous-system<br />
+                regulation — the mind-body bridge<br />
+                standard care rarely treats.
+              </span>
+            </button>
+            <button type="button" class="pillar-node has-photo petal-bottom" data-pillar="social">
+              <span class="pillar-label">4 · Social</span>
+              <span class="pillar-def">
+                Relationships, community, and<br />
+                environment — the external forces<br />
+                that shape recovery and health.
+              </span>
+            </button>
+            <button type="button" class="pillar-node has-photo" data-pillar="spiritual">
+              <span class="pillar-label">5 · Spiritual</span>
+              <span class="pillar-def">
+                Purpose, meaning, and inner<br />
+                alignment — the overlooked dimension<br />
+                that sustains motivation and healing.
+              </span>
+            </button>
+
+            <div class="core" aria-hidden="true">Total<br />Vitality</div>
+          </div>
+
+          <span class="diagram-label">Interactive daisy · overlapping pillars · wireframe V2</span>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="testimonials-strip" aria-label="Patient testimonials">
+      <p class="strip-label">Why we do, what we do…</p>
+      <div class="testimonials-carousel" id="testimonials-carousel">
+        <div class="testimonials-viewport">
+          <ul class="testimonials-list" id="testimonials-list">
+            <li class="testimonial-card is-active">
+              <p class="testimonial-headline">Completely changed my life</p>
+              <blockquote class="testimonial-quote">
+                <p>
+                  Dr. Levitan has completely changed my life. 6 months ago I could barely get out of bed
+                  and now I've been able to go back to work, back to the gym and start seeing my friends
+                  again. I couldn't be happier or more thankful.
+                </p>
+              </blockquote>
+              <p class="testimonial-attribution">Daniella</p>
+              <p class="testimonial-source">From fivejourneys.com</p>
+            </li>
+            <li class="testimonial-card">
+              <p class="testimonial-headline">Thorough &amp; holistic approach</p>
+              <blockquote class="testimonial-quote">
+                <p>
+                  I am so impressed by the length of time Dr. Trubow spends with me, her thorough and
+                  holistic approach, her compassion, and her professionalism. She provides excellent
+                  medical care and advice with sensitivity and humor — so critical to my choice in whom
+                  I trust with my health.
+                </p>
+              </blockquote>
+              <p class="testimonial-attribution">Mandy</p>
+              <p class="testimonial-source">From fivejourneys.com</p>
+            </li>
+            <li class="testimonial-card">
+              <p class="testimonial-headline">My new and improved self</p>
+              <blockquote class="testimonial-quote">
+                <p>
+                  From my initial visit with Dr. Trubow, I knew I was working with a physician who had
+                  the expertise and desire to get to the root cause of my health issues. One year later,
+                  I have vastly improved both in terms of lab work, but more importantly, in terms of my
+                  vitality, energy, and focus. I am so excited for the future and returning to my "new
+                  and improved" self! I owe my well-being, and literally my life, to Dr. Trubow.
+                </p>
+              </blockquote>
+              <p class="testimonial-attribution">Janice</p>
+              <p class="testimonial-source">From fivejourneys.com</p>
+            </li>
+            <li class="testimonial-card">
+              <p class="testimonial-headline">Huge progress for my son</p>
+              <blockquote class="testimonial-quote">
+                <p>
+                  My 4 year old son suffered with digestive issues, food sensitivities, and sensory
+                  processing disorder. I was recommended Five Journeys® by a close friend. So very
+                  fortunate for Dr. Levitan and his friendly staff!! They are AMAZING and we enjoy working
+                  with them. My son has made huge progress and doing well. We will continue our care for
+                  him here in the future.
+                </p>
+              </blockquote>
+              <p class="testimonial-attribution">Jessica</p>
+              <p class="testimonial-source">From fivejourneys.com</p>
+            </li>
+            <li class="testimonial-card">
+              <p class="testimonial-headline">Miraculous recovery</p>
+              <blockquote class="testimonial-quote">
+                <p>
+                  With the help of nutritional counseling, supplements, Dr. Levitan's monitoring and
+                  testing, I am in full remission from a very serious bout of digestive malfunction.
+                  With their protocols, my weight is stable, my system is working optimally, I feel
+                  strong and healthy. I am extremely grateful for Five Journeys® in helping me reach
+                  this miraculous recovery.
+                </p>
+              </blockquote>
+              <p class="testimonial-attribution">Peggy</p>
+              <p class="testimonial-source">From fivejourneys.com</p>
+            </li>
+            <li class="testimonial-card">
+              <p class="testimonial-headline">Help with IBS</p>
+              <blockquote class="testimonial-quote">
+                <p>
+                  I went to Five Journeys® for help with IBS. My symptoms have been reduced dramatically
+                  and my overall health has improved. The tests that they had me do were very informative
+                  and Dr. Levitan was very thorough in reviewing the results and coming up with a plan to
+                  address the issues. I also met with Stacie the dietician on numerous occasions who
+                  provided me with very solid guidance on how to address my diet issues and make
+                  improvements.
+                </p>
+              </blockquote>
+              <p class="testimonial-attribution">Bill</p>
+              <p class="testimonial-source">From fivejourneys.com</p>
+            </li>
+            <li class="testimonial-card">
+              <p class="testimonial-headline">Help with Lyme disease</p>
+              <blockquote class="testimonial-quote">
+                <p>
+                  I have been sick with Lyme Disease for 12 years. But when I started coming to see
+                  Dr. Levitan, things changed. He also realized that there were other things wrong and
+                  has helped me like no other doctor has. He is kind and caring and very knowledgeable.
+                  The staff is wonderful. If you have Lyme or are just trying to figure out what is
+                  making you feel sick, this practice is for you.
+                </p>
+              </blockquote>
+              <p class="testimonial-attribution">Connie</p>
+              <p class="testimonial-source">From fivejourneys.com</p>
+            </li>
+            <li class="testimonial-card">
+              <p class="testimonial-headline">Feeling much better</p>
+              <blockquote class="testimonial-quote">
+                <p>
+                  I went to 5 Journeys® seeking help when conventional medicine had let me down. After
+                  several meetings with Dr. Levitan and the incredible nutritionist, I have been feeling
+                  much better. Over the past 4-5 months I have lost 15 pounds, greatly improved my eating
+                  habits (quality and quantity), and feel much lighter both in body and spirit. My issues
+                  are nearly gone, and I'm grateful.
+                </p>
+              </blockquote>
+              <p class="testimonial-attribution">Brian</p>
+              <p class="testimonial-source">From fivejourneys.com</p>
+            </li>
+          </ul>
+        </div>
+        <div class="testimonials-dots" id="testimonials-dots" role="tablist" aria-label="Testimonial slides"></div>
+      </div>
+    </footer>
+
+    <div class="fold-line">Above-the-fold boundary</div>
+  </main>
+
+  <script>
+    (function () {
+      const toggle = document.getElementById("cta-helper-toggle");
+      const panel = document.getElementById("cta-helper-panel");
+      const closeBtn = panel.querySelector(".helper-close");
+
+      function openPanel() {
+        panel.hidden = false;
+        toggle.setAttribute("aria-expanded", "true");
+      }
+
+      function closePanel() {
+        panel.hidden = true;
+        toggle.setAttribute("aria-expanded", "false");
+      }
+
+      toggle.addEventListener("click", function () {
+        if (toggle.getAttribute("aria-expanded") === "true") {
+          closePanel();
+        } else {
+          openPanel();
+        }
+      });
+
+      closeBtn.addEventListener("click", closePanel);
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+          closePanel();
+          toggle.focus();
+        }
+      });
+    })();
+
+    (function () {
+      const cards = Array.from(document.querySelectorAll("#testimonials-list .testimonial-card"));
+      const dotsHost = document.getElementById("testimonials-dots");
+      const list = document.getElementById("testimonials-list");
+      if (!cards.length || !dotsHost || !list) return;
+
+      let activeIndex = 0;
+      let timerId = null;
+      const intervalMs = 10000;
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function setListHeight() {
+        const activeCard = cards[activeIndex];
+        list.style.minHeight = activeCard.offsetHeight + "px";
+      }
+
+      function showSlide(index) {
+        activeIndex = (index + cards.length) % cards.length;
+        cards.forEach(function (card, i) {
+          card.classList.toggle("is-active", i === activeIndex);
+        });
+        dotsHost.querySelectorAll(".testimonial-dot").forEach(function (dot, i) {
+          const isActive = i === activeIndex;
+          dot.classList.toggle("is-active", isActive);
+          dot.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+        setListHeight();
+      }
+
+      function nextSlide() {
+        showSlide(activeIndex + 1);
+      }
+
+      function startAutoplay() {
+        if (reducedMotion || cards.length < 2) return;
+        stopAutoplay();
+        timerId = window.setInterval(nextSlide, intervalMs);
+      }
+
+      function stopAutoplay() {
+        if (timerId !== null) {
+          window.clearInterval(timerId);
+          timerId = null;
+        }
+      }
+
+      cards.forEach(function (_card, index) {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "testimonial-dot" + (index === 0 ? " is-active" : "");
+        dot.setAttribute("role", "tab");
+        dot.setAttribute("aria-label", "Show testimonial " + (index + 1));
+        dot.setAttribute("aria-selected", index === 0 ? "true" : "false");
+        dot.addEventListener("click", function () {
+          showSlide(index);
+          startAutoplay();
+        });
+        dotsHost.appendChild(dot);
+      });
+
+      showSlide(0);
+      startAutoplay();
+
+      document.getElementById("testimonials-carousel").addEventListener("mouseenter", stopAutoplay);
+      document.getElementById("testimonials-carousel").addEventListener("mouseleave", startAutoplay);
+      window.addEventListener("resize", setListHeight);
+    })();
+  </script>
+</body>
+</html>
