@@ -145,6 +145,7 @@
     }
 
     .hero-message-stage {
+      min-height: 12.5rem;
       position: relative;
     }
 
@@ -152,22 +153,18 @@
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
-      inset: 0;
+      left: 0;
       opacity: 0;
       pointer-events: none;
       position: absolute;
-      transform: translateY(14px);
-      transition: opacity 0.45s ease, transform 0.45s ease;
-      visibility: hidden;
+      top: 0;
+      transition: opacity 2.4s ease-in-out;
       width: 100%;
     }
 
     .hero-message.is-active {
       opacity: 1;
       pointer-events: auto;
-      position: relative;
-      transform: translateY(0);
-      visibility: visible;
     }
 
     h1 {
@@ -1193,55 +1190,99 @@
       if (!stage || messages.length < 2 || !dotsHost || !status || !rotator) return;
 
       let activeIndex = 0;
-      let timerId = null;
-      const intervalMs = 7000;
+      let holdTimerId = null;
+      let fadeTimerId = null;
+      let autoplayEnabled = true;
+      const holdMs = 30000;
+      const fadeMs = 2400;
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
       function lockStageHeight() {
-        const previousHeight = stage.style.minHeight;
-        stage.style.minHeight = "";
         const tallest = messages.reduce(function (max, message) {
           return Math.max(max, message.scrollHeight);
         }, 0);
-        stage.style.minHeight = previousHeight;
         if (tallest) {
           stage.style.minHeight = tallest + "px";
         }
       }
 
-      function showMessage(index) {
-        activeIndex = ((index % messages.length) + messages.length) % messages.length;
+      function normalizeIndex(index) {
+        return ((index % messages.length) + messages.length) % messages.length;
+      }
 
-        messages.forEach(function (message, i) {
-          const isActive = i === activeIndex;
-          message.classList.toggle("is-active", isActive);
-          message.setAttribute("aria-hidden", isActive ? "false" : "true");
-        });
-
+      function updateChrome(index) {
         dotsHost.querySelectorAll(".message-dot").forEach(function (dot, i) {
-          const isActive = i === activeIndex;
+          const isActive = i === index;
           dot.classList.toggle("is-active", isActive);
           dot.setAttribute("aria-selected", isActive ? "true" : "false");
         });
-
-        status.textContent = "Messaging " + (activeIndex + 1) + " of " + messages.length;
+        status.textContent = "Messaging " + (index + 1) + " of " + messages.length;
       }
 
-      function nextMessage() {
-        showMessage(activeIndex + 1);
+      function setMessageVisible(index, isVisible) {
+        const message = messages[index];
+        message.classList.toggle("is-active", isVisible);
+        message.setAttribute("aria-hidden", isVisible ? "false" : "true");
+      }
+
+      function clearHold() {
+        if (holdTimerId !== null) {
+          window.clearTimeout(holdTimerId);
+          holdTimerId = null;
+        }
+      }
+
+      function clearFade() {
+        if (fadeTimerId !== null) {
+          window.clearTimeout(fadeTimerId);
+          fadeTimerId = null;
+        }
+      }
+
+      function scheduleNext() {
+        clearHold();
+        if (!autoplayEnabled || reducedMotion || messages.length < 2) return;
+        holdTimerId = window.setTimeout(function () {
+          showMessage(activeIndex + 1);
+        }, holdMs);
+      }
+
+      function showMessage(index) {
+        const nextIndex = normalizeIndex(index);
+        const alreadyShowing = nextIndex === activeIndex && messages[nextIndex].classList.contains("is-active");
+        if (alreadyShowing) return;
+
+        clearFade();
+        updateChrome(nextIndex);
+
+        if (reducedMotion) {
+          messages.forEach(function (_message, i) {
+            setMessageVisible(i, i === nextIndex);
+          });
+          activeIndex = nextIndex;
+          if (autoplayEnabled) scheduleNext();
+          return;
+        }
+
+        setMessageVisible(activeIndex, false);
+
+        fadeTimerId = window.setTimeout(function () {
+          activeIndex = nextIndex;
+          setMessageVisible(nextIndex, true);
+          fadeTimerId = null;
+          if (autoplayEnabled) scheduleNext();
+        }, fadeMs);
       }
 
       function startAutoplay() {
-        if (reducedMotion || messages.length < 2) return;
-        stopAutoplay();
-        timerId = window.setInterval(nextMessage, intervalMs);
+        autoplayEnabled = true;
+        if (fadeTimerId !== null) return;
+        scheduleNext();
       }
 
       function stopAutoplay() {
-        if (timerId !== null) {
-          window.clearInterval(timerId);
-          timerId = null;
-        }
+        autoplayEnabled = false;
+        clearHold();
       }
 
       messages.forEach(function (message, index) {
@@ -1259,7 +1300,7 @@
       });
 
       lockStageHeight();
-      showMessage(0);
+      updateChrome(0);
       startAutoplay();
 
       rotator.addEventListener("mouseenter", stopAutoplay);
