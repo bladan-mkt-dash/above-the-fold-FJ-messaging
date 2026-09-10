@@ -1176,6 +1176,10 @@
         return ((index % messages.length) + messages.length) % messages.length;
       }
 
+      function nextIndexFrom(index) {
+        return (index + 1) % messages.length;
+      }
+
       function updateChrome(index) {
         dotsHost.querySelectorAll(".message-dot").forEach(function (dot, i) {
           const isActive = i === index;
@@ -1208,7 +1212,7 @@
         clearHold();
         if (!autoplayEnabled || reducedMotion || messages.length < 2) return;
         holdTimerId = window.setTimeout(function () {
-          showMessage(activeIndex + 1);
+          showMessage(nextIndexFrom(activeIndex));
         }, holdMs);
       }
 
@@ -1268,8 +1272,6 @@
       updateChrome(0);
       startAutoplay();
 
-      rotator.addEventListener("mouseenter", stopAutoplay);
-      rotator.addEventListener("mouseleave", startAutoplay);
       window.addEventListener("resize", lockStageHeight);
     })();
 
