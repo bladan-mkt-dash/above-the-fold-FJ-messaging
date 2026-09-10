@@ -448,7 +448,9 @@
       flex: 1;
       flex-direction: column;
       justify-content: center;
-      min-height: 529px;
+      min-height: 600px;
+      overflow: visible;
+      padding: 1.25rem 0 0.5rem;
       position: relative;
       width: 100%;
     }
@@ -456,9 +458,10 @@
     .wheel {
       aspect-ratio: 1;
       margin: 0 auto;
-      max-width: 506px;
+      max-width: 560px;
+      overflow: visible;
       position: relative;
-      width: min(100%, 506px);
+      width: min(100%, 560px);
     }
 
     /* V4 daisy: no numbers · larger petal type · Physical rotated left (CCW 1) */
@@ -472,19 +475,19 @@
       color: var(--white);
       display: flex;
       flex-direction: column;
-      font-size: clamp(0.812rem, 1.75vw, 1.064rem);
+      font-size: clamp(0.568rem, 1.225vw, 0.745rem);
       font-weight: 700;
-      height: 36%;
+      height: 42%;
       justify-content: center;
       left: 50%;
       letter-spacing: 0.01em;
       line-height: 1.2;
-      padding: 0 0.7rem;
+      padding: 8px;
       position: absolute;
       text-align: center;
       top: 50%;
       transform: translate(-50%, -50%);
-      width: 36%;
+      width: 42%;
       z-index: 4;
     }
 
@@ -623,18 +626,18 @@
       max-width: 11.75em;
     }
 
-    /* Petal centers at ~31.5% radius — V4 rotated CCW one spot from V3
+    /* Petal centers at ~37.5% radius so labels clear the larger core
        Physical (top-left), Chemical (top), Emotional (top-right),
        Social (bottom-right), Spiritual (bottom-left) */
     .pillar-node[data-pillar="physical"] {
-      --node-x: 20.1%;
-      --node-y: 40.3%;
+      --node-x: 14.4%;
+      --node-y: 38.45%;
       --pillar-photo: url("assets/physical.png");
       animation-delay: 0s;
     }
     .pillar-node[data-pillar="chemical"] {
       --node-x: 50%;
-      --node-y: 18.5%;
+      --node-y: 12.5%;
       --pillar-photo: url("assets/chemical.png");
       animation-delay: 0.4s;
     }
@@ -648,20 +651,20 @@
       opacity: 0;
     }
     .pillar-node[data-pillar="emotional"] {
-      --node-x: 79.9%;
-      --node-y: 40.3%;
+      --node-x: 85.6%;
+      --node-y: 38.45%;
       --pillar-photo: url("assets/emotional.png");
       animation-delay: 0.8s;
     }
     .pillar-node[data-pillar="social"] {
-      --node-x: 68.5%;
-      --node-y: 75.5%;
+      --node-x: 72.02%;
+      --node-y: 80.36%;
       --pillar-photo: url("assets/social.png");
       animation-delay: 1.2s;
     }
     .pillar-node[data-pillar="spiritual"] {
-      --node-x: 31.5%;
-      --node-y: 75.5%;
+      --node-x: 27.98%;
+      --node-y: 80.36%;
       --pillar-photo: url("assets/spiritual.png?v=purpose-path-1");
       animation-delay: 1.6s;
     }
@@ -813,11 +816,12 @@
       }
 
       .constellation {
-        min-height: 437px;
+        min-height: 500px;
+        padding: 1rem 0 0.35rem;
       }
 
       .wheel {
-        max-width: 391px;
+        max-width: 440px;
       }
 
       h1 {
