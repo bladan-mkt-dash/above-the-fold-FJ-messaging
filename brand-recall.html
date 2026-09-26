@@ -218,6 +218,23 @@
     <div class="chart-wrap" id="year-line"></div>
     <p class="chart-note">Y-axis: brand recall (%). Dashed line is the 12-month average (44.0%).</p>
 
+    <div class="callout">
+      <strong>New-user recall tracks all-user — portal logins are not the driver</strong>
+      <p>
+        Restricting the formula to GA4 new-user sessions answers “of people the site has
+        never seen, how many already knew the brand?” It sits within 1–3 points of the
+        all-user line (12-mo avg 43.8% vs 44.0%; Sep 2026 37.6% vs 39.2%). Portal/login
+        landings are about 700–900 sessions a month, ~120–170 of them returning Direct.
+        GA4 “new” is a cookie, not “this person is a patient,” so this is a weak fix for
+        that mix. July–August new-user Direct is bot-adjusted the same way as all-user Direct.
+      </p>
+    </div>
+
+    <h2>New-user vs all-user brand-page recall</h2>
+    <p>Same brand-page formula, restricted to newVsReturning = new. If patient portal return traffic were inflating the ratio, these lines would diverge.</p>
+    <div class="chart-wrap" id="new-user-line"></div>
+    <p class="chart-note">Y-axis: brand-page recall (%). Value labels omitted — the two series sit 1–3 points apart.</p>
+
     <h2>Same month, prior year — is this seasonal?</h2>
     <p>Brand-page recall, January–September. If 2026 tracked 2025, the move would be seasonal. It does not.</p>
     <div class="chart-wrap" id="yoy-line"></div>
@@ -260,6 +277,7 @@
             <th>Total</th>
             <th>Homepage-only</th>
             <th>Brand-page</th>
+            <th>New-user brand-page</th>
           </tr>
         </thead>
         <tbody id="year-table"></tbody>
@@ -286,30 +304,31 @@
       <strong>Brand-page organic:</strong> Organic Search landing on homepage, about, contact, membership,
       patient portal, locations, clinic welcome pages, or clinician bios.
       <strong>Homepage-only:</strong> Organic Search landing on / only.
+      <strong>New-user brand-page:</strong> same formula on sessions where newVsReturning = new.
       Google hides almost all organic queries in GA4, so these are landing-page proxies.
       Calendar 2025 averaged 46.6%; 2026 through Sep 23 is 42.1%.
     </p>
 
     <footer>
-      Five Journeys · above-the-fold messaging project · brand recall from GA4 · last updated Sep 24, 2026
+      Five Journeys · above-the-fold messaging project · brand recall from GA4 · last updated Sep 26, 2026
     </footer>
   </div>
 
   <script>
     const yearMonths = [
-      { label: "Sep 25", full: "Sep 2025", direct: 2908, homepageOrganic: 1536, organicBranded: 3392, other: 7758, total: 14058, ratio: 44.8, homepageRatio: 31.6 },
-      { label: "Oct 25", full: "Oct 2025", direct: 3188, homepageOrganic: 1345, organicBranded: 2991, other: 6763, total: 12942, ratio: 47.7, homepageRatio: 35.0 },
-      { label: "Nov 25", full: "Nov 2025", direct: 4252, homepageOrganic: 1021, organicBranded: 2377, other: 6858, total: 13487, ratio: 49.2, homepageRatio: 39.1 },
-      { label: "Dec 25", full: "Dec 2025", direct: 3666, homepageOrganic: 883, organicBranded: 2003, other: 5941, total: 11610, ratio: 48.8, homepageRatio: 39.2 },
-      { label: "Jan 26", full: "Jan 2026", direct: 3251, homepageOrganic: 938, organicBranded: 2100, other: 7242, total: 12593, ratio: 42.5, homepageRatio: 33.3 },
-      { label: "Feb 26", full: "Feb 2026", direct: 3747, homepageOrganic: 630, organicBranded: 1568, other: 11466, total: 16781, ratio: 31.7, homepageRatio: 26.1 },
-      { label: "Mar 26", full: "Mar 2026", direct: 4081, homepageOrganic: 940, organicBranded: 2224, other: 10294, total: 16599, ratio: 38.0, homepageRatio: 30.2 },
-      { label: "Apr 26", full: "Apr 2026", direct: 4310, homepageOrganic: 846, organicBranded: 1960, other: 7162, total: 13432, ratio: 46.7, homepageRatio: 38.4 },
-      { label: "May 26", full: "May 2026", direct: 4977, homepageOrganic: 818, organicBranded: 1946, other: 6759, total: 13682, ratio: 50.6, homepageRatio: 42.4 },
-      { label: "Jun 26", full: "Jun 2026", direct: 5116, homepageOrganic: 975, organicBranded: 2193, other: 7092, total: 14401, ratio: 50.8, homepageRatio: 42.3 },
-      { label: "Jul 26", full: "Jul 2026", direct: 3326, homepageOrganic: 910, organicBranded: 2254, other: 7765, total: 13345, ratio: 41.8, homepageRatio: 31.7 },
-      { label: "Aug 26", full: "Aug 2026", direct: 3612, homepageOrganic: 886, organicBranded: 2165, other: 8531, total: 14308, ratio: 40.4, homepageRatio: 31.4 },
-      { label: "Sep 26", full: "Sep 2026 (1–23)", direct: 2800, homepageOrganic: 585, organicBranded: 1650, other: 6902, total: 11352, ratio: 39.2, homepageRatio: 29.8 },
+      { label: "Sep 25", full: "Sep 2025", direct: 2908, homepageOrganic: 1536, organicBranded: 3392, other: 7758, total: 14058, ratio: 44.8, homepageRatio: 31.6, newUserRatio: 41.1 },
+      { label: "Oct 25", full: "Oct 2025", direct: 3188, homepageOrganic: 1345, organicBranded: 2991, other: 6763, total: 12942, ratio: 47.7, homepageRatio: 35.0, newUserRatio: 46.0 },
+      { label: "Nov 25", full: "Nov 2025", direct: 4252, homepageOrganic: 1021, organicBranded: 2377, other: 6858, total: 13487, ratio: 49.2, homepageRatio: 39.1, newUserRatio: 49.7 },
+      { label: "Dec 25", full: "Dec 2025", direct: 3666, homepageOrganic: 883, organicBranded: 2003, other: 5941, total: 11610, ratio: 48.8, homepageRatio: 39.2, newUserRatio: 49.1 },
+      { label: "Jan 26", full: "Jan 2026", direct: 3251, homepageOrganic: 938, organicBranded: 2100, other: 7242, total: 12593, ratio: 42.5, homepageRatio: 33.3, newUserRatio: 42.5 },
+      { label: "Feb 26", full: "Feb 2026", direct: 3747, homepageOrganic: 630, organicBranded: 1568, other: 11466, total: 16781, ratio: 31.7, homepageRatio: 26.1, newUserRatio: 29.4 },
+      { label: "Mar 26", full: "Mar 2026", direct: 4081, homepageOrganic: 940, organicBranded: 2224, other: 10294, total: 16599, ratio: 38.0, homepageRatio: 30.2, newUserRatio: 35.9 },
+      { label: "Apr 26", full: "Apr 2026", direct: 4310, homepageOrganic: 846, organicBranded: 1960, other: 7162, total: 13432, ratio: 46.7, homepageRatio: 38.4, newUserRatio: 47.4 },
+      { label: "May 26", full: "May 2026", direct: 4977, homepageOrganic: 818, organicBranded: 1946, other: 6759, total: 13682, ratio: 50.6, homepageRatio: 42.4, newUserRatio: 53.5 },
+      { label: "Jun 26", full: "Jun 2026", direct: 5116, homepageOrganic: 975, organicBranded: 2193, other: 7092, total: 14401, ratio: 50.8, homepageRatio: 42.3, newUserRatio: 52.6 },
+      { label: "Jul 26", full: "Jul 2026", direct: 3326, homepageOrganic: 910, organicBranded: 2254, other: 7765, total: 13345, ratio: 41.8, homepageRatio: 31.7, newUserRatio: 40.1 },
+      { label: "Aug 26", full: "Aug 2026", direct: 3612, homepageOrganic: 886, organicBranded: 2165, other: 8531, total: 14308, ratio: 40.4, homepageRatio: 31.4, newUserRatio: 38.2 },
+      { label: "Sep 26", full: "Sep 2026 (1–23)", direct: 2800, homepageOrganic: 585, organicBranded: 1650, other: 6902, total: 11352, ratio: 39.2, homepageRatio: 29.8, newUserRatio: 37.6 },
     ];
     const yoyMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"];
     const ratio2025 = [47.9, 44.4, 45.3, 43.9, 46.7, 49.3, 44.2, 47.1, 44.8];
@@ -332,7 +351,7 @@
       return el;
     }
 
-    function lineChart(host, { categories, series, yMax, refLines = [], suffix = "" }) {
+    function lineChart(host, { categories, series, yMax, refLines = [], suffix = "", showValues = true }) {
       const w = 780, h = 280, pad = { t: 18, r: 16, b: 36, l: 40 };
       const iw = w - pad.l - pad.r, ih = h - pad.t - pad.b;
       const svg = svgEl("svg", { viewBox: `0 0 ${w} ${h}`, width: "100%", role: "img" });
@@ -355,9 +374,11 @@
         svg.appendChild(svgEl("path", { d, fill: "none", stroke: s.color, "stroke-width": 2.25 }));
         s.data.forEach((v, i) => {
           svg.appendChild(svgEl("circle", { cx: xAt(i), cy: yAt(v), r: 3.2, fill: s.color }));
-          const t = svgEl("text", { x: xAt(i), y: yAt(v) - 8, "text-anchor": "middle", fill: s.color, "font-size": 10, "font-weight": 600 });
-          t.textContent = `${v}${suffix}`;
-          svg.appendChild(t);
+          if (showValues) {
+            const t = svgEl("text", { x: xAt(i), y: yAt(v) - 8, "text-anchor": "middle", fill: s.color, "font-size": 10, "font-weight": 600 });
+            t.textContent = `${v}${suffix}`;
+            svg.appendChild(t);
+          }
         });
       });
       categories.forEach((c, i) => {
@@ -444,6 +465,18 @@
       ],
     });
 
+    lineChart(document.getElementById("new-user-line"), {
+      categories: yearMonths.map((m) => m.label),
+      yMax: 60,
+      suffix: "%",
+      showValues: false,
+      refLines: [{ value: 44.0 }],
+      series: [
+        { name: "All-user brand-page", color: COLORS.info, data: yearMonths.map((m) => m.ratio) },
+        { name: "New-user brand-page", color: COLORS.extra, data: yearMonths.map((m) => m.newUserRatio) },
+      ],
+    });
+
     lineChart(document.getElementById("yoy-line"), {
       categories: yoyMonths,
       yMax: 60,
@@ -484,6 +517,7 @@
         <td>${fmt(m.total)}</td>
         <td>${m.homepageRatio.toFixed(1)}%</td>
         <td>${m.ratio.toFixed(1)}%</td>
+        <td>${m.newUserRatio.toFixed(1)}%</td>
       </tr>`).join("");
 
     document.getElementById("yoy-table").innerHTML = yoyMonths.map((label, i) => {
