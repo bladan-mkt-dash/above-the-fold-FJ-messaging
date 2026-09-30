@@ -119,6 +119,42 @@
     @media (min-width: 720px) {
       .grid2 { grid-template-columns: 1fr 1fr; }
     }
+    .creatives {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+      margin: 0.75rem 0 1.5rem;
+    }
+    @media (min-width: 720px) {
+      .creatives { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    .creative {
+      background: var(--surface);
+      border: 1px solid #e4ebe8;
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+    .creative img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #fff;
+    }
+    .creative-meta { padding: 0.85rem 0.95rem 1rem; }
+    .creative-meta h3 { margin-bottom: 0.25rem; }
+    .creative-kpis {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 0.65rem;
+      font-size: 0.8rem;
+      color: var(--wire-label);
+    }
+    .creative-kpis strong {
+      color: var(--accent);
+      display: block;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+    }
     .chart-wrap {
       background: var(--surface);
       border: 1px solid #e4ebe8;
@@ -177,8 +213,8 @@
     <a class="back" href="index.html">← Above the fold project</a>
     <h1>ZM 5 Journeys split-test traffic</h1>
     <p class="lede">
-      Meta traffic campaign with three even-budget ad sets. Read as an image test,
-      not as a test of the V5 homepage headlines.
+      Three V5 headlines, tested as on-image copy in a Meta traffic campaign.
+      The score that matters here is link CTR and CPC.
     </p>
     <p class="meta">
       Source: Meta Ads API · campaign 52684253341268 · OUTCOME_TRAFFIC ·
@@ -186,64 +222,99 @@
     </p>
 
     <div class="callout">
-      <strong>This did not test the V5 headlines</strong>
+      <strong>The headlines are in the image, not in the ad text</strong>
       <p>
-        All three ads use the same primary text (“Discover a Different Kind of Care”),
-        the same body, Learn more, and the same destination
-        (http://www.fivejourneys.com/). V1 / V2 / V3 are image variants.
-        A click winner here is an image winner.
+        Meta’s text assets were identical (“Discover a Different Kind of Care”).
+        The A / B / C test is the headline burned into each creative. Feed 4:5
+        crops are shown below; story/reels used the same headlines.
       </p>
     </div>
 
     <div class="stats">
-      <div class="stat"><strong>$376.64</strong><span>Spend (6 days)</span></div>
+      <div class="stat"><strong>0.613%</strong><span>Best link CTR — V1 Silos</span></div>
+      <div class="stat"><strong>$0.38</strong><span>Lowest CPC — V3 Chasing symptoms</span></div>
       <div class="stat"><strong>898</strong><span>Link clicks</span></div>
-      <div class="stat"><strong>55</strong><span>Landing page views</span></div>
-      <div class="stat"><strong>$4.34</strong><span>Best cost / LPV — V3</span></div>
+      <div class="stat"><strong>$376.64</strong><span>Spend (6 days)</span></div>
     </div>
 
-    <h2>Landing page views by variant</h2>
-    <p>Traffic campaigns are paid to get people onto the site. Landing page views are the outcome. Link clicks are the auction metric.</p>
-    <div class="chart-wrap" id="lpv-bars"></div>
-    <p class="chart-note">Y-axis: landing page views. Source: Meta actions.landing_page_view.</p>
+    <h2>Creatives</h2>
+    <p>Same photo and layout. Only the headline and subhead change.</p>
+    <div class="creatives">
+      <article class="creative">
+        <img src="split-test/v1-feed.jpg" alt="V1: Your Symptoms Don’t Live in Silos. Your Care Shouldn’t Either." width="540" height="675" />
+        <div class="creative-meta">
+          <h3>V1 — Silos</h3>
+          <p>Your Symptoms Don’t Live in Silos. Your Care Shouldn’t Either.</p>
+          <div class="creative-kpis">
+            <div><strong>0.613%</strong>Link CTR</div>
+            <div><strong>$0.43</strong>CPC</div>
+          </div>
+        </div>
+      </article>
+      <article class="creative">
+        <img src="split-test/v2-feed.jpg" alt="V2: You Deserve to Feel Freaking Amazing. Our Method Gets You There." width="540" height="675" />
+        <div class="creative-meta">
+          <h3>V2 — Feel Freaking Amazing</h3>
+          <p>You Deserve to Feel Freaking Amazing™. Our Method Gets You There.</p>
+          <div class="creative-kpis">
+            <div><strong>0.309%</strong>Link CTR</div>
+            <div><strong>$0.47</strong>CPC</div>
+          </div>
+        </div>
+      </article>
+      <article class="creative">
+        <img src="split-test/v3-feed.jpg" alt="V3: Start Feeling Great Instead of Chasing Symptoms." width="540" height="675" />
+        <div class="creative-meta">
+          <h3>V3 — Chasing symptoms</h3>
+          <p>Start Feeling Great Instead of Chasing Symptoms.</p>
+          <div class="creative-kpis">
+            <div><strong>0.435%</strong>Link CTR</div>
+            <div><strong>$0.38</strong>CPC</div>
+          </div>
+        </div>
+      </article>
+    </div>
 
-    <h2>Link CTR vs cost per landing page view</h2>
-    <p>V1 wins the click rate. V3 wins the visit. Those are not the same contest.</p>
+    <h2>Link CTR and CPC</h2>
+    <p>
+      CTR is link clicks ÷ impressions. CPC is spend ÷ link clicks.
+      V1 is the click-rate winner. V3 is the cheapest click. V2 lost both.
+    </p>
     <div class="grid2">
       <div>
         <div class="chart-wrap" id="ctr-bars"></div>
         <p class="chart-note">Y-axis: link CTR (%).</p>
       </div>
       <div>
-        <div class="chart-wrap" id="cplpv-bars"></div>
-        <p class="chart-note">Y-axis: dollars per landing page view.</p>
+        <div class="chart-wrap" id="cpc-bars"></div>
+        <p class="chart-note">Y-axis: CPC (USD per link click).</p>
       </div>
     </div>
 
     <div class="grid3">
       <div>
-        <h3>V1 — highest CTR, fewest visits</h3>
-        <p>0.613% link CTR is a real win vs V2 and V3 (p &lt; 0.001). Only 9 of 293 link clicks became a landing page view (3.1%). Cost per visit $13.89.</p>
+        <h3>V1 wins CTR</h3>
+        <p>0.613% link CTR vs 0.435% (V3) and 0.309% (V2). The CTR gaps are significant (p &lt; 0.001 vs V2, p = 0.000015 vs V3).</p>
       </div>
       <div>
-        <h3>V2 — cheapest reach, weakest click</h3>
-        <p>Lowest CPM ($1.44) and most impressions, especially Sep 29 (56k impressions for $23). Link CTR 0.309%. 16 landing page views.</p>
+        <h3>V3 wins CPC</h3>
+        <p>$0.38 per link click vs $0.43 (V1) and $0.47 (V2). Same budget, more clicks, cheaper clicks.</p>
       </div>
       <div>
-        <h3>V3 — winner for this objective</h3>
-        <p>Most link clicks (344), most landing page views (30), lowest CPC ($0.40), lowest cost per visit ($4.34). LPV rate vs V1 is significant (p = 0.003).</p>
+        <h3>V2 is the weak headline</h3>
+        <p>Feel Freaking Amazing had the most impressions (cheap inventory on Sep 29) and the worst CTR. The line did not earn the extra delivery.</p>
       </div>
     </div>
 
     <h2>Daily link CTR</h2>
-    <p>Early days look like a creative test. Sep 29–30 the auction found cheap inventory and CTR collapsed on every variant.</p>
+    <p>Early days look like a headline test. Sep 29–30 the auction found cheap inventory and CTR collapsed on every variant.</p>
     <div class="chart-wrap" id="ctr-line"></div>
     <p class="chart-note">Y-axis: link CTR (%). Sep 30 is partial.</p>
 
-    <h2>Daily spend</h2>
-    <p>Budgets are even ($25/day each). Spend stayed close; delivery did not.</p>
-    <div class="chart-wrap" id="spend-bars"></div>
-    <p class="chart-note">Y-axis: USD.</p>
+    <h2>Daily CPC</h2>
+    <p>CPC fell with the cheap inventory at the end of the test. Compare variants on Sep 25–28, before that mix shift.</p>
+    <div class="chart-wrap" id="cpc-line"></div>
+    <p class="chart-note">Y-axis: USD per link click. Sep 30 is partial.</p>
 
     <h2>Variant detail</h2>
     <div class="table-scroll">
@@ -251,13 +322,12 @@
         <thead>
           <tr>
             <th>Variant</th>
+            <th>Headline</th>
             <th>Spend</th>
             <th>Impr.</th>
-            <th>Reach</th>
             <th>Link clicks</th>
             <th>Link CTR</th>
-            <th>LPV</th>
-            <th>Cost / LPV</th>
+            <th>CPC</th>
           </tr>
         </thead>
         <tbody id="variant-table"></tbody>
@@ -266,12 +336,10 @@
 
     <h2>Setup notes</h2>
     <p>
-      Shared copy: “Discover a Different Kind of Care” / “Looking for a different
-      approach to your health?” Destination is http (not https) fivejourneys.com.
-      Ad set names say women 35–55; the API targeting is women, US, ages 18–65.
-      Advantage+ placements (feed, stories, reels). Only 55 of 898 link clicks
-      became a landing page view (6.1%). That gap is a tracking or click-quality
-      problem, not a sample-size problem.
+      Shared Meta text asset: “Discover a Different Kind of Care.” Destination is
+      http (not https) fivejourneys.com. Ad set names say women 35–55; the API
+      targeting is women, US, ages 18–65. Advantage+ placements. CPC here is
+      spend ÷ link clicks, paired with link CTR.
     </p>
 
     <footer>
@@ -281,9 +349,9 @@
 
   <script>
     const variants = [
-      { key: "V1", spend: 125.04, impressions: 47817, reach: 34640, linkClicks: 293, linkCtr: 0.613, lpv: 9, costPerLpv: 13.89 },
-      { key: "V2", spend: 121.49, impressions: 84491, reach: 51932, linkClicks: 261, linkCtr: 0.309, lpv: 16, costPerLpv: 7.59 },
-      { key: "V3", spend: 130.11, impressions: 78993, reach: 55154, linkClicks: 344, linkCtr: 0.435, lpv: 30, costPerLpv: 4.34 },
+      { key: "V1", headline: "Silos", spend: 125.04, impressions: 47817, linkClicks: 293, linkCtr: 0.613, cpc: 0.43 },
+      { key: "V2", headline: "Feel Freaking Amazing", spend: 121.49, impressions: 84491, linkClicks: 261, linkCtr: 0.309, cpc: 0.47 },
+      { key: "V3", headline: "Chasing symptoms", spend: 130.11, impressions: 78993, linkClicks: 344, linkCtr: 0.435, cpc: 0.38 },
     ];
     const days = ["Sep 25", "Sep 26", "Sep 27", "Sep 28", "Sep 29", "Sep 30"];
     const linkCtrDaily = {
@@ -291,10 +359,10 @@
       V2: [0.72, 0.67, 0.74, 1.64, 0.17, 0.25],
       V3: [1.01, 2.12, 1.39, 0.53, 0.19, 0.33],
     };
-    const spendDaily = {
-      V1: [19.17, 18.54, 27.64, 30.41, 20.06, 9.22],
-      V2: [17.63, 20.10, 28.86, 25.99, 23.39, 5.52],
-      V3: [20.86, 16.94, 28.20, 33.32, 23.07, 7.72],
+    const cpcDaily = {
+      V1: [0.58, 0.49, 0.48, 0.78, 0.29, 0.17],
+      V2: [0.49, 1.26, 0.63, 0.72, 0.25, 0.17],
+      V3: [0.58, 0.39, 0.58, 0.34, 0.34, 0.16],
     };
     const COLORS = {
       info: "#2f6f9f",
@@ -401,52 +469,46 @@
       return n.toLocaleString("en-US", { style: "currency", currency: "USD" });
     }
 
-    barChart(document.getElementById("lpv-bars"), {
-      categories: variants.map((v) => v.key),
-      yMax: 40,
-      series: [{ name: "Landing page views", color: COLORS.info, data: variants.map((v) => v.lpv) }],
-    });
     barChart(document.getElementById("ctr-bars"), {
       categories: variants.map((v) => v.key),
       yMax: 0.8,
       suffix: "%",
       series: [{ name: "Link CTR", color: COLORS.info, data: variants.map((v) => v.linkCtr) }],
     });
-    barChart(document.getElementById("cplpv-bars"), {
+    barChart(document.getElementById("cpc-bars"), {
       categories: variants.map((v) => v.key),
-      yMax: 16,
-      series: [{ name: "Cost per LPV", color: COLORS.extra, data: variants.map((v) => v.costPerLpv) }],
+      yMax: 0.6,
+      series: [{ name: "CPC", color: COLORS.extra, data: variants.map((v) => v.cpc) }],
     });
     lineChart(document.getElementById("ctr-line"), {
       categories: days,
       yMax: 2.4,
       suffix: "%",
       series: [
-        { name: "V1", color: COLORS.info, data: linkCtrDaily.V1 },
-        { name: "V2", color: COLORS.other, data: linkCtrDaily.V2 },
-        { name: "V3", color: COLORS.success, data: linkCtrDaily.V3 },
+        { name: "V1 Silos", color: COLORS.info, data: linkCtrDaily.V1 },
+        { name: "V2 Feel Freaking Amazing", color: COLORS.other, data: linkCtrDaily.V2 },
+        { name: "V3 Chasing symptoms", color: COLORS.success, data: linkCtrDaily.V3 },
       ],
     });
-    barChart(document.getElementById("spend-bars"), {
+    lineChart(document.getElementById("cpc-line"), {
       categories: days,
-      yMax: 40,
+      yMax: 1.4,
       series: [
-        { name: "V1 spend", color: COLORS.info, data: spendDaily.V1 },
-        { name: "V2 spend", color: COLORS.other, data: spendDaily.V2 },
-        { name: "V3 spend", color: COLORS.success, data: spendDaily.V3 },
+        { name: "V1 Silos", color: COLORS.info, data: cpcDaily.V1 },
+        { name: "V2 Feel Freaking Amazing", color: COLORS.other, data: cpcDaily.V2 },
+        { name: "V3 Chasing symptoms", color: COLORS.success, data: cpcDaily.V3 },
       ],
     });
 
     document.getElementById("variant-table").innerHTML = variants.map((v) => `
       <tr>
         <td>${v.key}</td>
+        <td>${v.headline}</td>
         <td>${usd(v.spend)}</td>
         <td>${v.impressions.toLocaleString("en-US")}</td>
-        <td>${v.reach.toLocaleString("en-US")}</td>
         <td>${v.linkClicks.toLocaleString("en-US")}</td>
         <td>${v.linkCtr.toFixed(3)}%</td>
-        <td>${v.lpv}</td>
-        <td>${usd(v.costPerLpv)}</td>
+        <td>${usd(v.cpc)}</td>
       </tr>`).join("");
   </script>
 </body>
