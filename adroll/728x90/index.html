@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="ad.size" content="width=728,height=90" />
+  <meta name="viewport" content="width=728, height=90" />
+  <title>Five Journeys — 728x90</title>
+  <style>
+    html, body { margin: 0; padding: 0; width: 728px; height: 90px; overflow: hidden; }
+    #clickArea {
+      position: relative;
+      width: 728px;
+      height: 90px;
+      box-sizing: border-box;
+      border: 1px solid #1d3531;
+      background: #faf8f5;
+      color: #1a2e2a;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .wash {
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background: #eef3f1;
+    }
+    .mark {
+      position: absolute;
+      right: 70px;
+      top: -40px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #5da68a;
+      opacity: 0.16;
+      transform: scale(0.75);
+      animation: bloom 0.7s ease-out 0.15s forwards;
+    }
+    .inner {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      padding: 0 18px 0 22px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    .copy { min-width: 0; flex: 1; }
+    .brand {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #264540;
+      opacity: 0;
+      animation: rise 0.4s ease-out 0.1s forwards;
+    }
+    h1 {
+      margin: 4px 0 0;
+      font-size: 20px;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+      opacity: 0;
+      transform: translateY(8px);
+      animation: rise 0.45s ease-out 0.35s forwards;
+    }
+    .cta {
+      flex: 0 0 auto;
+      background: #264540;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 14px;
+      border-radius: 4px;
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateY(8px);
+      animation: rise 0.45s ease-out 0.7s forwards;
+    }
+    @keyframes rise {
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes bloom {
+      to { opacity: 0.2; transform: scale(1); }
+    }
+  </style>
+  <script>
+    var clickTag = "https://www.fivejourneys.com";
+    function openClickTag() {
+      var match = /[?&]clickTag=([^&]+)/i.exec(window.location.search);
+      var url = match ? decodeURIComponent(match[1]) : clickTag;
+      window.open(url, "_blank");
+    }
+  </script>
+</head>
+<body>
+  <div id="clickArea" onclick="openClickTag()">
+    <div class="wash"></div>
+    <div class="mark"></div>
+    <div class="inner">
+      <div class="copy">
+        <div class="brand">Five Journeys</div>
+        <h1>You Deserve to Feel Freaking Amazing™</h1>
+      </div>
+      <div class="cta">Book a Free Discovery Call</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Five Journeys — AdRoll HTML5 banners</title>
+  <style>
+    :root {
+      --ink: #1a2e2a;
+      --ink-muted: #3d524c;
+      --accent: #264540;
+      --surface: #f7f9f8;
+      --wire: #b8c9c3;
+    }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Segoe UI", system-ui, sans-serif;
+      line-height: 1.55;
+    }
+    .wrap { margin: 0 auto; max-width: 52rem; padding: 2rem 1.25rem 4rem; }
+    .back { color: var(--accent); font-weight: 600; text-decoration: none; font-size: 0.875rem; }
+    .back:hover { text-decoration: underline; }
+    h1 { font-size: 1.6rem; letter-spacing: -0.02em; margin: 1rem 0 0.4rem; }
+    p, li { color: var(--ink-muted); }
+    .frame {
+      background: var(--surface);
+      border: 1px dashed var(--wire);
+      display: inline-block;
+      margin: 0.5rem 0 1.5rem;
+      padding: 12px;
+    }
+    iframe { display: block; border: 0; }
+    code { font-size: 0.85em; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../index.html">← Above the fold project</a>
+    <h1>AdRoll HTML5 banners</h1>
+    <p>
+      Self-contained creatives for AdRoll upload. Animation plays once in about
+      1 second and holds. Default click-through is
+      <code>https://www.fivejourneys.com</code> — AdRoll will override that
+      with the campaign landing page via <code>clickTag</code>.
+    </p>
+
+    <h2>300 × 250</h2>
+    <div class="frame">
+      <iframe src="300x250/index.html" width="300" height="250" title="300x250 banner"></iframe>
+    </div>
+
+    <h2>728 × 90</h2>
+    <div class="frame">
+      <iframe src="728x90/index.html" width="728" height="90" title="728x90 banner"></iframe>
+    </div>
+
+    <h2>Upload to AdRoll</h2>
+    <ul>
+      <li>Each size is its own ZIP, with <code>index.html</code> at the root.</li>
+      <li>ZIP must stay under 150 KB. These are well under that (no images or fonts).</li>
+      <li>In AdRoll, set the landing URL on the ad — do not edit the file unless you want a local fallback.</li>
+      <li>AdRoll support often has to ingest HTML5 zips for you.</li>
+    </ul>
+    <p>
+      Zips: <a href="five-journeys-adroll-300x250.zip">300×250</a> ·
+      <a href="five-journeys-adroll-728x90.zip">728×90</a>
+    </p>
+  </div>
+</body>
+</html>
