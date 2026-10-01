@@ -40,22 +40,22 @@
       position: relative;
       z-index: 1;
       height: 100%;
-      padding: 16px 16px 14px;
+      padding: 14px 16px 14px;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
     }
-    .brand {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #264540;
+    .logo {
+      display: block;
+      height: 36px;
+      width: auto;
+      max-width: 168px;
+      pointer-events: none;
       opacity: 0;
       animation: rise 0.45s ease-out 0.1s forwards;
     }
     h1 {
-      margin: 18px 0 0;
+      margin: 16px 0 0;
       font-size: 22px;
       line-height: 1.18;
       letter-spacing: -0.03em;
@@ -103,7 +103,7 @@
     <div class="wash"></div>
     <div class="mark"></div>
     <div class="inner">
-      <div class="brand">Five Journeys</div>
+      <img class="logo" src="logo.png" alt="Five Journeys" width="120" height="36" />
       <h1>
         <span>You Deserve to</span>
         <span>Feel Freaking Amazing™</span>

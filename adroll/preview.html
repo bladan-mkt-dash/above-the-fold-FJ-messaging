@@ -39,7 +39,9 @@
     <a class="back" href="../index.html">← Above the fold project</a>
     <h1>AdRoll HTML5 banners</h1>
     <p>
-      Self-contained creatives for AdRoll upload. Animation plays once in about
+      Self-contained creatives for AdRoll upload. The original Five Journeys
+      wordmark is packaged as <code>logo.png</code> inside each ZIP — do not
+      hotlink it from fivejourneys.com. Animation plays once in about
       1 second and holds. Default click-through is
       <code>https://www.fivejourneys.com</code> — AdRoll will override that
       with the campaign landing page via <code>clickTag</code>.
@@ -57,10 +59,10 @@
 
     <h2>Upload to AdRoll</h2>
     <ul>
-      <li>Each size is its own ZIP, with <code>index.html</code> at the root.</li>
-      <li>ZIP must stay under 150 KB. These are well under that (no images or fonts).</li>
+      <li>Each size is its own ZIP, with <code>index.html</code> and <code>logo.png</code> at the root.</li>
+      <li>ZIP must stay under 150 KB. These stay well under that with the local logo file.</li>
       <li>In AdRoll, set the landing URL on the ad — do not edit the file unless you want a local fallback.</li>
-      <li>AdRoll support often has to ingest HTML5 zips for you.</li>
+      <li>Send AdRoll support these ZIPs. Relative images in the package are served with the ad; a live site URL is not required and often gets blocked.</li>
     </ul>
     <p>
       Zips: <a href="five-journeys-adroll-300x250.zip">300×250</a> ·

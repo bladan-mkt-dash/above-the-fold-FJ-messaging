@@ -40,24 +40,24 @@
       position: relative;
       z-index: 1;
       height: 100%;
-      padding: 0 18px 0 22px;
+      padding: 0 16px 0 16px;
       box-sizing: border-box;
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 18px;
     }
-    .copy { min-width: 0; flex: 1; }
-    .brand {
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #264540;
+    .logo {
+      display: block;
+      height: 48px;
+      width: auto;
+      flex: 0 0 auto;
+      pointer-events: none;
       opacity: 0;
       animation: rise 0.4s ease-out 0.1s forwards;
     }
+    .copy { min-width: 0; flex: 1; }
     h1 {
-      margin: 4px 0 0;
+      margin: 0;
       font-size: 20px;
       line-height: 1.15;
       letter-spacing: -0.03em;
@@ -100,8 +100,8 @@
     <div class="wash"></div>
     <div class="mark"></div>
     <div class="inner">
+      <img class="logo" src="logo.png" alt="Five Journeys" width="160" height="48" />
       <div class="copy">
-        <div class="brand">Five Journeys</div>
         <h1>You Deserve to Feel Freaking Amazing™</h1>
       </div>
       <div class="cta">Book a Free Discovery Call</div>
