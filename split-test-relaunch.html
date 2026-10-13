@@ -316,6 +316,18 @@
     <div class="chart-wrap" id="cpc-line"></div>
     <p class="chart-note">Y-axis: USD per link click. Oct 6 starts at 12:13 PM ET.</p>
 
+    <h2>Daily impressions</h2>
+    <p>
+      Spend stays even because each ad set has its own $30 daily budget. Impressions do not.
+      Meta bills for impressions and bids lowest cost for a link click, so the same dollars
+      buy as many impressions as the auction will sell. On Oct 10, Image 4 spent $22.96 and
+      received 34,868 impressions at a $0.66 CPM. Image 5 spent $25.88 and received 3,650
+      impressions at a $7.09 CPM. Image 4 did not receive extra budget. Its inventory was
+      cheaper, which is also why its link CTR fell to 0.37% and its CPC fell to $0.18 that day.
+    </p>
+    <div class="chart-wrap" id="impr-line"></div>
+    <p class="chart-note">Y-axis: impressions. Oct 6 starts at 12:13 PM ET.</p>
+
     <h2>Variant detail</h2>
     <div class="table-scroll">
       <table>
@@ -364,6 +376,11 @@
       "Image 5": [0.40, 0.48, 0.49, 0.59, 0.66],
       "Image 6": [0.38, 0.38, 0.48, 0.40, 0.53],
     };
+    const impressionsDaily = {
+      "Image 4": [8407, 3893, 2114, 2976, 34868],
+      "Image 5": [10477, 5469, 1624, 2319, 3650],
+      "Image 6": [9051, 8053, 4821, 9650, 4180],
+    };
     const COLORS = {
       info: "#2f6f9f",
       success: "#2b6b4f",
@@ -380,7 +397,7 @@
     }
 
     function lineChart(host, { categories, series, yMax, suffix = "", showValues = true }) {
-      const w = 780, h = 280, pad = { t: 18, r: 16, b: 36, l: 44 };
+      const w = 780, h = 280, pad = { t: 18, r: 16, b: 36, l: yMax >= 1000 ? 54 : 44 };
       const iw = w - pad.l - pad.r, ih = h - pad.t - pad.b;
       const svg = svgEl("svg", { viewBox: `0 0 ${w} ${h}`, width: "100%", role: "img" });
       for (let i = 0; i <= 4; i++) {
@@ -388,7 +405,9 @@
         const val = yMax - (yMax * i) / 4;
         svg.appendChild(svgEl("line", { x1: pad.l, x2: pad.l + iw, y1: y, y2: y, stroke: COLORS.grid, "stroke-width": 1 }));
         const lab = svgEl("text", { x: pad.l - 8, y: y + 4, "text-anchor": "end", fill: COLORS.axis, "font-size": 11 });
-        lab.textContent = `${Number(val.toFixed(2))}${suffix}`;
+        lab.textContent = yMax >= 1000
+          ? Math.round(val).toLocaleString("en-US")
+          : `${Number(val.toFixed(2))}${suffix}`;
         svg.appendChild(lab);
       }
       const xAt = (i) => pad.l + (categories.length === 1 ? iw / 2 : (iw * i) / (categories.length - 1));
@@ -497,6 +516,16 @@
         { name: "Image 4 Silos", color: COLORS.info, data: cpcDaily["Image 4"] },
         { name: "Image 5 Feel Freaking Amazing", color: COLORS.other, data: cpcDaily["Image 5"] },
         { name: "Image 6 Chasing symptoms", color: COLORS.success, data: cpcDaily["Image 6"] },
+      ],
+    });
+    lineChart(document.getElementById("impr-line"), {
+      categories: days,
+      yMax: 40000,
+      showValues: false,
+      series: [
+        { name: "Image 4 Silos", color: COLORS.info, data: impressionsDaily["Image 4"] },
+        { name: "Image 5 Feel Freaking Amazing", color: COLORS.other, data: impressionsDaily["Image 5"] },
+        { name: "Image 6 Chasing symptoms", color: COLORS.success, data: impressionsDaily["Image 6"] },
       ],
     });
 
