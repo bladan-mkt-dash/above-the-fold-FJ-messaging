@@ -214,14 +214,80 @@
     </article>
 
     <h2>30 days · High</h2>
-    <article class="task" data-id="tech-backlog">
+    <article class="task" data-id="crawl-reconcile">
       <label>
         <input type="checkbox" />
         <div>
-          <h3>Validated technical backlog, not a raw crawl dump</h3>
-          <p>Each ticket names a URL or template, the user or search impact, an owner, and a retest. Inventory, broken intended links, duplicate clusters, redirect chains, orphans, mobile tests, and field Core Web Vitals are included only where data exists.</p>
-          <p class="fit">Best fit: Cursor agent to turn crawl exports into tickets and to retest a URL. A crawler still has to fetch the site.</p>
-          <p class="access">Access: Full crawl, mobile lab data, and field Core Web Vitals were incomplete in the Oct 4 report. Search Console is on the non-www property. The 66% indexable ratio is not a target.</p>
+          <h3>Finish the crawl and match it to the CMS and sitemap</h3>
+          <p>The URL list is complete enough to ticket from. Each sitemap and CMS URL is marked found, redirected, excluded, or missing. The indexable count is written down and is not a goal.</p>
+          <p class="fit">Best fit: Cursor agent to reconcile the crawl, sitemap, and CMS exports. A crawler still has to fetch the site.</p>
+          <p class="access">Access: The Oct 4 crawl stopped at 628 URLs, with 415 classified indexable. The 66.1% ratio is not a target. Search Console is the non-www property.</p>
+        </div>
+      </label>
+    </article>
+    <article class="task" data-id="flag-or-defect">
+      <label>
+        <input type="checkbox" />
+        <div>
+          <h3>Separate diagnostic flags from confirmed defects</h3>
+          <p>Missing descriptions, heading order, homepage weight, the Newton video thumbnail, and long titles or URLs are sampled. A flag becomes a ticket only when it names a URL or template, the user or search impact, an owner, and a retest.</p>
+          <p class="fit">Best fit: Cursor agent to sample URLs and retest the live page. Claude to write the ticket in plain language. An editor decides which description gaps are worth fixing later.</p>
+          <p class="access">Access: 67 of 415 indexable pages lack descriptions. The larger 258 count includes excluded URLs. Shared modals inflate heading counts. Image-alt tools disagreed. Newton indexing passed; only thumbnailUrl was missing. This step creates tickets. It does not publish the fixes.</p>
+        </div>
+      </label>
+    </article>
+    <article class="task" data-id="broken-links">
+      <label>
+        <input type="checkbox" />
+        <div>
+          <h3>Confirm broken links a patient can hit</h3>
+          <p>Each current broken intended URL is its own ticket. Historical 403s, the utility 404, and crawler-only blocks are listed apart and are not security changes.</p>
+          <p class="fit">Best fit: Cursor agent to re-fetch the intended destinations from the link export.</p>
+          <p class="access">Access: 299 of 698 historical link destinations had 403 records. A fresh www homepage request reached the canonical page. Hosting owns the logs and any security-rule change.</p>
+        </div>
+      </label>
+    </article>
+    <article class="task" data-id="duplicates-redirects">
+      <label>
+        <input type="checkbox" />
+        <div>
+          <h3>Validate duplicate clusters and redirect chains</h3>
+          <p>Each cluster names the URL to keep, the duplicates, and whether the redirect is deliberate. No bulk canonical or noindex change comes out of the list.</p>
+          <p class="fit">Best fit: Cursor agent to group the crawl. A person confirms which URL should remain.</p>
+          <p class="access">Access: Duplicate and link-graph coverage was incomplete on Oct 4. Six crawl redirects and 52 historical redirect records need a second look. Keep deliberate redirects and shop, archive, and utility exclusions.</p>
+        </div>
+      </label>
+    </article>
+    <article class="task" data-id="orphans">
+      <label>
+        <input type="checkbox" />
+        <div>
+          <h3>List orphans only after internal links and the sitemap agree</h3>
+          <p>A URL is an orphan ticket only if it is meant to be found and has no internal path. Intentional exclusions stay off the list.</p>
+          <p class="fit">Best fit: Cursor agent to compare inlinks with the sitemap.</p>
+          <p class="access">Access: Orphan coverage was incomplete. Do not create tickets from an unfinished crawl.</p>
+        </div>
+      </label>
+    </article>
+    <article class="task" data-id="mobile-lab">
+      <label>
+        <input type="checkbox" />
+        <div>
+          <h3>Mobile lab tests for the priority pages</h3>
+          <p>Homepage, Boston, Newton, and membership each have a mobile lab result. A real regression is a ticket with a retest. A desktop result is not treated as mobile proof.</p>
+          <p class="fit">Best fit: PageSpeed or Lighthouse for the test. Cursor agent to turn a regression into a ticket.</p>
+          <p class="access">Access: Oct 4 had two desktop lab tests. Mobile lab data was unavailable.</p>
+        </div>
+      </label>
+    </article>
+    <article class="task" data-id="field-cwv">
+      <label>
+        <input type="checkbox" />
+        <div>
+          <h3>Field Core Web Vitals, or a note that they are still missing</h3>
+          <p>Search Console field data for the non-www property is attached to the backlog, or the ticket says field data is still unavailable. A lab score is not used in its place.</p>
+          <p class="fit">Best fit: Cursor agent with the Search Console connection in this dashboard.</p>
+          <p class="access">Access: Field Core Web Vitals were unavailable on Oct 4.</p>
         </div>
       </label>
     </article>
