@@ -96,6 +96,38 @@
     .task .fit { color: var(--ink-muted); }
     .task .access { color: var(--wire-label); font-size: 0.875rem; }
     .task.done h3 { color: var(--wire-label); text-decoration: line-through; }
+    .sync {
+      background: var(--surface);
+      border: 1px solid #e4ebe8;
+      border-radius: 0.5rem;
+      margin-top: 1.75rem;
+      padding: 0.9rem 1rem;
+    }
+    .sync summary { color: var(--accent); cursor: pointer; font-weight: 600; }
+    .sync p { margin: 0.6rem 0; }
+    .sync input {
+      border: 1px solid var(--wire);
+      border-radius: 0.35rem;
+      display: block;
+      font: inherit;
+      margin: 0.4rem 0 0.7rem;
+      padding: 0.4rem 0.55rem;
+      width: min(100%, 24rem);
+    }
+    .sync button {
+      background: var(--accent);
+      border: 0;
+      border-radius: 0.35rem;
+      color: white;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-right: 0.4rem;
+      padding: 0.4rem 0.7rem;
+    }
+    .sync button.secondary { background: transparent; color: var(--accent); }
+    #sync-status { color: var(--wire-label); font-size: 0.8125rem; min-height: 1.2em; }
     footer { color: var(--wire-label); font-size: 0.75rem; margin-top: 2.5rem; }
   </style>
 </head>
@@ -108,7 +140,7 @@
       Day 0 is the day this plan is assigned. Check a task only when the public
       page or the tested system meets the proof, not when a draft exists.
     </p>
-    <p class="meta">Checks stay in this browser only. Source: Predictable Profits CMO brief, October 4, 2026.</p>
+    <p class="meta">A saved check is written to both GitHub repos. Source: Predictable Profits CMO brief, October 4, 2026.</p>
     <div class="progress"><strong id="count">0 of 10</strong><span>Tasks checked off</span></div>
 
     <div class="callout">
@@ -244,16 +276,150 @@
       </label>
     </article>
 
+    <details class="sync">
+      <summary>Sync checks to the public and private repos</summary>
+      <p>
+        Paste a GitHub token once. It stays in this browser and is not saved in
+        the page. The token needs contents access to
+        <code>bladan-mkt-dash/above-the-fold-FJ-messaging</code> and
+        <code>bladan-mkt-dash/cursor</code>.
+      </p>
+      <input id="token" type="password" autocomplete="off" placeholder="github_pat_…" />
+      <button type="button" id="save-token">Save token</button>
+      <button type="button" class="secondary" id="clear-token">Forget token</button>
+      <p id="sync-status"></p>
+    </details>
+
     <footer>Five Journeys · above-the-fold project · 90-day SEO and AI plan · October 4, 2026 brief</footer>
   </div>
   <script>
     const KEY = "fj-cmo-seo-90-checks";
+    const TOKEN_KEY = "fj-cmo-seo-90-github-token";
+    const FILE = "seo-plan-checks.json";
+    const REPOS = [
+      { owner: "bladan-mkt-dash", repo: "above-the-fold-FJ-messaging", path: FILE },
+      { owner: "bladan-mkt-dash", repo: "cursor", path: "5J-PP-Web-Redesign/" + FILE },
+    ];
     const tasks = [...document.querySelectorAll(".task")];
-    const saved = JSON.parse(localStorage.getItem(KEY) || "{}");
+    const statusEl = document.getElementById("sync-status");
+    const tokenInput = document.getElementById("token");
+    let saved = JSON.parse(localStorage.getItem(KEY) || "{}");
+    let saveTimer = 0;
+    let writing = false;
 
     function paint() {
       const done = tasks.filter((task) => task.querySelector("input").checked).length;
       document.getElementById("count").textContent = `${done} of ${tasks.length}`;
+    }
+
+    function apply(checks) {
+      saved = checks;
+      tasks.forEach((task) => {
+        const box = task.querySelector("input");
+        box.checked = Boolean(saved[task.dataset.id]);
+        task.classList.toggle("done", box.checked);
+      });
+      localStorage.setItem(KEY, JSON.stringify(saved));
+      paint();
+    }
+
+    function token() {
+      return localStorage.getItem(TOKEN_KEY) || "";
+    }
+
+    function headers() {
+      const value = token();
+      const base = {
+        Accept: "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+      };
+      if (value) base.Authorization = `Bearer ${value}`;
+      return base;
+    }
+
+    function encode(obj) {
+      return btoa(unescape(encodeURIComponent(JSON.stringify(obj, null, 2) + "\n")));
+    }
+
+    function decode(content) {
+      return decodeURIComponent(escape(atob(content.replace(/\n/g, ""))));
+    }
+
+    async function readRepo(target) {
+      const url = `https://api.github.com/repos/${target.owner}/${target.repo}/contents/${target.path}`;
+      const res = await fetch(url, { headers: headers(), cache: "no-store" });
+      if (res.status === 404) return { checks: null, sha: null };
+      if (!res.ok) throw new Error(`${target.repo}: ${res.status}`);
+      const data = await res.json();
+      return { checks: JSON.parse(decode(data.content)), sha: data.sha };
+    }
+
+    async function writeRepo(target, checks, sha, attempt = 0) {
+      const url = `https://api.github.com/repos/${target.owner}/${target.repo}/contents/${target.path}`;
+      const res = await fetch(url, {
+        method: "PUT",
+        headers: headers(),
+        body: JSON.stringify({
+          message: "Update the SEO plan checks.",
+          content: encode(checks),
+          sha: sha || undefined,
+        }),
+      });
+      if ((res.status === 409 || res.status === 422) && attempt < 2) {
+        const latest = await readRepo(target);
+        return writeRepo(target, checks, latest.sha, attempt + 1);
+      }
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.message || `${res.status}`);
+      }
+    }
+
+    let lastRemote = "";
+
+    async function loadShared() {
+      if (writing || saveTimer) return;
+      try {
+        const remote = await readRepo(REPOS[0]);
+        if (!remote.checks) return;
+        const text = JSON.stringify(remote.checks);
+        if (text === lastRemote) return;
+        lastRemote = text;
+        apply(remote.checks);
+        if (!token()) statusEl.textContent = "Showing the shared checks. Save a token to write them back.";
+      } catch (error) {
+        statusEl.textContent = `Could not read the shared checks. ${error.message}`;
+      }
+    }
+
+    async function saveShared() {
+      if (!token()) {
+        statusEl.textContent = "Saved in this browser only. Add a token to update both repos.";
+        return;
+      }
+      if (writing) return;
+      writing = true;
+      statusEl.textContent = "Saving to both repos…";
+      const snapshot = { ...saved };
+      const notes = [];
+      try {
+        for (const target of REPOS) {
+          try {
+            const current = await readRepo(target);
+            await writeRepo(target, snapshot, current.sha);
+            notes.push(target.repo);
+          } catch (error) {
+            notes.push(`${target.repo} failed (${error.message})`);
+          }
+        }
+        lastRemote = JSON.stringify(snapshot);
+        const failed = notes.filter((note) => note.includes("failed"));
+        statusEl.textContent = failed.length
+          ? `Saved where GitHub allowed it. ${notes.join(". ")}.`
+          : "Saved to the public site and the private repo.";
+      } finally {
+        writing = false;
+      }
     }
 
     tasks.forEach((task) => {
@@ -265,9 +431,30 @@
         task.classList.toggle("done", box.checked);
         localStorage.setItem(KEY, JSON.stringify(saved));
         paint();
+        clearTimeout(saveTimer);
+        saveTimer = setTimeout(() => {
+          saveTimer = 0;
+          saveShared();
+        }, 400);
       });
     });
     paint();
+    loadShared();
+    setInterval(loadShared, 20000);
+
+    document.getElementById("save-token").addEventListener("click", () => {
+      const value = tokenInput.value.trim();
+      if (!value) return;
+      localStorage.setItem(TOKEN_KEY, value);
+      tokenInput.value = "";
+      statusEl.textContent = "Token saved in this browser.";
+      saveShared();
+    });
+    document.getElementById("clear-token").addEventListener("click", () => {
+      localStorage.removeItem(TOKEN_KEY);
+      tokenInput.value = "";
+      statusEl.textContent = "Token forgotten. Checks stay in this browser until you connect again.";
+    });
   </script>
 </body>
 </html>
