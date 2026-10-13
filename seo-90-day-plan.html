@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Five Journeys — 90-day SEO and AI plan</title>
+  <style>
+    :root {
+      --ink: #1a2e2a;
+      --ink-muted: #3d524c;
+      --surface: #f7f9f8;
+      --surface-alt: #eef3f1;
+      --surface-warm: #faf8f5;
+      --accent: #264540;
+      --accent-soft: #5da68a;
+      --wire: #b8c9c3;
+      --wire-label: #6b7f78;
+      --white: #ffffff;
+      --max: 46rem;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      line-height: 1.55;
+    }
+    .banner {
+      background: var(--surface-alt);
+      border-bottom: 1px dashed var(--wire);
+      color: var(--wire-label);
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      padding: 0.5rem 1.25rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .wrap { margin: 0 auto; max-width: var(--max); padding: 2rem 1.25rem 4rem; }
+    .back {
+      color: var(--accent);
+      display: inline-block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      text-decoration: none;
+    }
+    .back:hover { text-decoration: underline; }
+    h1 {
+      font-size: clamp(1.5rem, 3vw, 1.85rem);
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin: 0 0 0.5rem;
+    }
+    h2 { font-size: 1.05rem; letter-spacing: -0.01em; margin: 2rem 0 0.75rem; }
+    .lede, .meta, p { color: var(--ink-muted); font-size: 0.975rem; }
+    .lede { margin: 0 0 1rem; }
+    .meta { font-size: 0.8125rem; margin: 0 0 1.25rem; }
+    .progress {
+      background: var(--surface);
+      border: 1px solid #e4ebe8;
+      border-radius: 0.5rem;
+      display: inline-block;
+      margin: 0 0 1.25rem;
+      padding: 0.7rem 0.95rem;
+    }
+    .progress strong {
+      color: var(--accent);
+      display: block;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .progress span { color: var(--wire-label); font-size: 0.75rem; }
+    .callout {
+      background: var(--surface-warm);
+      border-left: 3px solid var(--accent-soft);
+      margin: 0 0 0.5rem;
+      padding: 1rem 1.1rem;
+    }
+    .callout strong { color: var(--ink); display: block; font-size: 0.875rem; margin-bottom: 0.35rem; }
+    .callout p { margin: 0; }
+    .task {
+      border-bottom: 1px solid #e4ebe8;
+      padding: 0.9rem 0 1rem;
+    }
+    .task label {
+      align-items: flex-start;
+      cursor: pointer;
+      display: flex;
+      gap: 0.7rem;
+    }
+    .task input { accent-color: var(--accent); margin-top: 0.3rem; }
+    .task h3 { font-size: 1rem; margin: 0; }
+    .task p { margin: 0.35rem 0 0; }
+    .task .fit { color: var(--ink-muted); }
+    .task .access { color: var(--wire-label); font-size: 0.875rem; }
+    .task.done h3 { color: var(--wire-label); text-decoration: line-through; }
+    footer { color: var(--wire-label); font-size: 0.75rem; margin-top: 2.5rem; }
+  </style>
+</head>
+<body>
+  <div class="banner">Internal plan · October 4, 2026 CMO brief</div>
+  <div class="wrap">
+    <a class="back" href="index.html">← Above the fold project</a>
+    <h1>Five Journeys 90-day SEO and AI plan</h1>
+    <p class="lede">
+      Day 0 is the day this plan is assigned. Check a task only when the public
+      page or the tested system meets the proof, not when a draft exists.
+    </p>
+    <p class="meta">Checks stay in this browser only. Source: Predictable Profits CMO brief, October 4, 2026.</p>
+    <div class="progress"><strong id="count">0 of 10</strong><span>Tasks checked off</span></div>
+
+    <div class="callout">
+      <strong>What stays out of scope</strong>
+      <p>
+        No sitewide rewrite, no bulk removal of noindex, no mass link disavow,
+        and no broad new-content calendar from this audit. Clinical wording
+        belongs to the clinical lead. Practice facts belong to operations.
+      </p>
+    </div>
+
+    <h2>48 hours · Critical</h2>
+    <article class="task" data-id="p1">
+      <label>
+        <input type="checkbox" />
+        <div>
+          <h3>P1. Clinical review of the Newton concierge article</h3>
+          <p>Clinical lead signs off. Live page and any machine-readable answer agree. CMO keeps the URL and review date.</p>
+          <p class="fit">Best fit: Claude, draft only. It can compare the live wording with the American Heart Association warning-sign guidance and propose the emergency-versus-routine distinction.</p>
+          <p class="access">Access: A clinician has to approve the words. This dashboard cannot edit fivejourneys.com. Needs the live page and the CMS or theme. Do not publish a model-written medical claim.</p>
+        </div>
+      </label>
+    </article>
+
+    <h2>7 days · High</h2>
+    <article class="task" data-id="p2">
+      <label>
+        <input type="checkbox" />
+        <div>
+          <h3>P2. Reconcile the adrenal article FAQ</h3>
+          <p>Visible answer and every FAQ data block match the clinical approval. Recheck the rendered page, not only the editor.</p>
+          <p class="fit">Best fit: Claude to line up the visible caveat against the stale 12–24 month FAQ block. Cursor agent to remove or update the duplicate once the site project is open.</p>
+          <p class="access">Access: Clinical sign-off first. Needs WordPress or the theme, plus a look at the rendered HTML. Schema can keep the old claim after the visible page is fixed.</p>
+        </div>
+      </label>
+    </article>
+    <article class="task" data-id="p3">
+      <label>
+        <input type="checkbox" />
+        <div>
+          <h3>P3. One practice facts sheet, then the priority pages</h3>
+          <p>Boston, FAQ, Nutrition, Membership, IV, and the business profiles match the sheet on clinicians, hours, membership, billing, and IV eligibility.</p>
+          <p class="fit">Best fit: Claude to list the conflicts already found. It should not choose which hours or which clinician name is true.</p>
+          <p class="access">Access: Operations owns the sheet. Needs current hours, billing, and Google Business Profile access. The newest page is not the source of truth.</p>
+        </div>
+      </label>
+    </article>
+
+    <h2>14 days · High</h2>
+    <article class="task" data-id="p4">
+      <label>
+        <input type="checkbox" />
+        <div>
+          <h3>P4. One booking that keeps its source through care</h3>
+          <p>A test record keeps campaign source through form, calendar, and CRM. Duplicates are excluded. Cancellations and no-shows are defined. The monthly report has a qualified-booking count.</p>
+          <p class="fit">Best fit: Cursor agent in this dashboard, using the GA4 and GHL connections already here. Claude can write the test script for the front desk.</p>
+          <p class="access">Access: Needs CRM login, front-desk time, and an agreed definition of a qualified booking. Keep health details out of analytics.</p>
+        </div>
+      </label>
+    </article>
+    <article class="task" data-id="p5">
+      <label>
+        <input type="checkbox" />
+        <div>
+          <h3>P5. Boston location main heading</h3>
+          <p>The rendered Boston page has one clear H1, location facts match the sheet, and the booking path still works.</p>
+          <p class="fit">Best fit: Cursor agent for the template edit. A browser check, Gemini if you want a second look at the rendered page, to confirm the heading is in the live HTML.</p>
+          <p class="access">Access: Needs the theme or CMS. Shared modals can create extra headings. This repo does not contain the Boston template.</p>
+        </div>
+      </label>
+    </article>
+
+    <h2>30 days · High</h2>
+    <article class="task" data-id="tech-backlog">
+      <label>
+        <input type="checkbox" />
+        <div>
+          <h3>Validated technical backlog, not a raw crawl dump</h3>
+          <p>Each ticket names a URL or template, the user or search impact, an owner, and a retest. Inventory, broken intended links, duplicate clusters, redirect chains, orphans, mobile tests, and field Core Web Vitals are included only where data exists.</p>
+          <p class="fit">Best fit: Cursor agent to turn crawl exports into tickets and to retest a URL. A crawler still has to fetch the site.</p>
+          <p class="access">Access: Full crawl, mobile lab data, and field Core Web Vitals were incomplete in the Oct 4 report. Search Console is on the non-www property. The 66% indexable ratio is not a target.</p>
+        </div>
+      </label>
+    </article>
+
+    <h2>30–60 days · Decision pages and template fixes</h2>
+    <article class="task" data-id="decision-pages">
+      <label>
+        <input type="checkbox" />
+        <div>
+          <h3>Cost, location, and service pages a patient can act on</h3>
+          <p>Membership and FAQ separate the monthly fee from visits, labs, and supplements. Boston and Newton agree with profiles. Nutrition no longer mixes Julia and Stacie. IV eligibility matches the FAQ.</p>
+          <p class="fit">Best fit: Claude to draft from the approved facts sheet, including the proposed Boston, Newton, and membership snippets. Cursor agent to place approved copy.</p>
+          <p class="access">Access: Nothing publishes before operations approval. Google may rewrite the snippet. Do not add a reviewer name or a freshness date unless that review happened.</p>
+        </div>
+      </label>
+    </article>
+    <article class="task" data-id="templates">
+      <label>
+        <input type="checkbox" />
+        <div>
+          <h3>Descriptions, heading templates, homepage weight, Newton video</h3>
+          <p>Approved descriptions are live on the chosen indexable URLs. Each affected template has a correct heading sample. Informative images have useful alternatives. Newton video data passes only if the visible video should be a rich result.</p>
+          <p class="fit">Best fit: Cursor agent in the website project. A designer checks the homepage so markup cuts do not change the layout.</p>
+          <p class="access">Access: The website project has to be open. Heading counts are inflated by modals. Image-alt tools disagreed, so confirm each image. The historical 403s stay with hosting. Do not change security rules from the crawl.</p>
+        </div>
+      </label>
+    </article>
+
+    <h2>60–90 days · Medium</h2>
+    <article class="task" data-id="content-profiles">
+      <label>
+        <input type="checkbox" />
+        <div>
+          <h3>Small clinical refresh and accurate outside profiles</h3>
+          <p>Refreshed pages were clinically reviewed, link to the right service, and distinguish education from practice guidance. Clinician profiles that already exist are corrected before any outreach.</p>
+          <p class="fit">Best fit: Claude to apply the decision rule: patient question, distinct role, clinical owner, demand evidence, and a next step. It should reject competitor-keyword gaps that are other cities or brands.</p>
+          <p class="access">Access: Clinical owner for medical pages. Logins for directories and podcast profiles. No mass disavow and no new content calendar from the backlink counts.</p>
+        </div>
+      </label>
+    </article>
+
+    <h2>Monthly · High</h2>
+    <article class="task" data-id="scorecard">
+      <label>
+        <input type="checkbox" />
+        <div>
+          <h3>Same-scope search, AI, and consultation report</h3>
+          <p>Qualified bookings, attended visits, nonbrand clicks, the 10-query local panel, and validated AI citations are reported with unknowns left visible.</p>
+          <p class="fit">Best fit: Cursor agent for Search Console and GA4 in this dashboard. A browsing agent for the fixed Google and AI prompts. ChatGPT, Gemini, and Perplexity each have to be checked in their own product.</p>
+          <p class="access">Access: Search Console query privacy means queries will not sum to all clicks. Google AI Mode was not measured. Some AI visits arrive as direct or branded search. Do not set a traffic target from the Oct 4 snapshot.</p>
+        </div>
+      </label>
+    </article>
+
+    <footer>Five Journeys · above-the-fold project · 90-day SEO and AI plan · October 4, 2026 brief</footer>
+  </div>
+  <script>
+    const KEY = "fj-cmo-seo-90-checks";
+    const tasks = [...document.querySelectorAll(".task")];
+    const saved = JSON.parse(localStorage.getItem(KEY) || "{}");
+
+    function paint() {
+      const done = tasks.filter((task) => task.querySelector("input").checked).length;
+      document.getElementById("count").textContent = `${done} of ${tasks.length}`;
+    }
+
+    tasks.forEach((task) => {
+      const box = task.querySelector("input");
+      box.checked = Boolean(saved[task.dataset.id]);
+      task.classList.toggle("done", box.checked);
+      box.addEventListener("change", () => {
+        saved[task.dataset.id] = box.checked;
+        task.classList.toggle("done", box.checked);
+        localStorage.setItem(KEY, JSON.stringify(saved));
+        paint();
+      });
+    });
+    paint();
+  </script>
+</body>
+</html>
