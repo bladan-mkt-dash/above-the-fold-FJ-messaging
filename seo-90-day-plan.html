@@ -140,7 +140,7 @@
       Day 0 is the day this plan is assigned. Check a task only when the public
       page or the tested system meets the proof, not when a draft exists.
     </p>
-    <p class="meta">A saved check is written to both GitHub repos. Source: Predictable Profits CMO brief, October 4, 2026.</p>
+    <p class="meta">Checks stay in this browser when you leave the page. A GitHub token also writes them to both repos. Source: Predictable Profits CMO brief, October 4, 2026.</p>
     <div class="progress"><strong id="count">0 of 10</strong><span>Tasks checked off</span></div>
 
     <div class="callout">
@@ -279,8 +279,9 @@
     <details class="sync">
       <summary>Sync checks to the public and private repos</summary>
       <p>
-        Paste a GitHub token once. It stays in this browser and is not saved in
-        the page. The token needs contents access to
+        Checks stay in this browser when you leave the page. Paste a GitHub
+        token once to copy them to both repos. The token stays in this browser
+        and is not saved in the page. It needs contents access to
         <code>bladan-mkt-dash/above-the-fold-FJ-messaging</code> and
         <code>bladan-mkt-dash/cursor</code>.
       </p>
@@ -303,24 +304,49 @@
     const tasks = [...document.querySelectorAll(".task")];
     const statusEl = document.getElementById("sync-status");
     const tokenInput = document.getElementById("token");
-    let saved = JSON.parse(localStorage.getItem(KEY) || "{}");
+    let saved = {};
+    let savedAt = "";
     let saveTimer = 0;
     let writing = false;
+    let pending = false;
 
     function paint() {
       const done = tasks.filter((task) => task.querySelector("input").checked).length;
       document.getElementById("count").textContent = `${done} of ${tasks.length}`;
     }
 
-    function apply(checks) {
-      saved = checks;
+    function unpack(raw) {
+      if (!raw || typeof raw !== "object" || Array.isArray(raw)) {
+        return { updatedAt: "", checks: {} };
+      }
+      if (raw.checks && typeof raw.checks === "object" && !Array.isArray(raw.checks)) {
+        return { updatedAt: String(raw.updatedAt || ""), checks: { ...raw.checks } };
+      }
+      return { updatedAt: "", checks: { ...raw } };
+    }
+
+    function remember() {
+      localStorage.setItem(KEY, JSON.stringify({ updatedAt: savedAt, checks: saved }));
+    }
+
+    function show(checks) {
+      saved = { ...checks };
       tasks.forEach((task) => {
         const box = task.querySelector("input");
         box.checked = Boolean(saved[task.dataset.id]);
         task.classList.toggle("done", box.checked);
       });
-      localStorage.setItem(KEY, JSON.stringify(saved));
+      remember();
       paint();
+    }
+
+    function remoteIsNewer(remote) {
+      if (remote.updatedAt && savedAt) return remote.updatedAt > savedAt;
+      if (remote.updatedAt && !savedAt) return true;
+      if (!remote.updatedAt && savedAt) return false;
+      const remoteOn = Object.values(remote.checks).some(Boolean);
+      const localOn = Object.values(saved).some(Boolean);
+      return remoteOn && !localOn;
     }
 
     function token() {
@@ -359,6 +385,7 @@
       const res = await fetch(url, {
         method: "PUT",
         headers: headers(),
+        keepalive: true,
         body: JSON.stringify({
           message: "Update the SEO plan checks.",
           content: encode(checks),
@@ -375,18 +402,28 @@
       }
     }
 
-    let lastRemote = "";
-
     async function loadShared() {
       if (writing || saveTimer) return;
       try {
         const remote = await readRepo(REPOS[0]);
         if (!remote.checks) return;
-        const text = JSON.stringify(remote.checks);
-        if (text === lastRemote) return;
-        lastRemote = text;
-        apply(remote.checks);
-        if (!token()) statusEl.textContent = "Showing the shared checks. Save a token to write them back.";
+        const packed = unpack(remote.checks);
+        if (packed.updatedAt && packed.updatedAt === savedAt) return;
+        if (remoteIsNewer(packed)) {
+          savedAt = packed.updatedAt;
+          show(packed.checks);
+          return;
+        }
+        if (!savedAt && Object.values(saved).some(Boolean)) {
+          savedAt = new Date().toISOString();
+          remember();
+        }
+        if (!token() && Object.values(saved).some(Boolean)) {
+          statusEl.textContent = "Saved in this browser. Add a token to copy these checks to both repos.";
+        } else if (statusEl.textContent.startsWith("Could not read")) {
+          statusEl.textContent = "";
+        }
+        if (token() && savedAt && savedAt > (packed.updatedAt || "")) saveShared();
       } catch (error) {
         statusEl.textContent = `Could not read the shared checks. ${error.message}`;
       }
@@ -394,13 +431,16 @@
 
     async function saveShared() {
       if (!token()) {
-        statusEl.textContent = "Saved in this browser only. Add a token to update both repos.";
+        statusEl.textContent = "Saved in this browser. Add a token to copy these checks to both repos.";
         return;
       }
-      if (writing) return;
+      if (writing) {
+        pending = true;
+        return;
+      }
       writing = true;
       statusEl.textContent = "Saving to both repos…";
-      const snapshot = { ...saved };
+      const snapshot = { updatedAt: savedAt, checks: { ...saved } };
       const notes = [];
       try {
         for (const target of REPOS) {
@@ -412,16 +452,22 @@
             notes.push(`${target.repo} failed (${error.message})`);
           }
         }
-        lastRemote = JSON.stringify(snapshot);
         const failed = notes.filter((note) => note.includes("failed"));
         statusEl.textContent = failed.length
           ? `Saved where GitHub allowed it. ${notes.join(". ")}.`
           : "Saved to the public site and the private repo.";
       } finally {
         writing = false;
+        if (pending) {
+          pending = false;
+          saveShared();
+        }
       }
     }
 
+    const initial = unpack(JSON.parse(localStorage.getItem(KEY) || "{}"));
+    saved = initial.checks;
+    savedAt = initial.updatedAt;
     tasks.forEach((task) => {
       const box = task.querySelector("input");
       box.checked = Boolean(saved[task.dataset.id]);
@@ -429,7 +475,8 @@
       box.addEventListener("change", () => {
         saved[task.dataset.id] = box.checked;
         task.classList.toggle("done", box.checked);
-        localStorage.setItem(KEY, JSON.stringify(saved));
+        savedAt = new Date().toISOString();
+        remember();
         paint();
         clearTimeout(saveTimer);
         saveTimer = setTimeout(() => {
@@ -441,6 +488,12 @@
     paint();
     loadShared();
     setInterval(loadShared, 20000);
+    window.addEventListener("pagehide", () => {
+      if (!saveTimer) return;
+      clearTimeout(saveTimer);
+      saveTimer = 0;
+      saveShared();
+    });
 
     document.getElementById("save-token").addEventListener("click", () => {
       const value = tokenInput.value.trim();
