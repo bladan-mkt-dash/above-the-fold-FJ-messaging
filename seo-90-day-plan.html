@@ -521,7 +521,10 @@
     savedAt = initial.updatedAt;
     tasks.forEach((task) => {
       const box = task.querySelector("input");
-      box.checked = Boolean(saved[task.dataset.id]);
+      const published = box.hasAttribute("checked");
+      if (Object.keys(saved).length) {
+        box.checked = Boolean(saved[task.dataset.id]) || published;
+      }
       task.classList.toggle("done", box.checked);
       box.addEventListener("change", () => {
         saved[task.dataset.id] = box.checked;
