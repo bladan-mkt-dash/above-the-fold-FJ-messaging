@@ -93,6 +93,13 @@
     .task input { accent-color: var(--accent); margin-top: 0.3rem; }
     .task h3 { font-size: 1rem; margin: 0; }
     .task p { margin: 0.35rem 0 0; }
+    .task .result {
+      color: var(--ink-muted);
+      font-size: 0.975rem;
+      margin: 0.55rem 0 0.15rem 1.15rem;
+      padding-left: 1.1rem;
+    }
+    .task .result li { margin: 0.28rem 0; }
     .task .fit { color: var(--ink-muted); }
     .task .access { color: var(--wire-label); font-size: 0.875rem; }
     .task.done h3 { color: var(--wire-label); text-decoration: line-through; }
@@ -231,7 +238,15 @@
         <div>
           <h3>Separate diagnostic flags from confirmed defects</h3>
           <p>Missing descriptions, heading order, homepage weight, the Newton video thumbnail, and long titles or URLs are sampled. A flag becomes a ticket only when it names a URL or template, the user or search impact, an owner, and a retest.</p>
-          <p>Sally on 15 Oct 2026, with Bruno’s approval. She read 979 sitemap URLs. 972 already had a meta description. Six had none, and all six should stay out of search: calculator-test, communication-preferences, manage-profile, my-account/favourites, my-account/settings, and the Boston Marathon hydration thank-you page. manage-profile was already noindex. The other five now send noindex, nofollow. Heading order, homepage weight, the Newton video thumbnail, and long titles were not in this pass.</p>
+          <ul class="result">
+            <li>Sally on 15 Oct 2026, with Bruno’s approval.</li>
+            <li>She read 979 sitemap URLs.</li>
+            <li>972 already had a meta description.</li>
+            <li>Six had none, and all six should stay out of search: calculator-test, communication-preferences, manage-profile, my-account/favourites, my-account/settings, and the Boston Marathon hydration thank-you page.</li>
+            <li>manage-profile was already noindex.</li>
+            <li>The other five now send noindex, nofollow.</li>
+            <li>Heading order, homepage weight, the Newton video thumbnail, and long titles were not in this pass.</li>
+          </ul>
           <p class="fit">Best fit: Cursor agent to sample URLs and retest the live page. Claude to write the ticket in plain language. An editor decides which description gaps are worth fixing later.</p>
           <p class="access">Access: 67 of 415 indexable pages lack descriptions. The larger 258 count includes excluded URLs. Shared modals inflate heading counts. Image-alt tools disagreed. Newton indexing passed; only thumbnailUrl was missing. This step creates tickets. It does not publish the fixes.</p>
         </div>
