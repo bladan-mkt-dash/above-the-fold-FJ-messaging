@@ -227,10 +227,11 @@
     </article>
     <article class="task" data-id="flag-or-defect">
       <label>
-        <input type="checkbox" />
+        <input type="checkbox" checked />
         <div>
           <h3>Separate diagnostic flags from confirmed defects</h3>
           <p>Missing descriptions, heading order, homepage weight, the Newton video thumbnail, and long titles or URLs are sampled. A flag becomes a ticket only when it names a URL or template, the user or search impact, an owner, and a retest.</p>
+          <p>Sally on 15 Oct 2026, with Bruno’s approval. She read 979 sitemap URLs. 972 already had a meta description. Six had none, and all six should stay out of search: calculator-test, communication-preferences, manage-profile, my-account/favourites, my-account/settings, and the Boston Marathon hydration thank-you page. manage-profile was already noindex. The other five now send noindex, nofollow. Heading order, homepage weight, the Newton video thumbnail, and long titles were not in this pass.</p>
           <p class="fit">Best fit: Cursor agent to sample URLs and retest the live page. Claude to write the ticket in plain language. An editor decides which description gaps are worth fixing later.</p>
           <p class="access">Access: 67 of 415 indexable pages lack descriptions. The larger 258 count includes excluded URLs. Shared modals inflate heading counts. Image-alt tools disagreed. Newton indexing passed; only thumbnailUrl was missing. This step creates tickets. It does not publish the fixes.</p>
         </div>
@@ -310,6 +311,7 @@
         <div>
           <h3>Descriptions, heading templates, homepage weight, Newton video</h3>
           <p>Approved descriptions are live on the chosen indexable URLs. Each affected template has a correct heading sample. Informative images have useful alternatives. Newton video data passes only if the visible video should be a rich result.</p>
+          <p>Descriptions, 15 Oct 2026. No indexable page needed a new description. Sally noindexed the six pages that lacked one, instead of writing descriptions for them. Heading templates, homepage weight, and the Newton video were not changed. robots.txt still disallows /my-account/, so Google may not fetch the favourites and settings tags until that line is removed.</p>
           <p class="fit">Best fit: Cursor agent in the website project. A designer checks the homepage so markup cuts do not change the layout.</p>
           <p class="access">Access: The website project has to be open. Heading counts are inflated by modals. Image-alt tools disagreed, so confirm each image. The historical 403s stay with hosting. Do not change security rules from the crawl.</p>
         </div>

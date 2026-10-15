@@ -1,1 +1,6 @@
-{}
+{
+  "updatedAt": "2026-10-15T17:35:00.000Z",
+  "checks": {
+    "flag-or-defect": true
+  }
+}
