@@ -100,8 +100,6 @@
       padding-left: 1.1rem;
     }
     .task .result li { margin: 0.28rem 0; }
-    .task .fit { color: var(--ink-muted); }
-    .task .access { color: var(--wire-label); font-size: 0.875rem; }
     .task.done h3 { color: var(--wire-label); text-decoration: line-through; }
     .sync {
       background: var(--surface);
@@ -167,8 +165,6 @@
           <h3>P1. Clinical review of the Newton concierge article</h3>
           <p>Clinical lead signs off. Live page and any machine-readable answer agree. CMO keeps the URL and review date.</p>
           <p class="result">On 15 Oct 2026 the clinical lead sign-off was checked on the live Newton concierge article. The article, meta description, Rank Math schema, and hand-written schema agree: for chest pain, seek immediate emergency care by dialing 911. The word sudden was removed. Bruno keeps the URL and this review date.</p>
-          <p class="fit">Best fit: Claude, draft only. It can compare the live wording with the American Heart Association warning-sign guidance and propose the emergency-versus-routine distinction.</p>
-          <p class="access">Access: A clinician has to approve the words. This dashboard cannot edit fivejourneys.com. Needs the live page and the CMS or theme. Do not publish a model-written medical claim.</p>
         </div>
       </label>
     </article>
@@ -180,8 +176,6 @@
         <div>
           <h3>P2. Reconcile the adrenal article FAQ</h3>
           <p>Visible answer and every FAQ data block match the clinical approval. Recheck the rendered page, not only the editor.</p>
-          <p class="fit">Best fit: Claude to line up the visible caveat against the stale 12–24 month FAQ block. Cursor agent to remove or update the duplicate once the site project is open.</p>
-          <p class="access">Access: Clinical sign-off first. Needs WordPress or the theme, plus a look at the rendered HTML. Schema can keep the old claim after the visible page is fixed.</p>
         </div>
       </label>
     </article>
@@ -191,8 +185,6 @@
         <div>
           <h3>P3. One practice facts sheet, then the priority pages</h3>
           <p>Boston, FAQ, Nutrition, Membership, IV, and the business profiles match the sheet on clinicians, hours, membership, billing, and IV eligibility.</p>
-          <p class="fit">Best fit: Claude to list the conflicts already found. It should not choose which hours or which clinician name is true.</p>
-          <p class="access">Access: Operations owns the sheet. Needs current hours, billing, and Google Business Profile access. The newest page is not the source of truth.</p>
         </div>
       </label>
     </article>
@@ -204,8 +196,6 @@
         <div>
           <h3>P4. One booking that keeps its source through care</h3>
           <p>A test record keeps campaign source through form, calendar, and CRM. Duplicates are excluded. Cancellations and no-shows are defined. The monthly report has a qualified-booking count.</p>
-          <p class="fit">Best fit: Cursor agent in this dashboard, using the GA4 and GHL connections already here. Claude can write the test script for the front desk.</p>
-          <p class="access">Access: Needs CRM login, front-desk time, and an agreed definition of a qualified booking. Keep health details out of analytics.</p>
         </div>
       </label>
     </article>
@@ -215,8 +205,6 @@
         <div>
           <h3>P5. Boston location main heading</h3>
           <p>The rendered Boston page has one clear H1, location facts match the sheet, and the booking path still works.</p>
-          <p class="fit">Best fit: Cursor agent for the template edit. A browser check, Gemini if you want a second look at the rendered page, to confirm the heading is in the live HTML.</p>
-          <p class="access">Access: Needs the theme or CMS. Shared modals can create extra headings. This repo does not contain the Boston template.</p>
         </div>
       </label>
     </article>
@@ -228,8 +216,6 @@
         <div>
           <h3>Finish the crawl and match it to the CMS and sitemap</h3>
           <p>The URL list is complete enough to ticket from. Each sitemap and CMS URL is marked found, redirected, excluded, or missing. The indexable count is written down and is not a goal.</p>
-          <p class="fit">Best fit: Cursor agent to reconcile the crawl, sitemap, and CMS exports. A crawler still has to fetch the site.</p>
-          <p class="access">Access: The Oct 4 crawl stopped at 628 URLs, with 415 classified indexable. The 66.1% ratio is not a target. Search Console is the non-www property.</p>
         </div>
       </label>
     </article>
@@ -248,8 +234,6 @@
             <li>The other five now send noindex, nofollow.</li>
             <li>Heading order, homepage weight, the Newton video thumbnail, and long titles were not in this pass.</li>
           </ul>
-          <p class="fit">Best fit: Cursor agent to sample URLs and retest the live page. Claude to write the ticket in plain language. An editor decides which description gaps are worth fixing later.</p>
-          <p class="access">Access: 67 of 415 indexable pages lack descriptions. The larger 258 count includes excluded URLs. Shared modals inflate heading counts. Image-alt tools disagreed. Newton indexing passed; only thumbnailUrl was missing. This step creates tickets. It does not publish the fixes.</p>
         </div>
       </label>
     </article>
@@ -259,8 +243,6 @@
         <div>
           <h3>Confirm broken links a patient can hit</h3>
           <p>Each current broken intended URL is its own ticket. Historical 403s, the utility 404, and crawler-only blocks are listed apart and are not security changes.</p>
-          <p class="fit">Best fit: Cursor agent to re-fetch the intended destinations from the link export.</p>
-          <p class="access">Access: 299 of 698 historical link destinations had 403 records. A fresh www homepage request reached the canonical page. Hosting owns the logs and any security-rule change.</p>
         </div>
       </label>
     </article>
@@ -270,8 +252,6 @@
         <div>
           <h3>Validate duplicate clusters and redirect chains</h3>
           <p>Each cluster names the URL to keep, the duplicates, and whether the redirect is deliberate. No bulk canonical or noindex change comes out of the list.</p>
-          <p class="fit">Best fit: Cursor agent to group the crawl. A person confirms which URL should remain.</p>
-          <p class="access">Access: Duplicate and link-graph coverage was incomplete on Oct 4. Six crawl redirects and 52 historical redirect records need a second look. Keep deliberate redirects and shop, archive, and utility exclusions.</p>
         </div>
       </label>
     </article>
@@ -281,8 +261,6 @@
         <div>
           <h3>List orphans only after internal links and the sitemap agree</h3>
           <p>A URL is an orphan ticket only if it is meant to be found and has no internal path. Intentional exclusions stay off the list.</p>
-          <p class="fit">Best fit: Cursor agent to compare inlinks with the sitemap.</p>
-          <p class="access">Access: Orphan coverage was incomplete. Do not create tickets from an unfinished crawl.</p>
         </div>
       </label>
     </article>
@@ -292,8 +270,6 @@
         <div>
           <h3>Mobile lab tests for the priority pages</h3>
           <p>Homepage, Boston, Newton, and membership each have a mobile lab result. A real regression is a ticket with a retest. A desktop result is not treated as mobile proof.</p>
-          <p class="fit">Best fit: PageSpeed or Lighthouse for the test. Cursor agent to turn a regression into a ticket.</p>
-          <p class="access">Access: Oct 4 had two desktop lab tests. Mobile lab data was unavailable.</p>
         </div>
       </label>
     </article>
@@ -303,8 +279,6 @@
         <div>
           <h3>Field Core Web Vitals, or a note that they are still missing</h3>
           <p>Search Console field data for the non-www property is attached to the backlog, or the ticket says field data is still unavailable. A lab score is not used in its place.</p>
-          <p class="fit">Best fit: Cursor agent with the Search Console connection in this dashboard.</p>
-          <p class="access">Access: Field Core Web Vitals were unavailable on Oct 4.</p>
         </div>
       </label>
     </article>
@@ -316,8 +290,6 @@
         <div>
           <h3>Cost, location, and service pages a patient can act on</h3>
           <p>Membership and FAQ separate the monthly fee from visits, labs, and supplements. Boston and Newton agree with profiles. Nutrition no longer mixes Julia and Stacie. IV eligibility matches the FAQ.</p>
-          <p class="fit">Best fit: Claude to draft from the approved facts sheet, including the proposed Boston, Newton, and membership snippets. Cursor agent to place approved copy.</p>
-          <p class="access">Access: Nothing publishes before operations approval. Google may rewrite the snippet. Do not add a reviewer name or a freshness date unless that review happened.</p>
         </div>
       </label>
     </article>
@@ -328,8 +300,6 @@
           <h3>Descriptions, heading templates, homepage weight, Newton video</h3>
           <p>Approved descriptions are live on the chosen indexable URLs. Each affected template has a correct heading sample. Informative images have useful alternatives. Newton video data passes only if the visible video should be a rich result.</p>
           <p>Descriptions, 15 Oct 2026. No indexable page needed a new description. Sally noindexed the six pages that lacked one, instead of writing descriptions for them. Heading templates, homepage weight, and the Newton video were not changed. robots.txt still disallows /my-account/, so Google may not fetch the favourites and settings tags until that line is removed.</p>
-          <p class="fit">Best fit: Cursor agent in the website project. A designer checks the homepage so markup cuts do not change the layout.</p>
-          <p class="access">Access: The website project has to be open. Heading counts are inflated by modals. Image-alt tools disagreed, so confirm each image. The historical 403s stay with hosting. Do not change security rules from the crawl.</p>
         </div>
       </label>
     </article>
@@ -341,8 +311,6 @@
         <div>
           <h3>Small clinical refresh and accurate outside profiles</h3>
           <p>Refreshed pages were clinically reviewed, link to the right service, and distinguish education from practice guidance. Clinician profiles that already exist are corrected before any outreach.</p>
-          <p class="fit">Best fit: Claude to apply the decision rule: patient question, distinct role, clinical owner, demand evidence, and a next step. It should reject competitor-keyword gaps that are other cities or brands.</p>
-          <p class="access">Access: Clinical owner for medical pages. Logins for directories and podcast profiles. No mass disavow and no new content calendar from the backlink counts.</p>
         </div>
       </label>
     </article>
@@ -354,8 +322,6 @@
         <div>
           <h3>Same-scope search, AI, and consultation report</h3>
           <p>Qualified bookings, attended visits, nonbrand clicks, the 10-query local panel, and validated AI citations are reported with unknowns left visible.</p>
-          <p class="fit">Best fit: Cursor agent for Search Console and GA4 in this dashboard. A browsing agent for the fixed Google and AI prompts. ChatGPT, Gemini, and Perplexity each have to be checked in their own product.</p>
-          <p class="access">Access: Search Console query privacy means queries will not sum to all clicks. Google AI Mode was not measured. Some AI visits arrive as direct or branded search. Do not set a traffic target from the Oct 4 snapshot.</p>
         </div>
       </label>
     </article>
