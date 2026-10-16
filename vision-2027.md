@@ -1,15 +1,86 @@
 # Five Journeys Marketing — end of 2027
 
-We closed the year with at least 40% more net new patients than 2026. Net means GoHighLevel sign-ups minus reconciled departures, Newton and Boston together, all membership levels, full-year 2026 as the base. They came in through a Discovery Call, committed, and stayed. The homepage and the ads say what members already say: symptoms do not live in silos, and care here does not either. The front door is a free Discovery Call. Direct and branded search are still a serious share of fivejourneys.com. February 2026 stays on the wall: paid volume that swells sessions and shrinks the people who already know the name does not count toward the 40%.
+## The year we closed
 
-Ed and Wendie hold the company goal. **Bruno Ladan, VP of Marketing,** holds the department, the promise, the budget, and Ready for Publishing. Under him: **Je** (organic social), **Sam** (email, podcast, CRM), **Voltaire** (blog and on-page words), and **Zigimedia** (social media advertising). Five Grok bots are staff. They report to Bruno. They do not supervise people, and they do not call their own work done.
+We closed the year with at least 40% more net new patients than 2026. Net means GoHighLevel sign-ups minus reconciled departures, Newton and Boston together, and any future Five Journeys location, all membership levels, full-year 2026 as the base.
 
-**Quality is the bottom of the ladder.** A session has a price. A click has a price. A lead has a price. A held Discovery Call has a price. A committed member who is still here has a price. Every rung is on the marketing dash. The rung we manage is the last one. Cost per click and cost per lead are diagnostics. Google paid search is scored on meetings and commitments. Zigimedia is scored on the share of clicks that become a form, a held call, and a committed member. Organic search is a leading indicator: when it slips, bookings feel it within a week or two. Word of mouth is often the source that commits, so the source has to be on the record. A quality lead has a hear-about, a held Discovery Call, a committed sign-up, a membership level, and a name that survives the churn reconciliation. “(Not set)” is an open item.
+The department is AI-forward. Marketing processes are automated. The cycle of asset conceptualization and creation, deployment, testing, measuring the result, and redeployment runs largely on its own, so optimization is real-time and seamless.
 
-**The circle runs every day.** Develop, approve, deploy, measure, judge, tweak, redeploy. Reporting starts the next lap. An asset is a reel, a blog, an email, a store page, a Google ad, or a Zigimedia ad, and it leaves with an identity the dash and GoHighLevel can read. The bots look at what is live and make the first draft from what is already up and from what the funnel did with it: the next carousel, the next headline on an approved layout, the next reel script, the next ad variant. September 2026 stays in their memory. The silos line won the click. The chasing-symptoms line won the cost. “Feel Freaking Amazing” is the outcome we keep, and it lost as a headline. The producer puts the draft on the owner’s Monday board with the evidence attached. Je, Sam, Voltaire, or Zigimedia makes it fit to wear the name. Bruno passes voice, clinical claims, a new audience, a category name, or a new dollar. The verdict that restarts the loop is a held call, a committed sign-up, a member who stayed, and a brand-recall share that held. One tweak goes back to Monday. The week Ed and Wendie read is the stack of laps already closed.
+The highest value of the department is excellence in the member experience through the whole life cycle. That standard shows up at every touch point. Marketing owns some of them outright: communications, landing pages, the social footprint, and the rest of the surfaces it runs. On the others it partners with admin, nursing, and the provider teams.
 
-**One bot keeps the site fit for Google and for LLMs.** On a regular cadence it scrapes fivejourneys.com, the sitemap, and Search Console, and it ties each URL to organic sessions and Discovery Calls. Search engine optimization and technical SEO are its job, done as that repeating scrape. For Google it files three lists. Working pages are left alone. Not working means the page is indexed and still does not earn the query, the session, or the booking: one change, a title, a link, a clearer page. Breaking means the thing is damaged: a URL that will not index, a canonical that points the wrong way, a sitemap entry for a dead page, structured data that fails, a template that cuts the page off. The same scrape asks whether a model can say Five Journeys correctly: who we are, the five journeys, Newton and Boston, and who the care is for, in words that match the promise and the page a patient would land on. Where the site is vague, contradictory, or silent, that is not working. Where the facts a model would need are blocked, unmarked, or inconsistent with the live page, that is breaking. The bot makes the technical change and drafts the clearer statement. Voltaire writes when the page needs words. Bruno approves anything that touches a medical claim or a category name. Breaking work comes before any new page. The item stays open until the same bot scrapes again and the break is gone, the page has moved a rung, or the statement a model would repeat is the one on the site. Then it opens the next item.
+The department is well positioned and ready to scale. The operation can be replicated in additional locations and in other states without being rebuilt from scratch.
 
-**Every bot owes the same record**, Sunday through Friday: what I inspected, what is working, what is not working, what is breaking, the one change I advanced, when I will look again, and whether last week’s promise closed. Zigimedia and paid search are read the same way. Working is a line that earns a held call at a price you accept. Not working is spend that stalls before the call. Breaking is a disapproved ad, a destination that does not resolve, a pixel that is not firing. Je’s grid, Sam’s automations, and GoHighLevel get the same three lists: a dead link, a blank hear-about, a workflow that did not fire, an account still on a personal login. Done is the second look, and, where the work is aimed at a patient, a movement on the ladder. A list of findings is an unfinished week.
+## The work, named once
 
-The dovetail is the same in every lane. **The watch** sits with Bruno, reads the dash, and drafts the week. **The site bot** runs the regular scrape and the optimization for Google and for LLMs, and it tells Voltaire which URLs need words before bookings drop. **The tester** sits with Zigimedia and Je, drafts from the live ads and the grid, and scores the next line on calls. **The producer** keeps Monday moving for Je, Sam, and Voltaire, and stops at Bruno’s gate. **The steward** sits in GoHighLevel with Sam and on Zigimedia’s handoff, and watches Interest become a booking, a meeting, a commitment, and a member who stayed. The humans and Zigimedia spend their time on craft, the buy, the record, and the yes. The bots spend their time walking the circle, starting the next step without being asked, and coming back to show the break is gone.
+The department is three blocks. New patient acquisition. Patient retention. Special projects and initiatives.
+
+Acquisition answers “what does it take?” in five steps.
+
+1. Research names the ideal client and what they need, and where a Five Journeys service is better than the competitor’s.
+2. Planning turns that into advertising, branding, promotion, and distribution.
+3. Creation makes the asset.
+4. Execution puts it in a channel.
+5. Evaluation asks whether the experience met or exceeded the promise, gathers the feedback, and adapts.
+
+Retention answers the same question with trust, loyalty, and continued value. A special project is named on that block, or it is not a project.
+
+Execution lands in one of ten channels, and the hear-about names which one.
+
+1. Word of mouth.
+2. Google: ads, organic search, Business Profile and Maps, Local Service Ads, and YouTube for Five Journeys and for Feel Freaking Amazing.
+3. Social: paid Facebook and Instagram for Five Journeys, and TikTok; organic Facebook and Instagram for Five Journeys, Feel Freaking Amazing, and Dr. Wendie; and TikTok, X, and LinkedIn.
+4. The website.
+5. Email.
+6. Legacy media: television, radio, PR, and publications.
+7. Events and tradeshows.
+8. Print and collateral.
+9. Referrals from customers and partners.
+10. Connected TV: Hulu, YouTube, and Amazon Prime.
+
+Boston and Newton, and any future location, each keep their own Business Profile and Local Service Ads. Word of mouth is often the source that commits. A referral is its own channel. Both have to be on the record.
+
+The tools are the layer the work reads and writes. They are not a second goal. Google Ads, GA4, Tag Manager, Search Console, Business Profiles, Local Service Ads, and YouTube. Meta and its ads manager. GoHighLevel for email, SMS, prospects, members, and the hear-about. Canva, CapCut, and Adobe for the asset. Ahrefs and BrightLocal for search beyond the scrape. Monday for the board. Share One for the testimonial. The Cursor wrapper publishes the report. Wise pays the assistants.
+
+## People hold the judgment
+
+Ed and Wendie hold the company goal. **Bruno Ladan, VP of Marketing,** holds the department, the promise, the budget, and Ready for Publishing. Under him: **Je** (organic social), **Sam** (email, podcast, CRM), **Voltaire** (blog and on-page words), and **Zigimedia** (social media advertising). Google, the website, legacy, events, print, connected TV, and referrals sit in the same department and on the same ladder.
+
+The humans and Zigimedia spend their time on craft, the buy, the record, and the yes. Bruno passes voice, clinical claims, a new audience, a category name, or a new dollar. Five Grok bots are staff. They report to Bruno. They do not supervise people, and they do not call their own work done.
+
+## Agents mapped to the steps
+
+Each bot owns one kind of microtask inside the five steps.
+
+**The watch** does the analysis. It sits with Bruno, reads the dash, and drafts the week.
+
+**The producer** does the content operations. It keeps Monday moving for Je, Sam, and Voltaire, puts the draft on the owner’s board with the evidence attached, and stops at Bruno’s gate.
+
+**The tester** drafts the next line. It sits with Zigimedia and Je, and with the Google and connected-TV lines, drafts from what is live, and scores the next line on calls.
+
+**SEO Sally** keeps channel four fit for Google and for language models. On a regular cadence she scrapes fivejourneys.com, the sitemap, and Search Console, and she ties each URL to organic sessions and Discovery Calls in GA4. Ahrefs and BrightLocal are for when the scrape is not enough. She tells Voltaire which URLs need words before bookings drop. She files three lists. Working pages are left alone. Not working means the page is indexed and still does not earn the query, the session, or the booking: one change, a title, a link, a clearer page. Breaking means the thing is damaged: a URL that will not index, a canonical that points the wrong way, a sitemap entry for a dead page, structured data that fails, a template that cuts the page off. The same scrape asks whether a model can say Five Journeys correctly: who we are, the five journeys, Newton and Boston and any future location, and who the care is for, in words that match the promise and the page a patient would land on. Where the site is vague, contradictory, or silent, that is not working. Where the facts a model would need are blocked, unmarked, or inconsistent with the live page, that is breaking. She makes the technical change and drafts the clearer statement. Voltaire writes when the page needs words. Bruno approves anything that touches a medical claim or a category name. Breaking work comes before any new page. The item stays open until she scrapes again and the break is gone, the page has moved a rung, or the statement a model would repeat is the one on the site.
+
+**The steward** keeps the record. It sits in GoHighLevel with Sam and on every paid handoff, and watches Interest become a booking, a meeting, a commitment, and a member who stayed.
+
+Every bot owes the same record, Sunday through Friday: what I inspected, what is working, what is not working, what is breaking, the one change I advanced, when I will look again, and whether last week’s promise closed. A list of findings is an unfinished week.
+
+## One lap
+
+A lap is one asset: a reel, a blog, an email, a store page, a Google ad, a Local Service Ad, a connected-TV spot, a print piece, or a Zigimedia ad.
+
+1. The lane owner sets the objective.
+2. The watch reads the dash. September 2026 stays in memory. The silos line won the click. The chasing-symptoms line won the cost. “Feel Freaking Amazing” is the outcome we keep, and it lost as a headline.
+3. The producer puts one draft on the Monday board with the evidence attached.
+4. Je, Sam, Voltaire, or Zigimedia makes it fit to wear the name.
+5. Bruno passes the gate.
+6. The asset ships with an identity the dash and GoHighLevel can read.
+7. The tester and the steward score the held call, the committed sign-up, and the member who stayed.
+8. One tweak goes back to Monday.
+9. The week Ed and Wendie read is the stack of laps already closed.
+
+## How a lap is judged
+
+**Quality is the bottom of the ladder.** A session has a price. A click has a price. A lead has a price. A held Discovery Call has a price. A committed member who is still here has a price. Every rung is on the marketing dash, read from GA4, Google Ads, Meta, and GoHighLevel. The rung we manage is the last one. Cost per click and cost per lead are diagnostics. Google paid search, Local Service Ads, and connected TV are scored on meetings and commitments. Zigimedia is scored on the share of clicks that become a form, a held call, and a committed member. Organic search is a leading indicator: when it slips, bookings feel it within a week or two.
+
+A quality lead has a hear-about, a held Discovery Call, a committed sign-up, a membership level, and a name that survives the churn reconciliation. “(Not set)” is an open item.
+
+Paid lines use the same three lists as the site. Working is a line that earns a held call at a price you accept. Not working is spend that stalls before the call. Breaking is a disapproved ad, a destination that does not resolve, a pixel that is not firing. Je’s grid, Sam’s automations, and GoHighLevel get those lists too: a dead link, a blank hear-about, a workflow that did not fire, an account still on a personal login. Done is the second look, and, where the work is aimed at a patient, a movement on the ladder.
