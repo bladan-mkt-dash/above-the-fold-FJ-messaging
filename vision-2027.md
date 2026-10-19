@@ -60,7 +60,61 @@ Most channels serve a dual purpose for acquisition and retention, but their impa
 
 Boston and Newton, and any future location, each keep their own Business Profile and Local Service Ads. A referral is its own channel. The hear-about and the referral have to be on the record.
 
-The tools are the layer the work reads and writes. They are not a second goal. Google Ads, GA4, Tag Manager, Search Console, Business Profiles, Local Service Ads, and YouTube. Meta and its ads manager. AdRoll for display and retargeting. GoHighLevel for email, SMS, prospects, members, and the hear-about. Canva, CapCut, and Adobe for the asset. Ahrefs and BrightLocal for search beyond the scrape. Monday for the board. Share One for the testimonial. The Cursor wrapper publishes the report. Wise pays the assistants.
+The tools are the layer the work reads and writes. They are not a second goal.
+
+**Google.**
+
+- Ads Manager (MCC).
+- Ads account.
+- Analytics (GA4).
+- Tag Manager.
+- Tag Assistant.
+- Search Console.
+- YouTube: Five Journeys, Feel Freaking Amazing.
+- Business Profiles: Boston, Newton.
+- Local Service Ads: Boston, Newton.
+
+**Meta.**
+
+- Five Journeys Facebook.
+- Five Journeys Instagram.
+- Dr. Wendie Facebook.
+- Dr. Wendie Instagram.
+- Ads Manager.
+
+**AdRoll.**
+
+- Display and retargeting.
+
+**CRM, GoHighLevel.**
+
+- Email and SMS automation.
+- Prospect, member data, and reporting.
+
+**Creative suite.**
+
+- Canva, CapCut, Adobe Pro.
+
+**SEO.**
+
+- Ahrefs.
+- BrightLocal.
+
+**Team and project management.**
+
+- Monday.
+
+**Patient testimonials.**
+
+- Share One.
+
+**Reporting.**
+
+- Cursor AI wrapper.
+
+**Admin.**
+
+- Wise, for VA payments.
 
 ## People hold the judgment
 
