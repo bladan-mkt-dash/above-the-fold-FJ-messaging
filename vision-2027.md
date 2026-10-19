@@ -28,7 +28,7 @@ The work answers “what does it take?”
 
 1. Research identifies the ideal client and what they need or want.
 2. Planning develops an experience better than competitors.
-3. Creation communicates the value: advertising, branding, promotion, and distribution.
+3. Creation creates compelling, brand-aligned assets and campaigns.
 4. Execution makes the experience meet or exceed the expectation.
 5. Evaluation gathers the feedback and adapts, and goes back to creation and execution.
 
