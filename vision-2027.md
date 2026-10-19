@@ -12,7 +12,7 @@ Our team operates on an **AI-forward, automated infrastructure**. The entire mar
 
 As a result, our operations are **mature and ready to scale**. The systems we built require no restructuring to support expansion into new markets and states.
 
-## The work, named once
+## Marketing SOW
 
 The department is three blocks. New patient acquisition. Patient retention. Special projects and initiatives.
 
