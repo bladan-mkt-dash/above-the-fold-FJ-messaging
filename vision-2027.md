@@ -14,32 +14,51 @@ As a result, our operations are **mature and ready to scale**. The systems we bu
 
 ## Marketing SOW
 
-The department is three blocks. New patient acquisition. Patient retention. Special projects and initiatives.
+New patient acquisition and patient retention are one body of work. A light activity or channel is almost entirely acquisition. A darker one is used for both and leans toward retention and engagement. The darker it is, the stronger that lean. Special projects and initiatives sit beside that line. A special project is named on that block, or it is not a project.
 
-Acquisition answers “what does it take?” in five steps.
+The work answers “what does it take?” from light to dark.
 
-1. Research names the ideal client and what they need, and where a Five Journeys service is better than the competitor’s.
-2. Planning turns that into advertising, branding, promotion, and distribution.
-3. Creation makes the asset.
-4. Execution puts it in a channel.
-5. Evaluation asks whether the experience met or exceeded the promise, gathers the feedback, and adapts.
+1. Research identifies the ideal client and what they need or want. Almost entirely acquisition.
+2. Planning develops the service so it is better than the competitor’s. Acquisition.
+3. Creation communicates the value: advertising, branding, promotion, and distribution. Used for acquisition and for retention.
+4. Execution makes the experience meet or exceed the expectation. Used for both, leaning toward retention.
+5. Evaluation gathers the feedback and adapts. Used for both, leaning toward retention.
+6. Retention holds the client with trust, loyalty, and continued value.
 
-Retention answers the same question with trust, loyalty, and continued value. A special project is named on that block, or it is not a project.
+The hear-about names the channel. A light channel is listed only under acquisition. A darker channel is listed under both.
 
-Execution lands in one of ten channels, and the hear-about names which one.
+**Acquisition.**
 
-1. Word of mouth.
-2. Google: ads, organic search, Business Profile and Maps, Local Service Ads, and YouTube for Five Journeys and for Feel Freaking Amazing.
-3. Social: paid Facebook and Instagram for Five Journeys, and TikTok; organic Facebook and Instagram for Five Journeys, Feel Freaking Amazing, and Dr. Wendie; and TikTok, X, and LinkedIn.
-4. The website.
-5. Email.
-6. Legacy media: television, radio, PR, and publications.
-7. Events and tradeshows.
-8. Print and collateral.
-9. Referrals from customers and partners.
-10. Connected TV: Hulu, YouTube, and Amazon Prime.
+- Word of mouth.
+- Google Ads.
+- Local Service Ads.
+- Legacy media: television, radio, PR, and publications.
+- Events and tradeshows.
+- Referrals from customers and partners.
+- Connected TV: Hulu, YouTube, and Amazon Prime.
+- Organic search.
+- Paid Facebook and Instagram for Five Journeys, and TikTok.
+- The website.
+- Business Profile and Maps.
+- YouTube for Five Journeys and for Feel Freaking Amazing.
+- Organic Facebook and Instagram for Five Journeys, Feel Freaking Amazing, and Dr. Wendie, and TikTok, X, and LinkedIn.
+- Email.
+- Print and collateral.
 
-Boston and Newton, and any future location, each keep their own Business Profile and Local Service Ads. Word of mouth is often the source that commits. A referral is its own channel. Both have to be on the record.
+The first seven are almost entirely acquisition. From organic search down, the channel is also retention, and the later names lean that way.
+
+**Retention and engagement.**
+
+- Organic search.
+- Paid Facebook and Instagram for Five Journeys, and TikTok.
+- The website.
+- Business Profile and Maps.
+- YouTube for Five Journeys and for Feel Freaking Amazing. Leans heavily toward retention and engagement.
+- Organic Facebook and Instagram for Five Journeys, Feel Freaking Amazing, and Dr. Wendie, and TikTok, X, and LinkedIn. Leans heavily toward retention and engagement.
+- Email. Leans heavily toward retention and engagement.
+- Print and collateral. Leans the furthest toward retention.
+
+Boston and Newton, and any future location, each keep their own Business Profile and Local Service Ads. A referral is its own channel. The hear-about and the referral have to be on the record.
 
 The tools are the layer the work reads and writes. They are not a second goal. Google Ads, GA4, Tag Manager, Search Console, Business Profiles, Local Service Ads, and YouTube. Meta and its ads manager. GoHighLevel for email, SMS, prospects, members, and the hear-about. Canva, CapCut, and Adobe for the asset. Ahrefs and BrightLocal for search beyond the scrape. Monday for the board. Share One for the testimonial. The Cursor wrapper publishes the report. Wise pays the assistants.
 
