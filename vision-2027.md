@@ -46,19 +46,19 @@ Most channels serve a dual purpose for acquisition and retention, but their impa
 - Referrals from customers and partners.
 - Connected TV and Over The Top TV.
 - The website.
+- Email.
 - Business Profile and Maps.
 - YouTube for Five Journeys and for Feel Freaking Amazing.
 - Organic Facebook and Instagram for Five Journeys, Feel Freaking Amazing, and Dr. Wendie, and TikTok, X, and LinkedIn.
-- Email.
 - Print and collateral.
 
 **Member retention and engagement.**
 
 - The website.
+- Email.
 - Business Profile and Maps.
 - YouTube for Five Journeys and for Feel Freaking Amazing.
 - Organic Facebook and Instagram for Five Journeys, Feel Freaking Amazing, and Dr. Wendie, and TikTok, X, and LinkedIn.
-- Email.
 - Print and collateral.
 
 Boston and Newton, and any future location, each keep their own Business Profile and Local Service Ads. A referral is its own channel. The hear-about and the referral have to be on the record.
