@@ -10,6 +10,8 @@ The average **Net Promoter Score (NPS)** consistently trends **above 9**, and we
 
 Our team operates on an **AI-forward, automated infrastructure**. The entire marketing lifecycle—from asset creation and deployment to testing and real-time optimization—runs autonomously, allowing us to focus on continuous strategy improvement and campaign performance.
 
+The Five Journeys website, alongside its supplement store, has emerged as a premier hub of credible, accurate information—making it an invaluable, highly visible resource for individuals leveraging AI and LLMs to research their health.
+
 As a result, our operations are **mature and ready to scale**. The systems we built require no restructuring to support expansion into new markets and states.
 
 ## Marketing SOW
