@@ -38,13 +38,13 @@ Most channels serve a dual purpose for acquisition and retention, but their impa
 
 - Word of mouth.
 - Google Ads.
+- Organic search.
+- Paid Facebook and Instagram for Five Journeys, and TikTok.
 - Local Service Ads.
 - Legacy media: television, radio, PR, and publications.
 - Events and tradeshows.
 - Referrals from customers and partners.
 - Connected TV and Over The Top TV.
-- Organic search.
-- Paid Facebook and Instagram for Five Journeys, and TikTok.
 - The website.
 - Business Profile and Maps.
 - YouTube for Five Journeys and for Feel Freaking Amazing.
@@ -54,8 +54,6 @@ Most channels serve a dual purpose for acquisition and retention, but their impa
 
 **Member retention and engagement.**
 
-- Organic search.
-- Paid Facebook and Instagram for Five Journeys, and TikTok.
 - The website.
 - Business Profile and Maps.
 - YouTube for Five Journeys and for Feel Freaking Amazing.
@@ -63,7 +61,7 @@ Most channels serve a dual purpose for acquisition and retention, but their impa
 - Email.
 - Print and collateral.
 
-YouTube, organic social, email, and print and collateral carry retention and engagement. Organic search, paid social, the website, and Business Profile and Maps do both.
+YouTube, organic social, email, and print and collateral carry retention and engagement. The website and Business Profile and Maps do both.
 
 Boston and Newton, and any future location, each keep their own Business Profile and Local Service Ads. A referral is its own channel. The hear-about and the referral have to be on the record.
 
