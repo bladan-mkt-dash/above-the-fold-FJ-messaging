@@ -52,7 +52,7 @@ Most channels serve a dual purpose for acquisition and retention, but their impa
 - Email.
 - Print and collateral.
 
-**Retention and engagement.**
+**Member retention and engagement.**
 
 - Organic search.
 - Paid Facebook and Instagram for Five Journeys, and TikTok.
