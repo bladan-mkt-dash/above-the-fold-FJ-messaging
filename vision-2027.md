@@ -42,15 +42,16 @@ Most channels serve a dual purpose for acquisition and retention, but their impa
 - Paid Facebook and Instagram for Five Journeys, and TikTok.
 - Local Service Ads.
 - Legacy media: television, radio, PR, and publications.
-- Events and tradeshows.
 - Referrals from customers and partners.
 - Connected TV and Over The Top TV.
 - The website.
 - Email.
 - Business Profile and Maps.
 - YouTube for Five Journeys and for Feel Freaking Amazing.
-- Organic Facebook and Instagram for Five Journeys, Feel Freaking Amazing, and Dr. Wendie, and TikTok, X, and LinkedIn.
+- Organic Facebook and Instagram for Five Journeys, Feel Freaking Amazing, and Dr. Wendie.
+- TikTok, X, and LinkedIn.
 - Print and collateral.
+- Events and tradeshows.
 
 **Member retention and engagement.**
 
@@ -58,7 +59,8 @@ Most channels serve a dual purpose for acquisition and retention, but their impa
 - Email.
 - Business Profile and Maps.
 - YouTube for Five Journeys and for Feel Freaking Amazing.
-- Organic Facebook and Instagram for Five Journeys, Feel Freaking Amazing, and Dr. Wendie, and TikTok, X, and LinkedIn.
+- Organic Facebook and Instagram for Five Journeys, Feel Freaking Amazing, and Dr. Wendie.
+- TikTok, X, and LinkedIn.
 - Print and collateral.
 
 Boston and Newton, and any future location, each keep their own Business Profile and Local Service Ads. A referral is its own channel. The hear-about and the referral have to be on the record.
