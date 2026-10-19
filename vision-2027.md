@@ -42,7 +42,7 @@ Most channels serve a dual purpose for acquisition and retention, but their impa
 - Legacy media: television, radio, PR, and publications.
 - Events and tradeshows.
 - Referrals from customers and partners.
-- Connected TV: Hulu, YouTube, and Amazon Prime.
+- Connected TV and Over The Top TV.
 - Organic search.
 - Paid Facebook and Instagram for Five Journeys, and TikTok.
 - The website.
