@@ -22,7 +22,7 @@ The work of the department comes in three blocks.
 2. Member retention.
 3. Special initiatives and projects.
 
-New member acquisition and retention are intrinsically connected. A special project is named on that block, or it is not a project.
+New member acquisition and retention are intrinsically connected.
 
 The work answers “what does it take?”
 
