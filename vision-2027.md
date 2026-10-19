@@ -34,7 +34,7 @@ The work answers “what does it take?”
 
 Most channels serve a dual purpose for acquisition and retention, but their impact is uneven. Below, they are listed by priority under their respective pillars.
 
-**Acquisition.**
+**Member acquisition.**
 
 - Word of mouth.
 - Google Ads.
