@@ -2,7 +2,7 @@
 
 ## At The End of 2027
 
-**Marketing drives a premium, seamless experience for prospects and members** by leading with targeted nurturing and deep engagement, establishing a shared culture of excellence that inspires how all departments deliver services.
+Marketing creates a concierge experience from initial awareness to final sign-up. The engagement and prospect nurturing throughout the funnel sets the tone for the member journey, shaping consistent messaging at every step and inspiring how other teams deliver ongoing service.
 
 We closed the year with a **40% year-over-year increase in net new patients** compared to 2026. This net growth includes all membership levels across Newton, Boston, and future locations (calculated as new sign-ups minus reconciled departures). This includes a major shift in our tier mix: new sign-ups moved from majority Standard to over 80% Silver, and Gold memberships grew from 128 to over 200.
 
