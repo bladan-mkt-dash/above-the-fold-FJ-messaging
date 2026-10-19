@@ -6,7 +6,7 @@ Marketing sets the tone for a concierge experience from initial awareness to fin
 
 We closed the year with a **40% year-over-year increase in net new patients** compared to 2026. This net growth includes all membership levels across Newton, Boston, and future locations (calculated as new sign-ups minus reconciled departures). This includes a major shift in our tier mix: new sign-ups moved from majority Standard to over 80% Silver, and Gold memberships grew from 128 to over 200.
 
-The average **Net Promoter Score (NPS)** consistently trends **above 9**, and we receive **3 to 5 Google 5-star reviews every week**. We will have implemented a programmatic solution for generating consistent reviews and made the NPS process effortless for members to submit and seamless for our team to act upon in real time to adapt and improve our services.
+The average **Net Promoter Score (NPS)** consistently trends **above 9**, and we receive **3 to 5 Google 5-star reviews every week**. We will have implemented a programmatic solution for generating consistent reviews and made the NPS collection process effortless for members to submit and seamless for our team to act upon in real time to adapt and improve our services.
 
 Our team operates on an **AI-forward, automated infrastructure**. The entire marketing lifecycle—from asset creation and deployment to testing and real-time optimization—runs autonomously, allowing us to focus on continuous strategy improvement and campaign performance.
 
