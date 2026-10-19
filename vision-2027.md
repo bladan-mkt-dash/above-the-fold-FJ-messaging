@@ -32,7 +32,7 @@ The work answers “what does it take?”
 4. Execution makes the experience meet or exceed the expectation.
 5. Evaluation gathers the feedback and adapts, and goes back to creation and execution.
 
-The hear-about names the channel.
+Most channels serve a dual purpose for acquisition and retention, but their impact is uneven. Below, they are listed by priority under their respective pillars.
 
 **Acquisition.**
 
