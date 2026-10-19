@@ -2,13 +2,13 @@
 
 ## 2027 in Review
 
-Our core objective is a premium, seamless experience for prospects and members. We measure satisfaction at the critical milestones of the customer cycle, and the Net Promoter Score holds consistently above 8. Marketing sets the baseline through lead nurturing and member engagement, and partners across departments to improve how the service is delivered.
+Our core objective is to **drive a premium, seamless experience for prospects and members**. We measure satisfaction at the critical milestones of the customer cycle, and the Net Promoter Score holds consistently above 8. Marketing sets the baseline through lead nurturing and member engagement, and partners across departments to improve how the service is delivered.
 
-We closed the year with 40% more net new patients than 2026. That net figure covers every membership level in Newton, Boston, and any future location, counted as new sign-ups minus reconciled departures.
+We closed the year with a **40% year-over-year increase in net new members** compared with 2026. That net figure covers every membership level in Newton, Boston, and any future location, counted as new sign-ups minus reconciled departures.
 
-The team operates on an AI-forward, automated infrastructure. The marketing cycle, from creating and deploying an asset through testing and real-time optimization, runs on its own, so we can stay on strategy and on how each campaign performs.
+The team operates on an **AI-forward, automated infrastructure**. The marketing cycle, from creating and deploying an asset through testing and real-time optimization, runs on its own, so we can stay on strategy and on how each campaign performs.
 
-The operation is mature and ready to scale. The systems we built need no restructuring to support a new market or another state.
+**Marketing operations are mature and ready to scale.** The systems we built need no restructuring to support a new market or another state.
 
 ## The work, named once
 
