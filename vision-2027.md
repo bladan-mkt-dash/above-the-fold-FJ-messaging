@@ -31,9 +31,8 @@ The work answers “what does it take?”
 3. Creation communicates the value: advertising, branding, promotion, and distribution.
 4. Execution makes the experience meet or exceed the expectation.
 5. Evaluation gathers the feedback and adapts.
-6. Retention holds the client with trust, loyalty, and continued value.
 
-Research and planning acquire the patient. Creation, execution, and evaluation acquire and retain. Retention is trust, loyalty, and continued value.
+Research and planning acquire the patient. Creation, execution, and evaluation acquire and retain.
 
 The hear-about names the channel.
 
