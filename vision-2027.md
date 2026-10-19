@@ -14,18 +14,20 @@ As a result, our operations are **mature and ready to scale**. The systems we bu
 
 ## Marketing SOW
 
-New patient acquisition and patient retention are one body of work. A light activity or channel is almost entirely acquisition. A darker one is used for both and leans toward retention and engagement. The darker it is, the stronger that lean. Special projects and initiatives sit beside that line. A special project is named on that block, or it is not a project.
+New patient acquisition and patient retention are linked. Special projects and initiatives are the third block. A special project is named on that block, or it is not a project.
 
-The work answers “what does it take?” from light to dark.
+The work answers “what does it take?”
 
-1. Research identifies the ideal client and what they need or want. Almost entirely acquisition.
-2. Planning develops the service so it is better than the competitor’s. Acquisition.
-3. Creation communicates the value: advertising, branding, promotion, and distribution. Used for acquisition and for retention.
-4. Execution makes the experience meet or exceed the expectation. Used for both, leaning toward retention.
-5. Evaluation gathers the feedback and adapts. Used for both, leaning toward retention.
+1. Research identifies the ideal client and what they need or want.
+2. Planning develops the service so it is better than the competitor’s.
+3. Creation communicates the value: advertising, branding, promotion, and distribution.
+4. Execution makes the experience meet or exceed the expectation.
+5. Evaluation gathers the feedback and adapts.
 6. Retention holds the client with trust, loyalty, and continued value.
 
-The hear-about names the channel. A light channel is listed only under acquisition. A darker channel is listed under both.
+Research and planning acquire the patient. Creation, execution, and evaluation acquire and retain. Retention is trust, loyalty, and continued value.
+
+The hear-about names the channel.
 
 **Acquisition.**
 
@@ -45,18 +47,18 @@ The hear-about names the channel. A light channel is listed only under acquisiti
 - Email.
 - Print and collateral.
 
-The first seven are almost entirely acquisition. From organic search down, the channel is also retention, and the later names lean that way.
-
 **Retention and engagement.**
 
 - Organic search.
 - Paid Facebook and Instagram for Five Journeys, and TikTok.
 - The website.
 - Business Profile and Maps.
-- YouTube for Five Journeys and for Feel Freaking Amazing. Leans heavily toward retention and engagement.
-- Organic Facebook and Instagram for Five Journeys, Feel Freaking Amazing, and Dr. Wendie, and TikTok, X, and LinkedIn. Leans heavily toward retention and engagement.
-- Email. Leans heavily toward retention and engagement.
-- Print and collateral. Leans the furthest toward retention.
+- YouTube for Five Journeys and for Feel Freaking Amazing.
+- Organic Facebook and Instagram for Five Journeys, Feel Freaking Amazing, and Dr. Wendie, and TikTok, X, and LinkedIn.
+- Email.
+- Print and collateral.
+
+YouTube, organic social, email, and print and collateral carry retention and engagement. Organic search, paid social, the website, and Business Profile and Maps do both.
 
 Boston and Newton, and any future location, each keep their own Business Profile and Local Service Ads. A referral is its own channel. The hear-about and the referral have to be on the record.
 
