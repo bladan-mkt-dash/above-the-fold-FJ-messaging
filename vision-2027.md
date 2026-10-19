@@ -27,7 +27,7 @@ New member acquisition and retention are intrinsically connected. A special proj
 The work answers “what does it take?”
 
 1. Research identifies the ideal client and what they need or want.
-2. Planning develops the service so it is better than the competitor’s.
+2. Planning develops the experience so it is better than the competitor’s.
 3. Creation communicates the value: advertising, branding, promotion, and distribution.
 4. Execution makes the experience meet or exceed the expectation.
 5. Evaluation gathers the feedback and adapts, and goes back to creation and execution.
