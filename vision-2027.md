@@ -2,13 +2,15 @@
 
 ## 2027 in Review
 
-Our core objective is to **drive a premium, seamless experience for prospects and members**. We measure satisfaction at the critical milestones of the customer cycle, and the Net Promoter Score holds consistently above 8. Marketing sets the baseline through lead nurturing and member engagement, and partners across departments to improve how the service is delivered.
+**Marketing sets the standard for driving a premium, seamless experience for prospects and members.** By leading with targeted nurturing and deep engagement, Marketing establishes a shared culture of excellence that inspires how all departments deliver services.
 
-We closed the year with a **40% year-over-year increase in net new members** compared with 2026. That net figure covers every membership level in Newton, Boston, and any future location, counted as new sign-ups minus reconciled departures.
+We closed the year with a **40% year-over-year increase in net new patients** compared to 2026. This net growth includes all membership levels across Newton, Boston, and future locations (calculated as new sign-ups minus reconciled departures). This includes a major shift in our tier mix: new sign-ups moved from majority Standard to over 80% Silver, and Gold memberships grew from 128 to over 200.
 
-The team operates on an **AI-forward, automated infrastructure**. The marketing cycle, from creating and deploying an asset through testing and real-time optimization, runs on its own, so we can stay on strategy and on how each campaign performs.
+The average **Net Promoter Score (NPS)** consistently trends **above 9**, and we receive **3 to 5 Google 5-star reviews every week**. We will have implemented a programmatic solution for generating consistent reviews and made the NPS process effortless for members to submit and seamless for our team to act upon in real time to adapt and improve our services.
 
-**Marketing operations are mature and ready to scale.** The systems we built need no restructuring to support a new market or another state.
+Our team operates on an **AI-forward, automated infrastructure**. The entire marketing lifecycle—from asset creation and deployment to testing and real-time optimization—runs autonomously, allowing us to focus on continuous strategy improvement and campaign performance.
+
+As a result, our operations are **mature and ready to scale**. The systems we built require no restructuring to support expansion into new markets and states.
 
 ## The work, named once
 
