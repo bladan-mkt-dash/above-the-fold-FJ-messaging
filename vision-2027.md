@@ -2,11 +2,11 @@
 
 ## The year we closed
 
+Excellence in the Five Journeys prospect and member experience is the north star of the department. Net promoter score is measured at the inflection points of the super-consumer cycle and trends consistently above 8. Marketing sets the tone through lead nurturing and member engagement, and partners with the other departments to improve the point of delivery of the service.
+
 We closed the year with at least 40% more net new patients than 2026. Net means GoHighLevel sign-ups minus reconciled departures, Newton and Boston together, and any future Five Journeys location, all membership levels, full-year 2026 as the base.
 
 The department is AI-forward. Marketing processes are automated. The cycle of asset conceptualization and creation, deployment, testing, measuring the result, and redeployment runs largely on its own, so optimization is real-time and seamless.
-
-The highest value of the department is excellence in the member experience through the whole life cycle. That standard shows up at every touch point. Marketing owns some of them outright: communications, landing pages, the social footprint, and the rest of the surfaces it runs. On the others it partners with admin, nursing, and the provider teams.
 
 The department is well positioned and ready to scale. The operation can be replicated in additional locations and in other states without being rebuilt from scratch.
 
