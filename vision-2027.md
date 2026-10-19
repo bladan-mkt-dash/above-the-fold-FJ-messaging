@@ -16,7 +16,13 @@ As a result, our operations are **mature and ready to scale**. The systems we bu
 
 ## Marketing SOW
 
-New patient acquisition and patient retention are linked. Special projects and initiatives are the third block. A special project is named on that block, or it is not a project.
+The work of the department comes in three blocks.
+
+1. Member acquisition.
+2. Member retention.
+3. Special initiatives and projects.
+
+New member acquisition and retention are intrinsically connected. A special project is named on that block, or it is not a project.
 
 The work answers “what does it take?”
 
