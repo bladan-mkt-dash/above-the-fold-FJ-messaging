@@ -56,7 +56,7 @@ The work answers “what does it take?”
 - TikTok, X, and LinkedIn.
 - Print and collateral.
 
-Most channels serve a dual purpose for acquisition and retention, but their impact is uneven. Below, they are listed by priority under their respective pillars.
+\* Most channels serve a dual purpose for acquisition and retention, but their impact is uneven. Below, they are listed by priority under their respective pillars.
 
 **Google.**
 
