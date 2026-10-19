@@ -32,8 +32,6 @@ The work answers “what does it take?”
 4. Execution makes the experience meet or exceed the expectation.
 5. Evaluation gathers the feedback and adapts.
 
-Research and planning acquire the patient. Creation, execution, and evaluation acquire and retain.
-
 The hear-about names the channel.
 
 **Acquisition.**
