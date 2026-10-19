@@ -32,8 +32,6 @@ The work answers “what does it take?”
 4. Execution makes the experience meet or exceed the expectation.
 5. Evaluation gathers the feedback and adapts, and goes back to creation and execution.
 
-Most channels serve a dual purpose for acquisition and retention, but their impact is uneven. Below, they are listed by priority under their respective pillars.
-
 **Member acquisition.**
 
 - Word of mouth.
@@ -58,9 +56,7 @@ Most channels serve a dual purpose for acquisition and retention, but their impa
 - TikTok, X, and LinkedIn.
 - Print and collateral.
 
-Boston and Newton, and any future location, each keep their own Business Profile and Local Service Ads. A referral is its own channel. The hear-about and the referral have to be on the record.
-
-The tools are the layer the work reads and writes. They are not a second goal.
+Most channels serve a dual purpose for acquisition and retention, but their impact is uneven. Below, they are listed by priority under their respective pillars.
 
 **Google.**
 
