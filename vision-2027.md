@@ -44,8 +44,7 @@ Most channels serve a dual purpose for acquisition and retention, but their impa
 - Legacy media: television, radio, PR, and publications.
 - Referrals from customers and partners.
 - Connected TV and Over The Top TV.
-- The website.
-- Email.
+- Website landing pages, forms, and email automations.
 - Business Profile and Maps.
 - Events and tradeshows.
 
