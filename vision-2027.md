@@ -1,14 +1,14 @@
 # Five Journeys Marketing — end of 2027
 
-## The year we closed
+## 2027 in Review
 
-Excellence in the Five Journeys prospect and member experience is the north star of the department. Net promoter score is measured at the inflection points of the super-consumer cycle and trends consistently above 8. Marketing sets the tone through lead nurturing and member engagement, and partners with the other departments to improve the point of delivery of the service.
+Our core objective is a premium, seamless experience for prospects and members. We measure satisfaction at the critical milestones of the customer cycle, and the Net Promoter Score holds consistently above 8. Marketing sets the baseline through lead nurturing and member engagement, and partners across departments to improve how the service is delivered.
 
-We closed the year with at least 40% more net new patients than 2026. Net means GoHighLevel sign-ups minus reconciled departures, Newton and Boston together, and any future Five Journeys location, all membership levels, full-year 2026 as the base.
+We closed the year with 40% more net new patients than 2026. That net figure covers every membership level in Newton, Boston, and any future location, counted as new sign-ups minus reconciled departures.
 
-The department is AI-forward. Marketing processes are automated. The cycle of asset conceptualization and creation, deployment, testing, measuring the result, and redeployment runs largely on its own, so optimization is real-time and seamless.
+The team operates on an AI-forward, automated infrastructure. The marketing cycle, from creating and deploying an asset through testing and real-time optimization, runs on its own, so we can stay on strategy and on how each campaign performs.
 
-The department is well positioned and ready to scale. The operation can be replicated in additional locations and in other states without being rebuilt from scratch.
+The operation is mature and ready to scale. The systems we built need no restructuring to support a new market or another state.
 
 ## The work, named once
 
