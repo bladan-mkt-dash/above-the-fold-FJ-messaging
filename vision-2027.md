@@ -47,10 +47,6 @@ Most channels serve a dual purpose for acquisition and retention, but their impa
 - The website.
 - Email.
 - Business Profile and Maps.
-- YouTube for Five Journeys and for Feel Freaking Amazing.
-- Organic Facebook and Instagram for Five Journeys, Feel Freaking Amazing, and Dr. Wendie.
-- TikTok, X, and LinkedIn.
-- Print and collateral.
 - Events and tradeshows.
 
 **Member retention and engagement.**
