@@ -16,7 +16,7 @@ As a result, our operations are **mature and ready to scale**. The systems we bu
 
 ## Marketing SOW
 
-The work of the department comes in three blocks.
+Marketing Departments work spans three interrelated areas.
 
 1. Member acquisition.
 2. Member retention.
