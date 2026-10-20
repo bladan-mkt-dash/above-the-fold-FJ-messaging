@@ -1,5 +1,9 @@
 # Five Journeys Marketing — end of 2027
 
+## Mission
+
+To fuel the expansion of Five Journeys across all membership tiers through AI-forward acquisition and retention campaigns, ensuring every prospect and member feels championed across all five aspects of their health journey.
+
 ## At The End of 2027
 
 Marketing sets the tone for a concierge experience from initial awareness to final sign-up and beyond. Lead generation, prospect nurturing, and customer engagement inspire other teams to deliver exceptional service, helping them champion the Five Journeys value at every stage of the member lifecycle.
