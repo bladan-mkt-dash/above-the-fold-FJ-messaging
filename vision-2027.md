@@ -4,7 +4,7 @@
 
 Marketing sets the tone for a concierge experience from initial awareness to final sign-up and beyond. Lead generation, prospect nurturing, and customer engagement inspire other teams to deliver exceptional service, helping them champion the Five Journeys value at every stage of the member lifecycle.
 
-We closed the year with a **40% year-over-year increase in net new patients** compared to 2026. This net growth includes all membership levels across Newton, Boston, and future locations (calculated as new sign-ups minus reconciled departures). This includes a major shift in our tier mix: new sign-ups moved from majority Standard to over 80% Silver, and Gold memberships grew from 128 to over 200.
+We closed the year with a **40% year-over-year increase in net new patients** compared to 2026. This net growth includes all membership levels across Newton, Boston, and future locations (calculated as new sign-ups minus reconciled departures). This includes a major shift in our tier mix: new sign-ups moved from majority Standard to over 80% Silver, and Gold memberships grew from 128 to 250.
 
 The average **Net Promoter Score (NPS)** consistently trends **above 9**, and we receive **3 to 5 Google 5-star reviews every week**. We will have implemented a programmatic solution for generating consistent reviews, made the NPS process effortless, and acted upon results in real time to adapt and improve our services.
 
