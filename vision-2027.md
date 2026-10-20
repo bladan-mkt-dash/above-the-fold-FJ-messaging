@@ -56,7 +56,7 @@ The work answers “what does it take?”
 - YouTube for Five Journeys and for Feel Freaking Amazing.
 - TikTok, X, and LinkedIn.
 
-*\* Most channels serve a dual purpose for acquisition and retention, but their impact is uneven. Above, they are listed by impact under their respective pillars.*
+*\* Most channels support both acquisition and retention with an uneven impact in those areas. Above, they are listed by impact under their respective areas.*
 
 **Google.**
 
