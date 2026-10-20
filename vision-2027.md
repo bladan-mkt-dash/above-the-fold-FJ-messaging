@@ -22,7 +22,7 @@ Marketing Departments work spans three interrelated areas:
 2. Member retention
 3. Special projects and initiatives
 
-New member acquisition and retention are intrinsically connected.
+Marketing operations encompasses a spectrum from research and planning to creative execution and evaluation. To support this workflow, the team deploys campaigns and assets across 14 distinct channels utilizing a stack of 24 specialized tools.
 
 The work answers “what does it take?”
 
