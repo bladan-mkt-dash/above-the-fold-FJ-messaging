@@ -50,11 +50,11 @@ The work answers “what does it take?”
 
 - The website.
 - Email.
+- Organic Facebook and Instagram for Five Journeys, Feel Freaking Amazing, and Dr. Wendie.
+- Print and collateral.
 - Business Profile and Maps.
 - YouTube for Five Journeys and for Feel Freaking Amazing.
-- Organic Facebook and Instagram for Five Journeys, Feel Freaking Amazing, and Dr. Wendie.
 - TikTok, X, and LinkedIn.
-- Print and collateral.
 
 *\* Most channels serve a dual purpose for acquisition and retention, but their impact is uneven. Above, they are listed by impact under their respective pillars.*
 
