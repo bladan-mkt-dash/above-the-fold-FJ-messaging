@@ -14,6 +14,16 @@ The Five Journeys website, alongside its supplement store, has emerged as a prem
 
 As a result, our operations are **mature and ready to scale**. The systems we built require no restructuring to support expansion into new markets and states.
 
+## Values
+
+| Value | What It Means for the Marketing Team |
+| --- | --- |
+| 1. Concierge First | We set the tone for the entire member lifecycle. Every touchpoint—from the first ad to a retention email—must feel high-touch, personalized, and exceptional. |
+| 2. AI-Forward & Scalable | We embrace automation and advanced infrastructure. By automating asset creation and system workflows, we free our minds to focus on strategy, performance, and scaling into new markets. |
+| 3. Credibility as a Anchor | In a world of noise, we build the premier hub of accurate, trusted health information. Our content is highly visible, scientifically sound, and optimized for the future of health search. |
+| 4. Data-Driven Agility | We make real-time optimization a habit. Whether acting on immediate NPS feedback or analyzing campaign metrics, we pivot quickly to improve results and elevate member satisfaction. |
+| 5. Vitality Champions | We don’t just market longevity; we embody it. We actively support our cross-functional teammates, inspiring them to deliver the core Five Journeys promise at every stage of the member lifecycle. |
+
 ## Marketing SOW
 
 Marketing Departments work spans three interrelated areas:
