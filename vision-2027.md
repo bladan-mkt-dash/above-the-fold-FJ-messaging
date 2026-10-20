@@ -16,11 +16,11 @@ As a result, our operations are **mature and ready to scale**. The systems we bu
 
 ## Marketing SOW
 
-Marketing Departments work spans three interrelated areas.
+Marketing Departments work spans three interrelated areas:
 
-1. Member acquisition.
-2. Member retention.
-3. Special initiatives and projects.
+1. Member acquisition
+2. Member retention
+3. Special projects and initiatives
 
 New member acquisition and retention are intrinsically connected.
 
