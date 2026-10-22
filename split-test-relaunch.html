@@ -200,6 +200,93 @@
       text-transform: uppercase;
     }
     .table-scroll { overflow-x: auto; }
+    #daily-table tr.is-selected-day td { background: var(--surface-warm); }
+    .as-of { margin: 0.25rem 0 0.9rem; }
+    .as-of-head {
+      align-items: baseline;
+      display: flex;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+    .as-of-head label {
+      color: var(--wire-label);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .as-of-head strong {
+      color: var(--accent);
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+    .as-of input[type="range"] {
+      --fill: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+      display: block;
+      height: 1.35rem;
+      margin: 0.35rem 0 0;
+      width: 100%;
+    }
+    .as-of input[type="range"]:focus-visible {
+      outline: 2px solid var(--accent-soft);
+      outline-offset: 2px;
+    }
+    .as-of input[type="range"]::-webkit-slider-runnable-track {
+      background: linear-gradient(to right, var(--accent) var(--fill), var(--wire) var(--fill));
+      border-radius: 999px;
+      height: 4px;
+    }
+    .as-of input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      background: var(--accent);
+      border: 2px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px var(--accent);
+      height: 1.05rem;
+      margin-top: -0.4rem;
+      width: 1.05rem;
+    }
+    .as-of input[type="range"]::-moz-range-track {
+      background: var(--wire);
+      border: 0;
+      border-radius: 999px;
+      height: 4px;
+    }
+    .as-of input[type="range"]::-moz-range-progress {
+      background: var(--accent);
+      border-radius: 999px;
+      height: 4px;
+    }
+    .as-of input[type="range"]::-moz-range-thumb {
+      background: var(--accent);
+      border: 2px solid #fff;
+      border-radius: 50%;
+      height: 1.05rem;
+      width: 1.05rem;
+    }
+    .as-of-days { display: grid; }
+    .as-of-days button {
+      background: none;
+      border: 0;
+      color: var(--wire-label);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.65rem;
+      line-height: 1.2;
+      padding: 0.15rem 0 0;
+      text-align: center;
+    }
+    .as-of-days button.is-gap { opacity: 0.45; }
+    .as-of-days button[aria-current="date"] {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .as-of-note { margin-top: 0.35rem; }
     footer {
       color: var(--wire-label);
       font-size: 0.75rem;
@@ -218,11 +305,20 @@
     </p>
     <p class="meta">
       Source: Meta Ads API · campaign 52684253341268 · OUTCOME_TRAFFIC ·
-      Oct 6–20, 2026 · Oct 6 starts at 12:13 PM ET. Oct 11–12 had no delivery.
-      Oct 13 ran from 10 PM to midnight ET. Oct 20 is partial, through the morning pull.
+      Oct 6–22, 2026 · Oct 6 starts at 12:13 PM ET. Oct 11–12 had no delivery.
+      Oct 13 ran from 10 PM to midnight ET. Oct 22 is partial, through the morning pull.
     </p>
 
     <h2>Variant detail</h2>
+    <div class="as-of">
+      <div class="as-of-head">
+        <label for="as-of">Cumulative through</label>
+        <strong id="as-of-label">Oct 22</strong>
+      </div>
+      <input id="as-of" type="range" min="0" max="16" value="16" step="1" aria-valuemin="0" aria-valuemax="16" aria-valuenow="16" aria-valuetext="Oct 22" />
+      <div class="as-of-days" id="as-of-days"></div>
+      <p class="chart-note as-of-note" id="as-of-note"></p>
+    </div>
     <div class="table-scroll">
       <table>
         <thead>
@@ -249,10 +345,10 @@
     </div>
 
     <div class="stats">
-      <div class="stat"><strong>0.883%</strong><span>Highest link CTR — Image 4 Silos</span></div>
-      <div class="stat"><strong>$0.30</strong><span>Lowest CPC — Image 6 Chasing symptoms</span></div>
-      <div class="stat"><strong>3,502</strong><span>Link clicks</span></div>
-      <div class="stat"><strong>$1,256.02</strong><span>Spend (Oct 6–20)</span></div>
+      <div class="stat"><strong id="stat-ctr">0.868%</strong><span id="stat-ctr-label">Highest link CTR — Image 4 Silos</span></div>
+      <div class="stat"><strong id="stat-cpc">$0.28</strong><span id="stat-cpc-label">Lowest CPC — Image 6 Chasing symptoms</span></div>
+      <div class="stat"><strong id="stat-clicks">4,163</strong><span>Link clicks</span></div>
+      <div class="stat"><strong id="stat-spend">$1,439.32</strong><span id="stat-spend-label">Spend (Oct 6–22)</span></div>
     </div>
 
     <h2>Creatives</h2>
@@ -264,8 +360,8 @@
           <h3>Image 4 — Silos</h3>
           <p>Your Symptoms Don’t Live in Silos. Your Care Shouldn’t Either.</p>
           <div class="creative-kpis">
-            <div><strong>0.883%</strong>Link CTR</div>
-            <div><strong>$0.35</strong>CPC</div>
+            <div><strong id="kpi-4-ctr">0.868%</strong>Link CTR</div>
+            <div><strong id="kpi-4-cpc">$0.35</strong>CPC</div>
           </div>
         </div>
       </article>
@@ -275,8 +371,8 @@
           <h3>Image 5 — Feel Freaking Amazing</h3>
           <p>You Deserve to Feel Freaking Amazing™. Our Method Gets You There.</p>
           <div class="creative-kpis">
-            <div><strong>0.809%</strong>Link CTR</div>
-            <div><strong>$0.45</strong>CPC</div>
+            <div><strong id="kpi-5-ctr">0.808%</strong>Link CTR</div>
+            <div><strong id="kpi-5-cpc">$0.44</strong>CPC</div>
           </div>
         </div>
       </article>
@@ -286,8 +382,8 @@
           <h3>Image 6 — Chasing symptoms</h3>
           <p>Start Feeling Great Instead of Chasing Symptoms.</p>
           <div class="creative-kpis">
-            <div><strong>0.844%</strong>Link CTR</div>
-            <div><strong>$0.30</strong>CPC</div>
+            <div><strong id="kpi-6-ctr">0.762%</strong>Link CTR</div>
+            <div><strong id="kpi-6-cpc">$0.28</strong>CPC</div>
           </div>
         </div>
       </article>
@@ -296,33 +392,35 @@
     <h2>Link CTR and CPC</h2>
     <p>
       CTR is link clicks ÷ impressions. CPC is spend ÷ link clicks.
-      Through this morning, Image 4 leads link CTR at 0.883%.
-      Image 6 is close at 0.844% and is the cheapest click at $0.30.
-      Image 5 trails on both, at 0.809% and $0.45. Oct 20 is still a partial morning.
+      Through this morning, Image 4 leads link CTR at 0.868%.
+      Image 5 is next at 0.808%. Image 6 is at 0.762% and is the cheapest click at $0.28.
+      That order is this morning’s cheap inventory. Through the completed Oct 21,
+      Image 6 led link CTR at 0.947%, Image 4 was at 0.931%, and Image 5 was at 0.826%.
+      Oct 22 is still a partial morning.
     </p>
     <div class="grid2">
       <div>
         <div class="chart-wrap" id="ctr-bars"></div>
-        <p class="chart-note">Y-axis: link CTR (%).</p>
+        <p class="chart-note" id="ctr-bars-note">Y-axis: link CTR (%).</p>
       </div>
       <div>
         <div class="chart-wrap" id="cpc-bars"></div>
-        <p class="chart-note">Y-axis: CPC (USD per link click).</p>
+        <p class="chart-note" id="cpc-bars-note">Y-axis: CPC (USD per link click).</p>
       </div>
     </div>
 
     <div class="grid3">
       <div>
-        <h3>Blended CTR has compressed</h3>
-        <p>Image 4 is at 0.883%, Image 6 at 0.844%, and Image 5 at 0.809%. The completed Oct 19 cheap-inventory day closed the gap that had separated Image 6. Image 4 vs Image 5 is still outside sampling noise (p = 0.045). Image 6 vs Image 4 (p = 0.254) and Image 6 vs Image 5 (p = 0.314) are inside noise.</p>
+        <h3>Oct 22 dropped Image 6’s blend</h3>
+        <p>Image 4 is at 0.868%, Image 5 at 0.808%, and Image 6 at 0.762%. Through the completed Oct 21, Image 6 led at 0.947% and Image 4 was at 0.931% (p = 0.645, inside noise). Image 4 vs Image 5 through Oct 21 is outside noise (p = 0.004), and so is Image 6 vs Image 5 (p = 0.001). On this morning’s blend, Image 6 vs Image 4 is outside noise (p &lt; 0.001) because of today’s impression flood. Image 4 vs Image 5 is inside noise (p = 0.079).</p>
       </div>
       <div>
         <h3>Image 6 wins CPC</h3>
-        <p>$0.30 per link click vs $0.35 (Image 4) and $0.45 (Image 5).</p>
+        <p>$0.28 per link click vs $0.35 (Image 4) and $0.44 (Image 5).</p>
       </div>
       <div>
-        <h3>Oct 20 is partial</h3>
-        <p>So far this morning Image 6 spent $2.14 and received 2,544 impressions at a $0.84 CPM, so its link CTR is 0.75% and its CPC is $0.11. Image 4 was 1.00% and $0.31. Image 5 was 1.40% and $0.71 on 642 impressions. The latest full day, Oct 19, had Image 5 at 0.55% and $0.22 and Image 6 at 0.43% and $0.19 on cheap inventory, while Image 4 was 1.15% and $0.39.</p>
+        <h3>Oct 22 is partial</h3>
+        <p>So far this morning Image 6 spent $17.25 and received 58,569 impressions at a $0.29 CPM, so its link CTR is 0.24% and its CPC is $0.12. Image 4 was 0.43% and $0.18. Image 5 was 0.55% and $0.16 on 8,435 impressions. The latest full day, Oct 21, had Image 6 at 6.53% and $0.23 on 2,251 impressions, Image 4 at 1.94% and $0.53, and Image 5 at 0.68% and $0.48.</p>
       </div>
     </div>
 
@@ -336,7 +434,11 @@
       3.41% on Oct 16 and 5.31% on Oct 17. On Oct 18 Image 6 again found cheap inventory
       and its CTR fell to 0.63%. On Oct 19 that cheap inventory continued for Image 5 and
       Image 6: their link CTRs were 0.55% and 0.43%, while Image 4 held 1.15% on tighter
-      inventory. Oct 20 is still partial, through this morning.
+      inventory. On the completed Oct 20, Image 5 led at 3.42% on 1,344 impressions,
+      Image 6 was 2.24%, and Image 4 was 1.97%. On Oct 21 Image 6’s link CTR was 6.53%
+      on 2,251 impressions, ahead of Image 4 at 1.94% and Image 5 at 0.68%.
+      Oct 22 is still partial, through this morning, and all three are on cheap inventory:
+      Image 6 at 0.24%, Image 4 at 0.43%, and Image 5 at 0.55%.
     </p>
     <div class="chart-wrap" id="ctr-line"></div>
     <p class="chart-note">Y-axis: link CTR (%). Gaps are days with no delivery. Oct 6 starts at 12:13 PM ET. Oct 13 starts at 10 PM ET.</p>
@@ -347,7 +449,10 @@
       restart, all three CPCs fell to about $0.10. On Oct 17 Image 6’s CPC was $0.25 on
       209 link clicks. On Oct 18 it was $0.25 again, with 26,631 impressions at a $1.59 CPM.
       On Oct 19, Image 6’s CPC fell to $0.19 and Image 5’s to $0.22 with the cheap inventory.
-      Image 4’s CPC was $0.39. On the partial Oct 20 morning, Image 6’s CPC is $0.11.
+      Image 4’s CPC was $0.39. On the completed Oct 20, Image 6’s CPC was $0.15,
+      Image 4’s was $0.48, and Image 5’s was $0.53. On Oct 21 Image 6’s CPC was $0.23
+      on 147 link clicks, Image 5’s was $0.48, and Image 4’s was $0.53.
+      On the partial Oct 22 morning, Image 6’s CPC is $0.12.
     </p>
     <div class="chart-wrap" id="cpc-line"></div>
     <p class="chart-note">Y-axis: USD per link click. Gaps are days with no delivery.</p>
@@ -369,8 +474,14 @@
       Oct 19 flipped that pattern again: Image 5 spent $49.70 and received 40,228
       impressions at a $1.24 CPM, and Image 6 spent $35.21 and received 42,049 impressions
       at a $0.84 CPM, while Image 4 spent $30.80 and received 6,946 impressions at a $4.43 CPM.
-      Oct 20, still a partial morning, has Image 6 at $2.14 and 2,544 impressions ($0.84 CPM),
-      Image 4 at $5.95 and 1,898 impressions, and Image 5 at $6.36 and 642 impressions.
+      Oct 20, a full day, had Image 6 at $9.95 and 2,901 impressions ($3.43 CPM),
+      Image 4 at $31.56 and 3,358 impressions ($9.40 CPM), and Image 5 at $24.29 and
+      1,344 impressions ($18.07 CPM). On Oct 21, Image 6 spent $34.33 and received
+      2,251 impressions at a $15.25 CPM, while Image 4 spent $31.25 and received
+      3,042 impressions at a $10.27 CPM, and Image 5 spent $26.14 and received
+      8,079 impressions at a $3.24 CPM. Oct 22, still a partial morning, has Image 6
+      at $17.25 and 58,569 impressions ($0.29 CPM), Image 4 at $15.44 and 19,857
+      impressions ($0.78 CPM), and Image 5 at $7.54 and 8,435 impressions ($0.89 CPM).
       Meta can spend above a daily budget on a single day. The ad set budgets are still $30.
     </p>
     <div class="chart-wrap" id="impr-line"></div>
@@ -403,12 +514,12 @@
     </p>
 
     <footer>
-      Five Journeys · above-the-fold messaging project · Meta split-test relaunch · pulled Oct 20, 2026
+      Five Journeys · above-the-fold messaging project · Meta split-test relaunch · pulled Oct 22, 2026
     </footer>
   </div>
 
   <script>
-    const days = ["Oct 6", "Oct 7", "Oct 8", "Oct 9", "Oct 10", "Oct 11", "Oct 12", "Oct 13", "Oct 14", "Oct 15", "Oct 16", "Oct 17", "Oct 18", "Oct 19", "Oct 20"];
+    const days = ["Oct 6", "Oct 7", "Oct 8", "Oct 9", "Oct 10", "Oct 11", "Oct 12", "Oct 13", "Oct 14", "Oct 15", "Oct 16", "Oct 17", "Oct 18", "Oct 19", "Oct 20", "Oct 21", "Oct 22"];
     const headlines = {
       "Image 4": "Silos",
       "Image 5": "Feel Freaking Amazing",
@@ -420,19 +531,19 @@
         [19.70, 8407, 55], [34.19, 3893, 96], [25.15, 2114, 54], [32.32, 2976, 53],
         [22.96, 34868, 130], null, null, [8.44, 22461, 86], [47.96, 10214, 117],
         [47.99, 3007, 80], [51.16, 25175, 198], [51.26, 4565, 121], [30.89, 7123, 91],
-        [30.80, 6946, 80], [5.95, 1898, 19],
+        [30.80, 6946, 80], [31.56, 3358, 66], [31.25, 3042, 59], [15.44, 19857, 85],
       ],
       "Image 5": [
         [20.33, 10477, 51], [40.50, 5469, 85], [19.74, 1624, 40], [27.87, 2319, 47],
         [25.88, 3650, 39], null, null, [8.05, 25526, 85], [52.03, 9085, 82],
         [45.81, 3679, 70], [50.00, 6179, 74], [50.72, 4626, 86], [30.63, 3051, 54],
-        [49.70, 40228, 221], [6.36, 642, 9],
+        [49.70, 40228, 221], [24.29, 1344, 46], [26.14, 8079, 55], [7.54, 8435, 46],
       ],
       "Image 6": [
         [19.24, 9051, 50], [34.57, 8053, 91], [22.49, 4821, 47], [29.26, 9650, 73],
         [28.78, 4180, 54], null, null, [8.08, 27187, 77], [51.89, 11471, 147],
         [43.35, 9701, 122], [50.97, 4103, 140], [51.38, 3935, 209], [42.27, 26631, 169],
-        [35.21, 42049, 181], [2.14, 2544, 19],
+        [35.21, 42049, 181], [9.95, 2901, 65], [34.33, 2251, 147], [17.25, 58569, 139],
       ],
     };
     const names = Object.keys(raw);
@@ -442,25 +553,29 @@
       return Math.round(n * f) / f;
     }
 
-    const variants = names.map((name) => {
-      const totals = raw[name].reduce((acc, row) => {
-        if (!row) return acc;
-        acc.spend += row[0];
-        acc.impressions += row[1];
-        acc.linkClicks += row[2];
-        return acc;
-      }, { spend: 0, impressions: 0, linkClicks: 0 });
-      totals.spend = roundTo(totals.spend, 2);
-      return {
-        key: name,
-        headline: headlines[name],
-        spend: totals.spend,
-        impressions: totals.impressions,
-        linkClicks: totals.linkClicks,
-        linkCtr: roundTo((totals.linkClicks / totals.impressions) * 100, 3),
-        cpc: roundTo(totals.spend / totals.linkClicks, 2),
-      };
-    });
+    function variantsThrough(endIndex) {
+      return names.map((name) => {
+        const totals = raw[name].slice(0, endIndex + 1).reduce((acc, row) => {
+          if (!row) return acc;
+          acc.spend += row[0];
+          acc.impressions += row[1];
+          acc.linkClicks += row[2];
+          return acc;
+        }, { spend: 0, impressions: 0, linkClicks: 0 });
+        totals.spend = roundTo(totals.spend, 2);
+        return {
+          key: name,
+          headline: headlines[name],
+          spend: totals.spend,
+          impressions: totals.impressions,
+          linkClicks: totals.linkClicks,
+          linkCtr: totals.impressions
+            ? roundTo((totals.linkClicks / totals.impressions) * 100, 3)
+            : 0,
+          cpc: totals.linkClicks ? roundTo(totals.spend / totals.linkClicks, 2) : 0,
+        };
+      });
+    }
 
     function dailyMetric(name, picker) {
       return raw[name].map((row) => (row ? picker(row) : null));
@@ -596,20 +711,9 @@
       return n.toLocaleString("en-US", { style: "currency", currency: "USD" });
     }
 
-    barChart(document.getElementById("ctr-bars"), {
-      categories: variants.map((v) => v.key),
-      yMax: 1.2,
-      suffix: "%",
-      series: [{ name: "Link CTR", color: COLORS.info, data: variants.map((v) => v.linkCtr) }],
-    });
-    barChart(document.getElementById("cpc-bars"), {
-      categories: variants.map((v) => v.key),
-      yMax: 0.6,
-      series: [{ name: "CPC", color: COLORS.extra, data: variants.map((v) => v.cpc) }],
-    });
     lineChart(document.getElementById("ctr-line"), {
       categories: days,
-      yMax: 6,
+      yMax: 7,
       suffix: "%",
       showValues: false,
       series: [
@@ -630,7 +734,7 @@
     });
     lineChart(document.getElementById("impr-line"), {
       categories: days,
-      yMax: 50000,
+      yMax: 70000,
       showValues: false,
       series: [
         { name: "Image 4 Silos", color: COLORS.info, data: impressionsDaily["Image 4"] },
@@ -660,15 +764,107 @@
       }).join("");
     }).join("");
 
-    document.getElementById("variant-table").innerHTML = variants.map((v) => `
-      <tr>
-        <td>${v.headline}</td>
-        <td>${usd(v.spend)}</td>
-        <td>${v.impressions.toLocaleString("en-US")}</td>
-        <td>${v.linkClicks.toLocaleString("en-US")}</td>
-        <td>${v.linkCtr.toFixed(3)}%</td>
-        <td>${usd(v.cpc)}</td>
-      </tr>`).join("");
+    function renderAsOf(endIndex) {
+      const index = Math.max(0, Math.min(days.length - 1, endIndex));
+      const rows = variantsThrough(index);
+      const day = days[index];
+      const slider = document.getElementById("as-of");
+      slider.max = String(days.length - 1);
+      slider.setAttribute("aria-valuemax", String(days.length - 1));
+      slider.value = String(index);
+      slider.setAttribute("aria-valuenow", String(index));
+      slider.setAttribute("aria-valuetext", day);
+      const fill = days.length === 1 ? 100 : (index / (days.length - 1)) * 100;
+      slider.style.setProperty("--fill", `${fill}%`);
+      document.getElementById("as-of-label").textContent = day;
+      document.querySelectorAll("#as-of-days button").forEach((button, i) => {
+        if (i === index) button.setAttribute("aria-current", "date");
+        else button.removeAttribute("aria-current");
+      });
+
+      const delivered = names.some((name) => raw[name][index]);
+      const note = document.getElementById("as-of-note");
+      if (!delivered) {
+        note.textContent = `No delivery on ${day}. Totals are unchanged from the previous day with delivery.`;
+      } else if (index === 0) {
+        note.textContent = "Oct 6 only, the opening afternoon.";
+      } else if (index === days.length - 1) {
+        note.textContent = "Cumulative from Oct 6 through this morning. Oct 22 is still a partial day.";
+      } else {
+        note.textContent = `Cumulative from Oct 6 through ${day}.`;
+      }
+
+      document.getElementById("variant-table").innerHTML = rows.map((v) => `
+        <tr>
+          <td>${v.headline}</td>
+          <td>${usd(v.spend)}</td>
+          <td>${v.impressions.toLocaleString("en-US")}</td>
+          <td>${v.linkClicks.toLocaleString("en-US")}</td>
+          <td>${v.linkCtr.toFixed(3)}%</td>
+          <td>${usd(v.cpc)}</td>
+        </tr>`).join("");
+
+      const ctrLeader = rows.reduce((a, b) => (a.linkCtr >= b.linkCtr ? a : b));
+      const cpcLeader = rows.reduce((a, b) => (a.cpc <= b.cpc ? a : b));
+      const clicks = rows.reduce((sum, v) => sum + v.linkClicks, 0);
+      const spend = roundTo(rows.reduce((sum, v) => sum + v.spend, 0), 2);
+      const endLabel = index === 0 ? "Oct 6" : `Oct 6–${day.replace("Oct ", "")}`;
+      document.getElementById("stat-ctr").textContent = `${ctrLeader.linkCtr.toFixed(3)}%`;
+      document.getElementById("stat-ctr-label").textContent = `Highest link CTR — ${ctrLeader.key} ${ctrLeader.headline}`;
+      document.getElementById("stat-cpc").textContent = usd(cpcLeader.cpc);
+      document.getElementById("stat-cpc-label").textContent = `Lowest CPC — ${cpcLeader.key} ${cpcLeader.headline}`;
+      document.getElementById("stat-clicks").textContent = clicks.toLocaleString("en-US");
+      document.getElementById("stat-spend").textContent = usd(spend);
+      document.getElementById("stat-spend-label").textContent = `Spend (${endLabel})`;
+
+      const kpi = {
+        "Image 4": ["kpi-4-ctr", "kpi-4-cpc"],
+        "Image 5": ["kpi-5-ctr", "kpi-5-cpc"],
+        "Image 6": ["kpi-6-ctr", "kpi-6-cpc"],
+      };
+      rows.forEach((v) => {
+        document.getElementById(kpi[v.key][0]).textContent = `${v.linkCtr.toFixed(3)}%`;
+        document.getElementById(kpi[v.key][1]).textContent = usd(v.cpc);
+      });
+
+      const ctrMax = Math.max(1.2, ...rows.map((v) => v.linkCtr));
+      const cpcMax = Math.max(0.6, ...rows.map((v) => v.cpc));
+      barChart(document.getElementById("ctr-bars"), {
+        categories: rows.map((v) => v.key),
+        yMax: Math.ceil(ctrMax * 10) / 10,
+        suffix: "%",
+        series: [{ name: "Link CTR", color: COLORS.info, data: rows.map((v) => v.linkCtr) }],
+      });
+      barChart(document.getElementById("cpc-bars"), {
+        categories: rows.map((v) => v.key),
+        yMax: Math.ceil(cpcMax * 10) / 10,
+        series: [{ name: "CPC", color: COLORS.extra, data: rows.map((v) => v.cpc) }],
+      });
+      const through = index === days.length - 1 ? "" : ` Cumulative through ${day}.`;
+      document.getElementById("ctr-bars-note").textContent = `Y-axis: link CTR (%).${through}`;
+      document.getElementById("cpc-bars-note").textContent = `Y-axis: CPC (USD per link click).${through}`;
+
+      document.querySelectorAll("#daily-table tr").forEach((tr) => {
+        const cell = tr.cells[0];
+        tr.classList.toggle("is-selected-day", Boolean(cell && cell.textContent === day));
+      });
+    }
+
+    const dayButtons = document.getElementById("as-of-days");
+    dayButtons.style.gridTemplateColumns = `repeat(${days.length}, minmax(0, 1fr))`;
+    days.forEach((day, i) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = day.replace("Oct ", "");
+      button.setAttribute("aria-label", day);
+      if (!names.some((name) => raw[name][i])) button.className = "is-gap";
+      button.addEventListener("click", () => renderAsOf(i));
+      dayButtons.appendChild(button);
+    });
+    document.getElementById("as-of").addEventListener("input", (event) => {
+      renderAsOf(Number(event.target.value));
+    });
+    renderAsOf(days.length - 1);
   </script>
 </body>
 </html>
