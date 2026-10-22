@@ -100,6 +100,9 @@
       padding-left: 1.1rem;
     }
     .task .result li { margin: 0.28rem 0; }
+    .task .result li.tabled,
+    .task .result li.tabled li { color: #b42318; }
+    .task .result li.tabled strong { font-weight: 700; }
     .task.done h3 { color: var(--wire-label); text-decoration: line-through; }
     .sync {
       background: var(--surface);
@@ -203,7 +206,7 @@
               </ul>
             </li>
             <li>Google Business Profiles for Newton and Boston: hours, address, and clinicians.</li>
-            <li>Tabled
+            <li class="tabled"><strong>Tabled</strong>
               <ul>
                 <li>Membership page: the monthly fee, and what visits, labs, and supplements cost apart from it.</li>
                 <li>IV page: who is eligible for an IV.</li>
