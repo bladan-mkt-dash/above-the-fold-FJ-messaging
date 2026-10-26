@@ -204,12 +204,12 @@
       Overnight crawl 23–24 Oct 2026 (Eastern). Diagnose-only. No site changes until Bruno approves each URL.
     </p>
     <p class="meta">
-      Mark a ticket done only when its retest has passed. The Done boxes start empty.
+      Mark a ticket done only when its retest has passed. The Done boxes start empty, except T01, which is already checked because its retest passed.
       They stay in this browser when you leave the page. Checking a box does not edit fivejourneys.com.
       Links to the live site open in a new tab.
     </p>
     <div class="progress" aria-live="polite">
-      <strong id="count">0 of 15</strong>
+      <strong id="count">1 of 15</strong>
       <span>Tickets marked done in the table</span>
     </div>
 
@@ -226,7 +226,7 @@
       <ul>
         <li>Real-visitor Core Web Vitals are missing (T13). A lab score does not stand in for them.</li>
         <li>Ahrefs is not connected (T14), so backlink and keyword evidence is incomplete.</li>
-        <li>The Nitro cache is off for the whole site (T01). Admin turns it back on. It is not a writing task.</li>
+        <li>T01 cache is back on (HIT confirmed 26 Oct 2026). Unused JavaScript and empty alt text still need Admin (T02, T12).</li>
         <li>Each live URL still needs Bruno’s approval before anyone changes it.</li>
       </ul>
     </div>
@@ -236,7 +236,7 @@
       <ul class="words">
         <li><strong>Indexable</strong> means Google is allowed to list the page.</li>
         <li><strong>Sitemap</strong> means the address list the site gives Google.</li>
-        <li><strong>Cache</strong> means a saved copy so the next visit is faster. It is off.</li>
+        <li><strong>Cache</strong> means a saved copy so the next visit is faster. It is on again as of 26 Oct 2026 (HIT confirmed).</li>
         <li><strong>Main content time (LCP)</strong> means how long the largest visible piece takes to appear. Google’s good line is 2.5 seconds.</li>
         <li><strong>Field data</strong> means speed scores from real visitors. Those are missing.</li>
         <li><strong>Lab score</strong> means a simulated phone test (Lighthouse). It is not field data.</li>
@@ -250,7 +250,7 @@
     <p class="meta">Slide the table sideways for the later columns. Done and Impact stay pinned on a wide screen. Ordered T01 through T15.</p>
     <div class="table-wrap">
       <table>
-        <caption>Fifteen tickets from the overnight crawl. Impact is High, Medium, or Low. Done starts unchecked.</caption>
+        <caption>Fifteen tickets from the overnight crawl. Impact is High, Medium, or Low. Done starts unchecked, except T01, which is already checked because its retest passed.</caption>
         <thead>
           <tr>
             <th class="done-col" scope="col">Done</th>
@@ -265,8 +265,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr id="T01" data-id="T01">
-            <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T01. Site cache disabled (Nitro in Test Mode)" /></td>
+          <tr id="T01" class="done" data-id="T01">
+            <td class="done-col"><input type="checkbox" checked autocomplete="off" aria-label="T01. Site cache disabled (Nitro in Test Mode)" /></td>
             <td class="impact-col"><span class="impact high">High</span></td>
             <td>T01</td>
             <td>
@@ -275,13 +275,16 @@
             </td>
             <td>Homepage and every page tested.</td>
             <td>
-              At 12:22am Eastern on 24 Oct 2026, the homepage said the cache was off because of Test Mode.
-              The response headers were <code>x-nitro-disabled=1</code>, <code>x-nitro-disabled-reason=Test Mode</code>, and <code>cache-control=no-cache</code>.
-              The mobile lab test flagged a slow server response on all 10 top pages (1.1–2.8 seconds before the page starts).
+              On 26 Oct 2026 (Eastern), Nitro Test Mode was turned off, the cache was purged, and Cache Warmup finished (about 1,510 optimized pages).
+              Live checks then showed a cache HIT on <a href="https://fivejourneys.com/" target="_blank" rel="noopener noreferrer">/</a>, <a href="https://fivejourneys.com/contact/" target="_blank" rel="noopener noreferrer">/contact/</a>, and <a href="https://fivejourneys.com/primary-care/" target="_blank" rel="noopener noreferrer">/primary-care/</a>:
+              <code>x-nitro-cache: HIT</code>, <code>x-nitro-cache-from: drop-in</code>, <code>x-nitro-rev: c4371f3</code>.
+              No Test Mode header and no <code>x-nitro-disabled</code>.
+              Earlier, at 12:22am Eastern on 24 Oct 2026, the homepage said the cache was off because of Test Mode
+              (<code>x-nitro-disabled=1</code>, <code>x-nitro-disabled-reason=Test Mode</code>, <code>cache-control=no-cache</code>).
             </td>
             <td>Admin</td>
             <td>Turn Nitro (or LiteSpeed) cache back on for the live site, and leave Test Mode. A second visit to the same page should show that the saved copy was used (a cache HIT header).</td>
-            <td>Read the homepage headers again and look for a cache HIT. Re-run the mobile lab test on the homepage and two location pages. Main content time and the server wait should drop.</td>
+            <td>Done — cache HIT confirmed 26 Oct 2026. Optional next: re-run mobile Lighthouse on / and location pages (feeds T02).</td>
           </tr>
           <tr id="T02" data-id="T02">
             <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T02. Mobile LCP very slow on homepage and two high-traffic posts" /></td>
@@ -639,6 +642,9 @@
       }
 
       var saved = readSaved();
+      if (saved.T01 === undefined) {
+        saved.T01 = true;
+      }
 
       function paint() {
         var done = rows.filter(function (row) {
