@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Five Journeys technical SEO backlog</title>
+  <meta name="description" content="Five Journeys technical SEO backlog from the overnight crawl of 23–24 Oct 2026. Diagnose only. No site changes until Bruno approves each URL." />
+  <style>
+    :root {
+      --ink: #1a2e2a;
+      --ink-muted: #3d524c;
+      --surface: #f7f9f8;
+      --surface-alt: #eef3f1;
+      --surface-warm: #faf8f5;
+      --accent: #264540;
+      --accent-soft: #5da68a;
+      --wire: #b8c9c3;
+      --wire-label: #6b7f78;
+      --white: #ffffff;
+      --max: 76rem;
+      --done-w: 4.25rem;
+      --impact-w: 6.75rem;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      line-height: 1.55;
+    }
+    .banner {
+      background: var(--surface-alt);
+      border-bottom: 1px dashed var(--wire);
+      color: var(--wire-label);
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      padding: 0.5rem 1.25rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .wrap { margin: 0 auto; max-width: var(--max); padding: 2rem 1.25rem 4rem; }
+    .back {
+      color: var(--accent);
+      display: inline-block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      text-decoration: none;
+    }
+    .back:hover { text-decoration: underline; }
+    h1 {
+      font-size: clamp(1.5rem, 3vw, 1.85rem);
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin: 0 0 0.5rem;
+    }
+    h2 { font-size: 1.05rem; letter-spacing: -0.01em; margin: 2rem 0 0.75rem; }
+    .lede, .meta, p { color: var(--ink-muted); font-size: 0.975rem; }
+    .lede { margin: 0 0 1rem; }
+    .meta { font-size: 0.8125rem; margin: 0 0 1.25rem; }
+    a { color: var(--accent); }
+    .progress {
+      background: var(--surface);
+      border: 1px solid #e4ebe8;
+      border-radius: 0.5rem;
+      display: inline-block;
+      margin: 0 0 1.25rem;
+      padding: 0.7rem 0.95rem;
+    }
+    .progress strong {
+      color: var(--accent);
+      display: block;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .progress span { color: var(--wire-label); font-size: 0.75rem; }
+    .stats {
+      display: grid;
+      gap: 0.6rem;
+      grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
+      margin: 0 0 1.25rem;
+    }
+    .stat {
+      background: var(--surface);
+      border: 1px solid #e4ebe8;
+      border-radius: 0.5rem;
+      padding: 0.7rem 0.95rem;
+    }
+    .stat strong {
+      color: var(--accent);
+      display: block;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .stat span { color: var(--wire-label); font-size: 0.75rem; }
+    .callout {
+      background: var(--surface-warm);
+      border-left: 3px solid var(--accent-soft);
+      margin: 0 0 1rem;
+      padding: 1rem 1.1rem;
+    }
+    .callout strong { color: var(--ink); display: block; font-size: 0.875rem; margin-bottom: 0.35rem; }
+    .callout p, .callout li { margin: 0; }
+    .callout ul { margin: 0.35rem 0 0; padding-left: 1.15rem; }
+    .callout li { margin: 0.28rem 0; }
+    .words { margin: 0; padding-left: 1.15rem; }
+    .words li { margin: 0.28rem 0; }
+    .table-wrap {
+      border: 1px solid #e4ebe8;
+      border-radius: 0.5rem;
+      margin: 0.5rem 0 0.5rem;
+      overflow-x: auto;
+    }
+    table {
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 0.875rem;
+      min-width: 78rem;
+      width: 100%;
+    }
+    caption {
+      caption-side: bottom;
+      color: var(--wire-label);
+      font-size: 0.75rem;
+      padding: 0.65rem 0.2rem 0.2rem;
+      text-align: left;
+    }
+    th, td {
+      border-bottom: 1px solid #e4ebe8;
+      padding: 0.75rem 0.7rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: var(--surface-alt);
+      color: var(--accent);
+      font-size: 0.75rem;
+      letter-spacing: 0.03em;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    td { background: var(--white); color: var(--ink-muted); }
+    td p { font-size: inherit; margin: 0.35rem 0 0; }
+    .issue-title { color: var(--ink); font-weight: 600; margin: 0; }
+    .done-col, .impact-col { position: sticky; z-index: 1; }
+    .done-col {
+      left: 0;
+      max-width: var(--done-w);
+      min-width: var(--done-w);
+      text-align: center;
+      width: var(--done-w);
+    }
+    .impact-col {
+      box-shadow: 4px 0 6px -4px rgba(26, 46, 42, 0.28);
+      left: var(--done-w);
+      max-width: var(--impact-w);
+      min-width: var(--impact-w);
+      width: var(--impact-w);
+    }
+    thead .done-col, thead .impact-col { background: var(--surface-alt); z-index: 3; }
+    .impact { font-weight: 700; }
+    .impact.high { color: #8a3b12; }
+    .impact.medium { color: #6a5420; }
+    .impact.low { color: var(--ink-muted); }
+    .urls { margin: 0; padding-left: 1.1rem; }
+    .urls li { margin: 0.22rem 0; }
+    td a { word-break: break-word; }
+    input[type="checkbox"] {
+      accent-color: var(--accent);
+      block-size: 1.05rem;
+      inline-size: 1.05rem;
+    }
+    input:focus-visible, a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    tr.done .issue-title { color: var(--wire-label); text-decoration: line-through; }
+    tr.done td { background: var(--surface); }
+    .missing { color: #8a3b12; font-weight: 700; }
+    .lab { min-width: 46rem; }
+    .sr-only {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    footer { color: var(--wire-label); font-size: 0.75rem; margin-top: 2.5rem; }
+  </style>
+</head>
+<body>
+  <div class="banner">Diagnose only · Overnight crawl 23–24 Oct 2026 · Eastern</div>
+  <div class="wrap">
+    <a class="back" href="seo-90-day-plan.html">← 90-day SEO plan</a>
+    <h1>Five Journeys technical SEO backlog</h1>
+    <p class="lede">
+      Overnight crawl 23–24 Oct 2026 (Eastern). Diagnose-only. No site changes until Bruno approves each URL.
+    </p>
+    <p class="meta">
+      Mark a ticket done only when its retest has passed. The Done boxes start empty.
+      They stay in this browser when you leave the page. Checking a box does not edit fivejourneys.com.
+      Links to the live site open in a new tab.
+    </p>
+    <div class="progress" aria-live="polite">
+      <strong id="count">0 of 15</strong>
+      <span>Tickets marked done in the table</span>
+    </div>
+
+    <h2>At a glance</h2>
+    <div class="stats">
+      <div class="stat"><strong>1,366</strong><span>URLs crawled</span></div>
+      <div class="stat"><strong>1,078</strong><span>Indexable. A count, not a target.</span></div>
+      <div class="stat"><strong>4,552</strong><span>Search clicks / 28 days</span></div>
+      <div class="stat"><strong>42–73</strong><span>Mobile lab scores, top 10 pages</span></div>
+    </div>
+
+    <div class="callout">
+      <strong>Validated blockers</strong>
+      <ul>
+        <li>Real-visitor Core Web Vitals are missing (T13). A lab score does not stand in for them.</li>
+        <li>Ahrefs is not connected (T14), so backlink and keyword evidence is incomplete.</li>
+        <li>The Nitro cache is off for the whole site (T01). Admin turns it back on. It is not a writing task.</li>
+        <li>Each live URL still needs Bruno’s approval before anyone changes it.</li>
+      </ul>
+    </div>
+
+    <div class="callout">
+      <strong>Words used on this page</strong>
+      <ul class="words">
+        <li><strong>Indexable</strong> means Google is allowed to list the page.</li>
+        <li><strong>Sitemap</strong> means the address list the site gives Google.</li>
+        <li><strong>Cache</strong> means a saved copy so the next visit is faster. It is off.</li>
+        <li><strong>Main content time (LCP)</strong> means how long the largest visible piece takes to appear. Google’s good line is 2.5 seconds.</li>
+        <li><strong>Field data</strong> means speed scores from real visitors. Those are missing.</li>
+        <li><strong>Lab score</strong> means a simulated phone test (Lighthouse). It is not field data.</li>
+        <li><strong>Main heading (H1)</strong> means the page’s top heading. There should be one.</li>
+        <li><strong>Structured data (JSON-LD)</strong> means the hidden summary Google may use for extra search lines.</li>
+        <li><strong>Noindex</strong> means a tag that asks Google not to list that page.</li>
+      </ul>
+    </div>
+
+    <h2>Prioritized backlog</h2>
+    <p class="meta">Slide the table sideways for the later columns. Done and Impact stay pinned on a wide screen. Ordered T01 through T15.</p>
+    <div class="table-wrap">
+      <table>
+        <caption>Fifteen tickets from the overnight crawl. Impact is High, Medium, or Low. Done starts unchecked.</caption>
+        <thead>
+          <tr>
+            <th class="done-col" scope="col">Done</th>
+            <th class="impact-col" scope="col">Impact</th>
+            <th scope="col">ID</th>
+            <th scope="col">Issue</th>
+            <th scope="col">Example URLs / count</th>
+            <th scope="col">Evidence</th>
+            <th scope="col">Owner</th>
+            <th scope="col">Proposed fix</th>
+            <th scope="col">Retest</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="T01" data-id="T01">
+            <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T01. Site cache disabled (Nitro in Test Mode)" /></td>
+            <td class="impact-col"><span class="impact high">High</span></td>
+            <td>T01</td>
+            <td>
+              <p class="issue-title">Site cache disabled (Nitro in Test Mode)</p>
+              <p>Every page waits on a fresh server build. This is the shared cause of the slow mobile load.</p>
+            </td>
+            <td>Homepage and every page tested.</td>
+            <td>
+              At 12:22am Eastern on 24 Oct 2026, the homepage said the cache was off because of Test Mode.
+              The response headers were <code>x-nitro-disabled=1</code>, <code>x-nitro-disabled-reason=Test Mode</code>, and <code>cache-control=no-cache</code>.
+              The mobile lab test flagged a slow server response on all 10 top pages (1.1–2.8 seconds before the page starts).
+            </td>
+            <td>Admin</td>
+            <td>Turn Nitro (or LiteSpeed) cache back on for the live site, and leave Test Mode. A second visit to the same page should show that the saved copy was used (a cache HIT header).</td>
+            <td>Read the homepage headers again and look for a cache HIT. Re-run the mobile lab test on the homepage and two location pages. Main content time and the server wait should drop.</td>
+          </tr>
+          <tr id="T02" data-id="T02">
+            <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T02. Mobile LCP very slow on homepage and two high-traffic posts" /></td>
+            <td class="impact-col"><span class="impact high">High</span></td>
+            <td>T02</td>
+            <td>
+              <p class="issue-title">Mobile LCP very slow on homepage and two high-traffic posts</p>
+              <p>These are the busiest landing pages. In the lab, the main visible piece takes 15–17 seconds, far above the 2.5 second good line.</p>
+            </td>
+            <td>
+              <ul class="urls">
+                <li><a href="https://fivejourneys.com/" target="_blank" rel="noopener noreferrer">fivejourneys.com/</a> — main content 15.8s. Google Analytics: 2,632 organic sessions. Search Console: 2,152 clicks and 30,485 impressions.</li>
+                <li><a href="https://fivejourneys.com/heres-how-long-it-actually-takes-to-heal-from-adrenal-fatigue/" target="_blank" rel="noopener noreferrer">heres-how-long-it-actually-takes-to-heal-from-adrenal-fatigue/</a> — main content 16.9s.</li>
+                <li><a href="https://fivejourneys.com/how-to-increase-adiponectin-the-fat-burning-hormone/" target="_blank" rel="noopener noreferrer">how-to-increase-adiponectin-the-fat-burning-hormone/</a> — main content 16.9s.</li>
+              </ul>
+            </td>
+            <td>
+              Mobile lab test of the top 10 pages on 24 Oct 2026: performance scores 42–73. Worst main-content times were 15.8–16.9 seconds.
+              The biggest delays were unused JavaScript (about 2.5–3.0 seconds) and the slow server response.
+              The Boston location page was also slow: main content 9.5 seconds, with oversized images.
+            </td>
+            <td>Admin / Developer (theme and plugin JavaScript). SEO Sally proposes a change only after approval.</td>
+            <td>
+              After T01: delay or remove unused JavaScript. On the homepage, the slowest large piece is the chat prompt.
+              Compress and resize the hero images on <a href="https://fivejourneys.com/welcome-to-425-boylston/" target="_blank" rel="noopener noreferrer">welcome-to-425-boylston/</a>.
+              One URL at a time, and only after Bruno approves that URL.
+            </td>
+            <td>Mobile lab main-content time under 4 seconds on each fixed URL. Later, compare real-visitor Core Web Vitals when field data exists.</td>
+          </tr>
+          <tr id="T03" data-id="T03">
+            <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T03. Broken structured data (invalid JSON-LD) including homepage" /></td>
+            <td class="impact-col"><span class="impact high">High</span></td>
+            <td>T03</td>
+            <td>
+              <p class="issue-title">Broken structured data (invalid JSON-LD) including homepage</p>
+              <p>Google may drop the extra lines in search. An error on the homepage touches the brand result as a whole. Do not invent clinical claims or a new business block to “fill in” the gap.</p>
+            </td>
+            <td>
+              <p>8 live indexable pages. Seven more invalid hits were leftovers from redirects, not live pages.</p>
+              <ul class="urls">
+                <li><a href="https://fivejourneys.com/" target="_blank" rel="noopener noreferrer">fivejourneys.com/</a></li>
+                <li><a href="https://fivejourneys.com/somebody-feed-phil-boston/" target="_blank" rel="noopener noreferrer">somebody-feed-phil-boston/</a></li>
+                <li><a href="https://fivejourneys.com/natural-solutions-for-menopause/" target="_blank" rel="noopener noreferrer">natural-solutions-for-menopause/</a></li>
+                <li><a href="https://fivejourneys.com/excellent-gut-health-foods/" target="_blank" rel="noopener noreferrer">excellent-gut-health-foods/</a></li>
+                <li><a href="https://fivejourneys.com/4-tips-for-staying-on-track-for-any-holiday-weekend/" target="_blank" rel="noopener noreferrer">4-tips-for-staying-on-track-for-any-holiday-weekend/</a></li>
+                <li><a href="https://fivejourneys.com/top-nutrients-shown-to-improve-cognition/" target="_blank" rel="noopener noreferrer">top-nutrients-shown-to-improve-cognition/</a></li>
+                <li><a href="https://fivejourneys.com/functional-medicine-preventative-care-in-newton/" target="_blank" rel="noopener noreferrer">functional-medicine-preventative-care-in-newton/</a></li>
+                <li><a href="https://fivejourneys.com/podcasts/could-histamine-be-causing-your-symptoms/" target="_blank" rel="noopener noreferrer">podcasts/could-histamine-be-causing-your-symptoms/</a></li>
+              </ul>
+            </td>
+            <td>
+              The crawl found invalid structured data on 15 URLs. Eight of those are real pages that load and are allowed in search.
+              Homepage alone, from the Search Console export for 23 Jul–21 Oct 2026: 2,152 clicks and 30,485 impressions.
+            </td>
+            <td>SEO Sally (Editor) for the per-page head script or Elementor HTML. Admin if the error is in the theme header.</td>
+            <td>Check each page in Google’s Rich Results Test. Fix or remove only the broken block. Do not invent LocalBusiness markup or clinical claims. Homepage first, after Bruno approves that URL.</td>
+            <td>Rich Results Test and a fresh crawl show no invalid structured data. Search Console enhancement reports clear over 2–4 weeks.</td>
+          </tr>
+          <tr id="T04" data-id="T04">
+            <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T04. More than one H1 on high-impression articles" /></td>
+            <td class="impact-col"><span class="impact high">High</span></td>
+            <td>T04</td>
+            <td>
+              <p class="issue-title">More than one H1 on high-impression articles</p>
+              <p>The top heading is unclear on pages Google already shows often. This is an editor change, one URL at a time.</p>
+            </td>
+            <td>
+              <p>18 indexable pages do not have exactly one main heading. The busiest examples:</p>
+              <ul class="urls">
+                <li><a href="https://fivejourneys.com/what-to-eat-during-each-phase-of-your-menstrual-cycle/" target="_blank" rel="noopener noreferrer">what-to-eat-during-each-phase-of-your-menstrual-cycle/</a> — 6 main headings; 134 clicks and 30,308 impressions.</li>
+                <li><a href="https://fivejourneys.com/is-matcha-anti-inflammatory/" target="_blank" rel="noopener noreferrer">is-matcha-anti-inflammatory/</a> — 3; 153 clicks and 19,941 impressions.</li>
+                <li><a href="https://fivejourneys.com/5-root-causes-of-sugar-cravings-and-how-to-get-rid-of-them-for-good/" target="_blank" rel="noopener noreferrer">5-root-causes-of-sugar-cravings-and-how-to-get-rid-of-them-for-good/</a> — 2; 84 clicks and 11,519 impressions.</li>
+                <li><a href="https://fivejourneys.com/somebody-feed-phil-boston/" target="_blank" rel="noopener noreferrer">somebody-feed-phil-boston/</a> — 3 main headings.</li>
+                <li><a href="https://fivejourneys.com/rise-and-dine-where-to-find-the-best-gluten-free-breakfast-in-boston/" target="_blank" rel="noopener noreferrer">rise-and-dine-where-to-find-the-best-gluten-free-breakfast-in-boston/</a> — 2 main headings.</li>
+                <li><a href="https://fivejourneys.com/shop/" target="_blank" rel="noopener noreferrer">shop/</a> — 2 main headings.</li>
+              </ul>
+            </td>
+            <td>The crawl counted a main-heading number other than 1 on 18 indexable URLs. Several are high-impression pages in Search Console.</td>
+            <td>SEO Sally (Editor)</td>
+            <td>Keep one main heading that matches the topic. Change the extras to second-level headings. One URL at a time, after Bruno approves.</td>
+            <td>A new crawl shows exactly one main heading. Spot-check the live HTML with a cache-busting link (<code>?nc=</code>).</td>
+          </tr>
+          <tr id="T05" data-id="T05">
+            <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T05. Sitemap still lists URLs that 301 to the homepage" /></td>
+            <td class="impact-col"><span class="impact medium">Medium</span></td>
+            <td>T05</td>
+            <td>
+              <p class="issue-title">Sitemap still lists URLs that 301 to the homepage</p>
+              <p>Google keeps rediscovering dead paths because they are still on the address list.</p>
+            </td>
+            <td>
+              <ul class="urls">
+                <li><a href="https://fivejourneys.com/drew-ryan-ms-atc/" target="_blank" rel="noopener noreferrer">drew-ryan-ms-atc/</a></li>
+                <li><a href="https://fivejourneys.com/performance-and-recovery-coaching-at-five-journeys-joint-scheduling-page/" target="_blank" rel="noopener noreferrer">performance-and-recovery-coaching-at-five-journeys-joint-scheduling-page/</a></li>
+                <li><a href="https://fivejourneys.com/test/" target="_blank" rel="noopener noreferrer">test/</a></li>
+              </ul>
+              <p>These also redirect home, but confirm they are actually in the sitemap before removing them: <a href="https://fivejourneys.com/megnesium/" target="_blank" rel="noopener noreferrer">megnesium/</a> and <a href="https://fivejourneys.com/shop/histarrest/" target="_blank" rel="noopener noreferrer">shop/histarrest/</a>.</p>
+            </td>
+            <td>The crawl shows a permanent redirect (301) to <a href="https://fivejourneys.com/" target="_blank" rel="noopener noreferrer">fivejourneys.com/</a>. These paths also inflate duplicate-title groups.</td>
+            <td>Admin (Rank Math / sitemap settings), or SEO Sally if an editor can trash or redirect them cleanly.</td>
+            <td>Remove or trash the stub posts so they leave the sitemap. Keep only redirects that are intentional. Confirm the sitemap index no longer lists them.</td>
+            <td>Fetch the sitemap and confirm those URLs are gone. Search Console URL Inspection within a week.</td>
+          </tr>
+          <tr id="T06" data-id="T06">
+            <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T06. Orphan pages in the sitemap (no internal links)" /></td>
+            <td class="impact-col"><span class="impact medium">Medium</span></td>
+            <td>T06</td>
+            <td>
+              <p class="issue-title">Orphan pages in the sitemap (no internal links)</p>
+              <p>A page can be on the sitemap and still have no link from any other page. People and Google then have a harder time finding it.</p>
+            </td>
+            <td>
+              <p>35 sitemap pages are indexable and have zero internal links. 11 of them have some Search Console impressions. Highest impression counts:</p>
+              <ul class="urls">
+                <li><a href="https://fivejourneys.com/energy-boosting-supplements/" target="_blank" rel="noopener noreferrer">energy-boosting-supplements/</a> — 593 impressions</li>
+                <li><a href="https://fivejourneys.com/nancy-blatt-md/" target="_blank" rel="noopener noreferrer">nancy-blatt-md/</a> — 238</li>
+                <li><a href="https://fivejourneys.com/womens-health-supplements/" target="_blank" rel="noopener noreferrer">womens-health-supplements/</a> — 204</li>
+                <li><a href="https://fivejourneys.com/membership-termsandconditions/" target="_blank" rel="noopener noreferrer">membership-termsandconditions/</a> — 188</li>
+                <li><a href="https://fivejourneys.com/supplements-for-detox/" target="_blank" rel="noopener noreferrer">supplements-for-detox/</a> — 131</li>
+                <li><a href="https://fivejourneys.com/cara-ufer-rn/" target="_blank" rel="noopener noreferrer">cara-ufer-rn/</a> — 112</li>
+              </ul>
+            </td>
+            <td>After the full 1,366-URL crawl, these pages had no internal links. An earlier pass said 102. That figure came from an incomplete file before the crawl finished. The corrected count is 35.</td>
+            <td>SEO Sally (Editor), plus a Bruno decision on thin pages and ads-only pages.</td>
+            <td>For pages to keep, add a normal in-context link from a related service, location, or about page. For ads-only or thank-you pages, consider noindex and remove them from the sitemap instead of linking them.</td>
+            <td>Keepers have at least one internal link. Orphans that get traffic are either linked or deliberately set to noindex.</td>
+          </tr>
+          <tr id="T07" data-id="T07">
+            <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T07. Duplicate title tags across distinct indexable URLs" /></td>
+            <td class="impact-col"><span class="impact medium">Medium</span></td>
+            <td>T07</td>
+            <td>
+              <p class="issue-title">Duplicate title tags across distinct indexable URLs</p>
+              <p>When two live pages share a title, it is harder to tell which one is ranking and harder to read the reports.</p>
+            </td>
+            <td>
+              <p>14 shared-title groups, covering 36 indexable URL rows. Real collisions, not just redirects:</p>
+              <ul class="urls">
+                <li><a href="https://fivejourneys.com/product/para-kit/" target="_blank" rel="noopener noreferrer">product/para-kit/</a> and <a href="https://fivejourneys.com/product/microb-manager-para-max/" target="_blank" rel="noopener noreferrer">product/microb-manager-para-max/</a></li>
+                <li><a href="https://fivejourneys.com/product/dao-enzyme/" target="_blank" rel="noopener noreferrer">product/dao-enzyme/</a> and <a href="https://fivejourneys.com/product/histdao/" target="_blank" rel="noopener noreferrer">product/histdao/</a></li>
+                <li>Podcast titles reused across episodes.</li>
+                <li>The About us title appears on staff URLs that redirect to <a href="https://fivejourneys.com/about-us/" target="_blank" rel="noopener noreferrer">about-us/</a>.</li>
+                <li>Ad landing pages share a “Womens Health…” title.</li>
+              </ul>
+            </td>
+            <td>The crawl found duplicate titles inside the indexable set. A shop pair that differs only by a trailing slash is a harmless redirect, not a real collision.</td>
+            <td>SEO Sally (Editor)</td>
+            <td>Give each live URL its own title. Fix product and podcast titles first, where both URLs are real pages. Leave pure redirect stubs to the T05 cleanup.</td>
+            <td>A new crawl shows one loading, indexable URL per title.</td>
+          </tr>
+          <tr id="T08" data-id="T08">
+            <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T08. noindex page still in the XML sitemap" /></td>
+            <td class="impact-col"><span class="impact medium">Medium</span></td>
+            <td>T08</td>
+            <td>
+              <p class="issue-title">noindex page still in the XML sitemap</p>
+              <p>The sitemap should not advertise a page Google is told to skip.</p>
+            </td>
+            <td><a href="https://fivejourneys.com/manage-profile/" target="_blank" rel="noopener noreferrer">manage-profile/</a> — the page says noindex, nofollow, and it is still in the sitemap.</td>
+            <td>This was the only sitemap URL that is also marked noindex.</td>
+            <td>Admin / Rank Math</td>
+            <td>Leave manage-profile, and any other account screens, out of the sitemap.</td>
+            <td>The sitemap no longer lists the URL, and the page still says noindex.</td>
+          </tr>
+          <tr id="T09" data-id="T09">
+            <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T09. Many category and product-category archives are indexable with thin/missing meta" /></td>
+            <td class="impact-col"><span class="impact medium">Medium</span></td>
+            <td>T09</td>
+            <td>
+              <p class="issue-title">Many category and product-category archives are indexable with thin/missing meta</p>
+              <p>Category lists that stay in search can dilute what the site is about. A missing description also looks thin in the search result.</p>
+            </td>
+            <td>
+              91 indexable archive URLs (47 category, 35 product-category, and others).
+              66 indexable pages are missing a meta description, and all 66 are archives or page-2-and-later lists, not articles.
+              One example with impressions: <a href="https://fivejourneys.com/product-category/immune-support/" target="_blank" rel="noopener noreferrer">product-category/immune-support/</a> (220 impressions).
+            </td>
+            <td>Crawl, plus the Search Console pages export.</td>
+            <td>Bruno decides, then SEO Sally or Admin.</td>
+            <td>Decide which archives should stay in search. For keepers, add Rank Math descriptions. For the rest, set noindex and drop them from the sitemap. Do not change them in bulk without Bruno’s approval pattern.</td>
+            <td>A sample of archives matches the decision: either indexed with a description, or noindex.</td>
+          </tr>
+          <tr id="T10" data-id="T10">
+            <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T10. Intentional-looking noindex on service/clinician URLs — confirm" /></td>
+            <td class="impact-col"><span class="impact medium">Medium</span></td>
+            <td>T10</td>
+            <td>
+              <p class="issue-title">Intentional-looking noindex on service/clinician URLs — confirm</p>
+              <p>If these pages should rank, the noindex tag is a block the site set itself. If the tag is intentional because the page is thin or a duplicate, write that down and leave it.</p>
+            </td>
+            <td>
+              <ul class="urls">
+                <li><a href="https://fivejourneys.com/wellness-iv-therapy/" target="_blank" rel="noopener noreferrer">wellness-iv-therapy/</a></li>
+                <li><a href="https://fivejourneys.com/wellness-spa/" target="_blank" rel="noopener noreferrer">wellness-spa/</a></li>
+                <li><a href="https://fivejourneys.com/deanna-whitt-functional-medicine-dietitian/" target="_blank" rel="noopener noreferrer">deanna-whitt-functional-medicine-dietitian/</a></li>
+                <li><a href="https://fivejourneys.com/membership-plans-gold-platinum/" target="_blank" rel="noopener noreferrer">membership-plans-gold-platinum/</a></li>
+                <li>Plus 2 product URLs. The crawl did not name them.</li>
+              </ul>
+            </td>
+            <td>The crawl found noindex on these pages, and they are not category archives.</td>
+            <td>Bruno decision</td>
+            <td>Confirm each URL should stay noindex. If any should be public, remove noindex only after Bruno approves that URL. Do not add clinical claims.</td>
+            <td>The robots tag matches Bruno’s decision. Confirm with Search Console URL Inspection.</td>
+          </tr>
+          <tr id="T11" data-id="T11">
+            <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T11. Cloudflare email-protection 404 linked from site" /></td>
+            <td class="impact-col"><span class="impact low">Low</span></td>
+            <td>T11</td>
+            <td>
+              <p class="issue-title">Cloudflare email-protection 404 linked from site</p>
+              <p>Pages that hide an email address link to a missing page. This is minor crawl noise.</p>
+            </td>
+            <td><a href="https://fivejourneys.com/cdn-cgi/l/email-protection" target="_blank" rel="noopener noreferrer">cdn-cgi/l/email-protection</a> returns a 404. It is the only hard 404 in the crawl.</td>
+            <td>The crawl recorded status 404 for that address.</td>
+            <td>Developer / Admin</td>
+            <td>Replace the hidden email links with the phone numbers already published (617-934-6400 general; Back Bay 617-862-0257), or fix the Cloudflare email setting so the links resolve.</td>
+            <td>A new crawl shows no internal link to that 404.</td>
+          </tr>
+          <tr id="T12" data-id="T12">
+            <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T12. Empty image alt attributes at scale" /></td>
+            <td class="impact-col"><span class="impact low">Low</span></td>
+            <td>T12</td>
+            <td>
+              <p class="issue-title">Empty image alt attributes at scale</p>
+              <p>Empty image descriptions matter for screen readers and for image search. Most of this count is the repeated header and footer, not article photos.</p>
+            </td>
+            <td>About 10,091 images with empty alt text across indexable pages (likely repeated icons, plus content photos). Every indexable page was also flagged for one missing alt, likely a single header image that repeats.</td>
+            <td>The crawl flagged empty alt text and missing alt text across the site.</td>
+            <td>Admin / Developer for the theme. SEO Sally for content images on the important URLs.</td>
+            <td>Decorative icons get an empty alt so screen readers skip them. Photos on important pages get a plain description of the picture. No clinical claims in that text.</td>
+            <td>Spot-check the main templates. The empty-alt count drops on content images.</td>
+          </tr>
+          <tr id="T13" data-id="T13">
+            <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T13. Search Console Core Web Vitals field data not available via API" /></td>
+            <td class="impact-col"><span class="impact high">High</span></td>
+            <td>T13</td>
+            <td>
+              <p class="issue-title">Search Console Core Web Vitals field data not available via API</p>
+              <p>This blocks signing off on mobile speed. The lab scores cannot close it. Real-visitor scores stay missing until Bruno exports or screenshots Search Console.</p>
+            </td>
+            <td>Sitewide, and at the individual URL. See the mobile speed section below.</td>
+            <td>The PageSpeed Insights pull of Chrome’s real-visitor data failed during the crawl (quota or a lookup error). The Search Console Core Web Vitals report is not available through that API. The lab test is all we have.</td>
+            <td>Bruno (export), then SEO Sally.</td>
+            <td>In Search Console, open Experience, then Core Web Vitals, on the non-www property. Export or screenshot the mobile groups: poor, needs improvement, and good. A higher PageSpeed quota later is optional.</td>
+            <td>The field table on this page gets real numbers. Until then every field cell stays labeled Missing.</td>
+          </tr>
+          <tr id="T14" data-id="T14">
+            <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T14. Ahrefs not connected — backlink/keyword evidence incomplete" /></td>
+            <td class="impact-col"><span class="impact medium">Medium</span></td>
+            <td>T14</td>
+            <td>
+              <p class="issue-title">Ahrefs not connected — backlink/keyword evidence incomplete</p>
+              <p>Link and keyword priority is incomplete until this is connected. It blocks that part of the backlog, not the on-page tickets above.</p>
+            </td>
+            <td>Sitewide.</td>
+            <td>SEO Sally’s standing rules ask for Ahrefs citations where they matter. The connector is not turned on.</td>
+            <td>Bruno</td>
+            <td>Approve the Ahrefs connector (the id already noted is 56809965), or send CSV exports.</td>
+            <td>Backlink and referring-domain numbers show up the next time this backlog is refreshed.</td>
+          </tr>
+          <tr id="T15" data-id="T15">
+            <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T15. Two URLs timed out during crawl — verify live" /></td>
+            <td class="impact-col"><span class="impact low">Low</span></td>
+            <td>T15</td>
+            <td>
+              <p class="issue-title">Two URLs timed out during crawl — verify live</p>
+              <p>This may be a slow response, related to the cache being off (T01), rather than a dead page.</p>
+            </td>
+            <td>
+              <ul class="urls">
+                <li><a href="https://fivejourneys.com/product/thrivagen/" target="_blank" rel="noopener noreferrer">product/thrivagen/</a></li>
+                <li><a href="https://fivejourneys.com/category/blog/page/4/" target="_blank" rel="noopener noreferrer">category/blog/page/4/</a></li>
+              </ul>
+            </td>
+            <td>The crawl error was a timeout while reading the secure page. It is not a confirmed 404.</td>
+            <td>SEO Sally</td>
+            <td>Open both URLs. If they are slow or fail, fold them into the cache and performance work. If they are gone, use a clean 404 or an intentional redirect.</td>
+            <td>Both return a normal page quickly, or an intentional redirect or “gone” response.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="mobile-cwv">Mobile Core Web Vitals</h2>
+    <div class="callout">
+      <strong>Field data is missing</strong>
+      <p>
+        Real-visitor scores were not available for this crawl. Every field cell below says Missing on purpose.
+        A lab score is not typed into a Missing cell. See T13 for the export Bruno can send.
+      </p>
+    </div>
+    <p class="lede">
+      Lab results are a simulated phone visit on 24 Oct 2026 (Lighthouse). The top 10 pages scored 42–73.
+      The ticket file names a main-content time for the pages below. It does not list a separate score for every URL in that top 10.
+      The server wait was flagged on all 10 of those pages (1.1–2.8 seconds).
+    </p>
+    <div class="table-wrap">
+      <table class="lab">
+        <caption>Field column is Missing until Search Console field data is exported. Lab numbers are not a substitute.</caption>
+        <thead>
+          <tr>
+            <th scope="col">Page</th>
+            <th scope="col">Real-visitor score (field)</th>
+            <th scope="col">Lab test, mobile, 24 Oct 2026</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Whole site, top 10 pages</td>
+            <td class="missing">Missing</td>
+            <td>Performance scores 42–73. Slow server response on 10 of 10 pages (1.1–2.8 seconds).</td>
+          </tr>
+          <tr>
+            <td><a href="https://fivejourneys.com/" target="_blank" rel="noopener noreferrer">Homepage</a></td>
+            <td class="missing">Missing</td>
+            <td>Main content 15.8 seconds. Google Analytics: 2,632 organic sessions. Search Console: 2,152 clicks and 30,485 impressions.</td>
+          </tr>
+          <tr>
+            <td><a href="https://fivejourneys.com/heres-how-long-it-actually-takes-to-heal-from-adrenal-fatigue/" target="_blank" rel="noopener noreferrer">Adrenal-fatigue article</a></td>
+            <td class="missing">Missing</td>
+            <td>Main content 16.9 seconds.</td>
+          </tr>
+          <tr>
+            <td><a href="https://fivejourneys.com/how-to-increase-adiponectin-the-fat-burning-hormone/" target="_blank" rel="noopener noreferrer">Adiponectin article</a></td>
+            <td class="missing">Missing</td>
+            <td>Main content 16.9 seconds.</td>
+          </tr>
+          <tr>
+            <td>Boston location page</td>
+            <td class="missing">Missing</td>
+            <td>Main content 9.5 seconds, with oversized images. The image work in T02 names <a href="https://fivejourneys.com/welcome-to-425-boylston/" target="_blank" rel="noopener noreferrer">welcome-to-425-boylston/</a>.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer>Five Journeys · technical SEO backlog · overnight crawl 23–24 Oct 2026 · diagnose only</footer>
+  </div>
+  <script>
+    (function () {
+      var KEY = "fj-cmo-seo-backlog-checks";
+      var rows = Array.prototype.slice.call(document.querySelectorAll("tbody tr[data-id]"));
+      var countEl = document.getElementById("count");
+
+      function readSaved() {
+        try {
+          var raw = JSON.parse(localStorage.getItem(KEY) || "{}");
+          if (raw && raw.checks && typeof raw.checks === "object" && !Array.isArray(raw.checks)) {
+            return raw.checks;
+          }
+        } catch (error) {
+          return {};
+        }
+        return {};
+      }
+
+      var saved = readSaved();
+
+      function paint() {
+        var done = rows.filter(function (row) {
+          return row.querySelector("input").checked;
+        }).length;
+        countEl.textContent = done + " of " + rows.length;
+      }
+
+      rows.forEach(function (row) {
+        var box = row.querySelector('input[type="checkbox"]');
+        var on = Boolean(saved[row.dataset.id]);
+        box.checked = on;
+        row.classList.toggle("done", on);
+        box.addEventListener("change", function () {
+          saved[row.dataset.id] = box.checked;
+          row.classList.toggle("done", box.checked);
+          localStorage.setItem(KEY, JSON.stringify({
+            updatedAt: new Date().toISOString(),
+            checks: saved
+          }));
+          paint();
+        });
+      });
+
+      paint();
+    }());
+  </script>
+</body>
+</html>
