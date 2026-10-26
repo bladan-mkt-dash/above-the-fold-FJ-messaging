@@ -204,13 +204,13 @@
       Overnight crawl 23–24 Oct 2026 (Eastern). Diagnose-only. No site changes until Bruno approves each URL.
     </p>
     <p class="meta">
-      Mark a ticket done only when its retest has passed. The Done boxes start empty, except T01, which is already checked because its retest passed.
+      Mark a ticket done only when its retest has passed. T01, T03, and T04 are already checked because their retests passed.
       They stay in this browser when you leave the page. Checking a box does not edit fivejourneys.com.
       Links to the live site open in a new tab.
     </p>
     <div class="progress" aria-live="polite">
-      <strong id="count">1 of 15</strong>
-      <span>Tickets marked done in the table</span>
+      <strong id="count">3 of 15</strong>
+      <span id="done-ids">done (T01, T03, T04)</span>
     </div>
 
     <h2>At a glance</h2>
@@ -250,7 +250,7 @@
     <p class="meta">Slide the table sideways for the later columns. Done and Impact stay pinned on a wide screen. Ordered T01 through T15.</p>
     <div class="table-wrap">
       <table>
-        <caption>Fifteen tickets from the overnight crawl. Impact is High, Medium, or Low. Done starts unchecked, except T01, which is already checked because its retest passed.</caption>
+        <caption>3 of 15 done (T01, T03, T04). Fifteen tickets from the overnight crawl. Impact is High, Medium, or Low.</caption>
         <thead>
           <tr>
             <th class="done-col" scope="col">Done</th>
@@ -314,8 +314,8 @@
             </td>
             <td>Mobile lab main-content time under 4 seconds on each fixed URL. Later, compare real-visitor Core Web Vitals when field data exists.</td>
           </tr>
-          <tr id="T03" data-id="T03">
-            <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T03. Broken structured data (invalid JSON-LD) including homepage" /></td>
+          <tr id="T03" class="done" data-id="T03">
+            <td class="done-col"><input type="checkbox" checked autocomplete="off" aria-label="T03. Broken structured data (invalid JSON-LD) including homepage" /></td>
             <td class="impact-col"><span class="impact high">High</span></td>
             <td>T03</td>
             <td>
@@ -338,13 +338,14 @@
             <td>
               The crawl found invalid structured data on 15 URLs. Eight of those are real pages that load and are allowed in search.
               Homepage alone, from the Search Console export for 23 Jul–21 Oct 2026: 2,152 clicks and 30,485 impressions.
+              Done 26 Oct 2026: all 8 JSON-LD pages are fixed.
             </td>
             <td>SEO Sally (Editor) for the per-page head script or Elementor HTML. Admin if the error is in the theme header.</td>
             <td>Check each page in Google’s Rich Results Test. Fix or remove only the broken block. Do not invent LocalBusiness markup or clinical claims. Homepage first, after Bruno approves that URL.</td>
-            <td>Rich Results Test and a fresh crawl show no invalid structured data. Search Console enhancement reports clear over 2–4 weeks.</td>
+            <td>Done — all 8 JSON-LD pages fixed. Search Console enhancement reports may still take 2–4 weeks to clear.</td>
           </tr>
-          <tr id="T04" data-id="T04">
-            <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T04. More than one H1 on high-impression articles" /></td>
+          <tr id="T04" class="done" data-id="T04">
+            <td class="done-col"><input type="checkbox" checked autocomplete="off" aria-label="T04. More than one H1 on high-impression articles" /></td>
             <td class="impact-col"><span class="impact high">High</span></td>
             <td>T04</td>
             <td>
@@ -362,10 +363,14 @@
                 <li><a href="https://fivejourneys.com/shop/" target="_blank" rel="noopener noreferrer">shop/</a> — 2 main headings.</li>
               </ul>
             </td>
-            <td>The crawl counted a main-heading number other than 1 on 18 indexable URLs. Several are high-impression pages in Search Console.</td>
+            <td>
+              The crawl counted a main-heading number other than 1 on 18 indexable URLs. Several are high-impression pages in Search Console.
+              Done 26 Oct 2026: the multi-H1 set is fixed (menstrual, matcha, Phil, sugar-cravings, rise-and-dine, shop H1 is now “Save on Supplements Today”, Tamer Khafagy, and free-sugar-detox-3).
+              0-H1 policy pages are out of T04 scope.
+            </td>
             <td>SEO Sally (Editor)</td>
             <td>Keep one main heading that matches the topic. Change the extras to second-level headings. One URL at a time, after Bruno approves.</td>
-            <td>A new crawl shows exactly one main heading. Spot-check the live HTML with a cache-busting link (<code>?nc=</code>).</td>
+            <td>Done — multi-H1 set fixed. 0-H1 policy pages are out of T04 scope. Spot-check the live HTML with a cache-busting link (<code>?nc=</code>).</td>
           </tr>
           <tr id="T05" data-id="T05">
             <td class="done-col"><input type="checkbox" autocomplete="off" aria-label="T05. Sitemap still lists URLs that 301 to the homepage" /></td>
@@ -642,15 +647,22 @@
       }
 
       var saved = readSaved();
-      if (saved.T01 === undefined) {
-        saved.T01 = true;
-      }
+      ["T01", "T03", "T04"].forEach(function (id) {
+        if (saved[id] === undefined) {
+          saved[id] = true;
+        }
+      });
 
       function paint() {
-        var done = rows.filter(function (row) {
+        var doneRows = rows.filter(function (row) {
           return row.querySelector("input").checked;
-        }).length;
-        countEl.textContent = done + " of " + rows.length;
+        });
+        var ids = doneRows.map(function (row) {
+          return row.dataset.id;
+        });
+        countEl.textContent = doneRows.length + " of " + rows.length;
+        var label = document.getElementById("done-ids");
+        label.textContent = ids.length ? "done (" + ids.join(", ") + ")" : "none marked done";
       }
 
       rows.forEach(function (row) {
