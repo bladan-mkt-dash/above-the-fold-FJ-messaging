@@ -52,11 +52,42 @@
       margin: 0 0 0.5rem;
     }
     h2 { font-size: 1.05rem; letter-spacing: -0.01em; margin: 1.75rem 0 0.5rem; }
+    h3 { font-size: 0.975rem; letter-spacing: -0.01em; margin: 1.25rem 0 0.35rem; }
     p, li { color: var(--ink-muted); font-size: 0.975rem; }
     .lede { margin: 0 0 1rem; }
-    ul { margin: 0.35rem 0 0; padding-left: 1.2rem; }
+    ul, ol { margin: 0.35rem 0 0; padding-left: 1.2rem; }
     li { margin: 0.45rem 0; }
+    .table-scroll { margin: 0.35rem 0 0.15rem; overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td {
+      border-bottom: 1px solid var(--wire);
+      padding: 0.4rem 0.75rem 0.4rem 0;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { color: var(--ink); font-size: 0.8rem; font-weight: 600; }
+    td { color: var(--ink-muted); font-size: 0.9rem; }
+    .note { font-size: 0.8125rem; margin: 1rem 0 0; }
     a { color: var(--accent); }
+    @media (max-width: 40rem) {
+      .table-scroll table,
+      .table-scroll thead,
+      .table-scroll tbody,
+      .table-scroll tr,
+      .table-scroll td { display: block; }
+      .table-scroll thead { display: none; }
+      .table-scroll tr { border-bottom: 1px solid var(--wire); padding: 0.45rem 0 0.55rem; }
+      .table-scroll td { border: 0; padding: 0.12rem 0; }
+      .table-scroll td:first-child { color: var(--ink); font-weight: 600; }
+      .table-scroll td:nth-child(n+2)::before {
+        color: var(--wire-label);
+        content: attr(data-label);
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+      }
+    }
   </style>
 </head>
 <body>
@@ -65,6 +96,209 @@
     <a class="back" href="index.html">← Above the fold project</a>
     <h1>SEO Specialist — SEO Sally</h1>
     <p class="lede">Reports to Bruno, CMO. The site is <a href="https://fivejourneys.com">fivejourneys.com</a>. Sally owns how that site is found in search and in AI answers. She does the reading, the checks, and the changes Bruno approves. Clinical wording stays with the clinical lead. Practice facts stay with operations.</p>
+
+    <h2>2027 KPIs</h2>
+
+    <h3>North star</h3>
+    <p>Double organic traffic so December 2027 equals 2× the 2026 monthly average. Everything below serves that outcome.</p>
+
+    <h3>Primary measures</h3>
+    <p>Same growth path; cross-check each other.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">KPI</th>
+            <th scope="col">2026 avg</th>
+            <th scope="col">Dec 2027</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GA4 Organic Search users</td>
+            <td data-label="2026 avg">~3,790/mo</td>
+            <td data-label="Dec 2027">~7,580/mo</td>
+          </tr>
+          <tr>
+            <td>Semrush Organic Search Traffic</td>
+            <td data-label="2026 avg">~7,800/mo</td>
+            <td data-label="Dec 2027">~15,600/mo</td>
+          </tr>
+          <tr>
+            <td>GSC clicks</td>
+            <td data-label="2026 avg">~4,460/mo</td>
+            <td data-label="Dec 2027">~8,920/mo</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Roughly ~4.5% MoM from today’s levels. Quarterly Organic Search users checkpoints: ~4,780 (end Q1 2027) → ~5,490 (Q2) → ~6,300 (Q3) → ~7,580 (Dec 2027).</p>
+    <p>Not a primary KPI for SEO Sally: Total users / Direct (too noisy; SEO doesn’t control them).</p>
+
+    <h3>1. Traffic quality</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">KPI</th>
+            <th scope="col">2026 baseline</th>
+            <th scope="col">Dec 2027 target</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Organic Search conversions (GA4)</td>
+            <td data-label="2026 baseline">~1,140/mo</td>
+            <td data-label="Dec 2027 target">~2,280/mo</td>
+          </tr>
+          <tr>
+            <td>Non-Branded Traffic share (Semrush US)</td>
+            <td data-label="2026 baseline">~37%</td>
+            <td data-label="Dec 2027 target">≥50%</td>
+          </tr>
+          <tr>
+            <td>Branded Traffic share (Semrush US)</td>
+            <td data-label="2026 baseline">~63%</td>
+            <td data-label="Dec 2027 target">Can stay strong; don’t force it down</td>
+          </tr>
+          <tr>
+            <td>Organic engagement rate (GA4)</td>
+            <td data-label="2026 baseline">~60%+ lately</td>
+            <td data-label="Dec 2027 target">Hold ≥60%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>2. Search footprint &amp; rankings</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">KPI</th>
+            <th scope="col">2026 / latest</th>
+            <th scope="col">Dec 2027 target</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ahrefs keywords in Top 3</td>
+            <td data-label="2026 / latest">avg ~280 (Sep 269)</td>
+            <td data-label="Dec 2027 target">~560</td>
+          </tr>
+          <tr>
+            <td>Ahrefs keywords in 4–10</td>
+            <td data-label="2026 / latest">avg ~310 (Sep 348)</td>
+            <td data-label="Dec 2027 target">~620</td>
+          </tr>
+          <tr>
+            <td>Ahrefs Total Keywords</td>
+            <td data-label="2026 / latest">Sep ~710 (tool scale shifted)</td>
+            <td data-label="Dec 2027 target">Grow meaningful Top 100 breadth YoY; don’t chase old inflated totals</td>
+          </tr>
+          <tr>
+            <td>Semrush Organic Keywords (US)</td>
+            <td data-label="2026 / latest">Sep ~3,110</td>
+            <td data-label="Dec 2027 target">~5,000–6,000</td>
+          </tr>
+          <tr>
+            <td>GSC impressions</td>
+            <td data-label="2026 / latest">avg ~290k</td>
+            <td data-label="Dec 2027 target">~580k or higher CTR if impressions grow slower</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>3. AI search positioning</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">KPI</th>
+            <th scope="col">2026 baseline</th>
+            <th scope="col">Dec 2027 target</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Semrush AI Visibility (USA)</td>
+            <td data-label="2026 baseline">avg ~24 (Sep 28)</td>
+            <td data-label="Dec 2027 target">~75 (floor ~50)</td>
+          </tr>
+          <tr>
+            <td>Ahrefs Google AI Overviews</td>
+            <td data-label="2026 baseline">H2 avg ~217 (Sep 352)</td>
+            <td data-label="Dec 2027 target">~650–700</td>
+          </tr>
+          <tr>
+            <td>Ahrefs AI Mode</td>
+            <td data-label="2026 baseline">Jun–Sep avg ~73 (Sep 38)</td>
+            <td data-label="Dec 2027 target">~150 (stop the slide first, then climb)</td>
+          </tr>
+          <tr>
+            <td>Ahrefs ChatGPT</td>
+            <td data-label="2026 baseline">avg ~6; Sep 1</td>
+            <td data-label="Dec 2027 target">~15–25</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>4. Authority &amp; links</h3>
+    <p>Health checks, not vanity volume.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">KPI</th>
+            <th scope="col">Latest / 2026</th>
+            <th scope="col">Dec 2027 target</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ahrefs Domain Rating</td>
+            <td data-label="Latest / 2026">35</td>
+            <td data-label="Dec 2027 target">~42–48</td>
+          </tr>
+          <tr>
+            <td>Semrush Authority Score</td>
+            <td data-label="Latest / 2026">~32</td>
+            <td data-label="Dec 2027 target">~36–40</td>
+          </tr>
+          <tr>
+            <td>Referring domains</td>
+            <td data-label="Latest / 2026">Sep 2,815 (avg ~1,630)</td>
+            <td data-label="Dec 2027 target">No raw “hit N” goal — +20–40 net relevant RDs per quarter</td>
+          </tr>
+          <tr>
+            <td>Backlinks</td>
+            <td data-label="Latest / 2026">Sep ~10.8k</td>
+            <td data-label="Dec 2027 target">Flat-to-modest; count editorial wins, not total volume</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>5. Technical &amp; on-page unblockers</h3>
+    <ul>
+      <li>Soft 404s / crawl errors → near zero</li>
+      <li>CWV on money pages: solid mobile LCP; working taps beat lab score</li>
+      <li>Clean on-page: one H1, titles/meta, internal links from strong → money pages</li>
+      <li>Priority URL improvements (including Rank Math gaps)</li>
+    </ul>
+
+    <h3>Scorecard order</h3>
+    <p>Optimize in this order.</p>
+    <ol>
+      <li>Organic sessions/traffic (GA4 organic users + Semrush Organic Traffic + GSC clicks)</li>
+      <li>Non-branded share + organic conversions</li>
+      <li>AI Visibility + AI Overviews (then AI Mode, ChatGPT)</li>
+      <li>Top 3 / 4–10 keywords + US organic keywords</li>
+      <li>DR / Authority Score + quality referring domains (health only)</li>
+    </ol>
+    <p class="note">2026 averages use months on the Site indicators sheet: Jan, Feb, Jun, Jul, Aug, Sep 2026.</p>
 
     <h2>What she does</h2>
     <ul>
