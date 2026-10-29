@@ -104,7 +104,7 @@
 
     <h3>Primary measures</h3>
     <p>Same growth path; cross-check each other.</p>
-    <p>GA4 and Search Console are the record. Semrush and Ahrefs figures are estimates, used as cross-checks and early signals.</p>
+    <p>GA4 and Search Console are the record. Ahrefs and BrightLocal figures are tool estimates, used as early signals.</p>
     <div class="table-scroll">
       <table>
         <thead>
@@ -119,11 +119,6 @@
             <td>GA4 Organic Search users</td>
             <td data-label="2026 avg">~3,790/mo</td>
             <td data-label="Dec 2027">~7,580/mo</td>
-          </tr>
-          <tr>
-            <td>Semrush Organic Search Traffic</td>
-            <td data-label="2026 avg">~7,800/mo</td>
-            <td data-label="Dec 2027">~15,600/mo</td>
           </tr>
           <tr>
             <td>GSC clicks</td>
@@ -168,13 +163,13 @@
             <td data-label="Dec 2027 target">~2,280/mo</td>
           </tr>
           <tr>
-            <td>Non-Branded Traffic share (Semrush US, estimate)</td>
-            <td data-label="2026 baseline">~37%</td>
+            <td>Non-branded share of Search Console clicks (brand terms, Five Journeys variants and clinician names filtered out)</td>
+            <td data-label="2026 baseline">Not yet measured; set from the Search Console query data</td>
             <td data-label="Dec 2027 target">≥50%</td>
           </tr>
           <tr>
-            <td>Branded Traffic share (Semrush US)</td>
-            <td data-label="2026 baseline">~63%</td>
+            <td>Branded share of Search Console clicks (same filter)</td>
+            <td data-label="2026 baseline">Not yet measured; set from the Search Console query data</td>
             <td data-label="Dec 2027 target">Can stay strong; don’t force it down</td>
           </tr>
           <tr>
@@ -208,14 +203,9 @@
             <td data-label="Dec 2027 target">~620</td>
           </tr>
           <tr>
-            <td>Ahrefs Total Keywords</td>
+            <td>Ahrefs Total Keywords (our organic keywords measure)</td>
             <td data-label="2026 / latest">Sep ~710 (tool scale shifted)</td>
             <td data-label="Dec 2027 target">Grow meaningful Top 100 breadth YoY; don’t chase old inflated totals</td>
-          </tr>
-          <tr>
-            <td>Semrush Organic Keywords (US)</td>
-            <td data-label="2026 / latest">Sep ~3,110</td>
-            <td data-label="Dec 2027 target">~5,000–6,000, as a sign of how many searches we show up for, not a goal on its own</td>
           </tr>
           <tr>
             <td>GSC impressions</td>
@@ -244,9 +234,14 @@
             <td data-label="Dec 2027 target">Five Journeys cited in at least half of the question set</td>
           </tr>
           <tr>
-            <td>Semrush AI Visibility (USA)</td>
-            <td data-label="2026 baseline">avg ~24 (Sep 28)</td>
-            <td data-label="Dec 2027 target">~75 (floor ~50)</td>
+            <td>AI Visibility score (SEO Sally’s own, 0–100, calculated monthly from Ahrefs; see below)</td>
+            <td data-label="2026 baseline">Jun–Sep avg ~32 (Sep 33.5)</td>
+            <td data-label="Dec 2027 target">100, meaning every AI target is hit (checkpoints ~47 end Q1, ~60 Q2, ~78 Q3 2027)</td>
+          </tr>
+          <tr>
+            <td>GA4 AI referral sessions (chatgpt.com, perplexity.ai, gemini, copilot)</td>
+            <td data-label="2026 baseline">Not yet measured; set in the first monthly report</td>
+            <td data-label="Dec 2027 target">Grow alongside the AI Visibility score</td>
           </tr>
           <tr>
             <td>Ahrefs Google AI Overviews</td>
@@ -266,9 +261,10 @@
         </tbody>
       </table>
     </div>
+    <p><strong>AI Visibility score.</strong> SEO Sally’s own 0–100 score, calculated monthly from three Ahrefs counts: Score = 0.5 × min(100, AI Overviews ÷ 700 × 100) + 0.3 × min(100, AI Mode ÷ 150 × 100) + 0.2 × min(100, ChatGPT ÷ 25 × 100). Each platform is scored against its Dec 2027 target, so 100 means every target is hit. The 50/30/20 weights reflect how many searchers each platform reaches; they are a judgment call and Bruno can change them. It is backfilled from the Ahrefs history (from Jun 2026, the first month with AI Mode) and reported next to GA4 AI referral sessions.</p>
 
     <h3>4. Authority &amp; links</h3>
-    <p>Health checks, not vanity volume.</p>
+    <p>Health checks, not vanity volume. Ahrefs Domain Rating is the one authority score.</p>
     <p>SEO Sally finds and recommends link opportunities. Outreach is done by whoever Bruno assigns.</p>
     <div class="table-scroll">
       <table>
@@ -286,11 +282,6 @@
             <td data-label="Dec 2027 target">~42–48</td>
           </tr>
           <tr>
-            <td>Semrush Authority Score</td>
-            <td data-label="Latest / 2026">~32</td>
-            <td data-label="Dec 2027 target">~36–40</td>
-          </tr>
-          <tr>
             <td>Referring domains</td>
             <td data-label="Latest / 2026">Sep 2,815 (avg ~1,630)</td>
             <td data-label="Dec 2027 target">No raw “hit N” goal — +20–40 net relevant RDs per quarter</td>
@@ -305,6 +296,7 @@
     </div>
 
     <h3>5. Local search (Boston and Newton)</h3>
+    <p>Map-pack ranks come from BrightLocal: weekly ranks for Boston and Newton on the priority local terms, plus a quarterly Local Search Grid (if the plan includes it) and a citation / NAP audit.</p>
     <div class="table-scroll">
       <table>
         <thead>
@@ -316,18 +308,18 @@
         </thead>
         <tbody>
           <tr>
-            <td>Map-pack visibility for priority service searches, Boston and Newton</td>
-            <td data-label="2026 baseline">Not yet measured; needs Google Business Profile access</td>
+            <td>Map-pack visibility for priority service searches, Boston and Newton (BrightLocal)</td>
+            <td data-label="2026 baseline">Not yet measured; tracked weekly in BrightLocal</td>
             <td data-label="Dec 2027 target">Top 3 in the map pack for priority service searches in both locations</td>
           </tr>
           <tr>
             <td>Calls and direction requests from the Google Business Profiles</td>
-            <td data-label="2026 baseline">Not yet measured; needs Google Business Profile access</td>
+            <td data-label="2026 baseline">Not yet measured; from Business Profile data in Drawer A</td>
             <td data-label="Dec 2027 target">Grow in line with organic traffic</td>
           </tr>
           <tr>
-            <td>Hours, address and clinicians consistent across the site and both Business Profiles</td>
-            <td data-label="2026 baseline">Checked monthly</td>
+            <td>Hours, address and clinicians consistent across the site, both Business Profiles and local citations</td>
+            <td data-label="2026 baseline">Checked monthly; BrightLocal citation / NAP audit quarterly</td>
             <td data-label="Dec 2027 target">No mismatches</td>
           </tr>
         </tbody>
@@ -345,12 +337,12 @@
     <h3>Scorecard order</h3>
     <p>Optimize in this order.</p>
     <ol>
-      <li>Organic sessions/traffic (GA4 organic users + Semrush Organic Traffic + GSC clicks)</li>
+      <li>Organic sessions/traffic (GA4 organic users + GSC clicks)</li>
       <li>Qualified bookings, attended visits, and nonbrand clicks from organic search</li>
-      <li>Validated AI citations, then AI Visibility and AI Overviews (then AI Mode, ChatGPT)</li>
-      <li>Top 3 / 4–10 keywords + US organic keywords</li>
-      <li>Local map-pack visibility for Boston and Newton</li>
-      <li>DR / Authority Score + quality referring domains (health only)</li>
+      <li>Validated AI citations, then the AI Visibility score and AI Overviews (then AI Mode, ChatGPT), with GA4 AI referral sessions alongside</li>
+      <li>Top 3 / 4–10 keywords + Ahrefs Total Keywords</li>
+      <li>Local map-pack visibility for Boston and Newton (BrightLocal)</li>
+      <li>Ahrefs DR + quality referring domains (health only)</li>
     </ol>
     <p class="note">2026 averages use months on the Site indicators sheet: Jan, Feb, Jun, Jul, Aug, Sep 2026.</p>
 
@@ -362,7 +354,7 @@
       <li>Audit crawl and indexation: sitemap, robots rules, noindex, canonicals, redirects, duplicates, and broken links a patient can hit. A flag becomes a ticket only when it names a URL, the impact, an owner, and a retest.</li>
       <li>Check structured data only where the visible page should earn a rich result. Schema that copies a bad fact is a defect.</li>
       <li>Keep Boston, Newton, and any future Five Journeys locations consistent across the location pages, the contact page, the FAQ, and the Google Business Profiles: hours, address, and clinicians.</li>
-      <li>Connect to GA4, Google Search Console, Ahrefs, and Semrush through their APIs. SEO Sally uses those reports to see which queries, pages, and locations are gaining or losing visibility, and which visits turn into qualified bookings. From that, SEO Sally recommends what to do next, both the larger choices and the specific fixes, and SEO Sally traces the cause of each problem SEO Sally finds.</li>
+      <li>Read GA4, Google Search Console, Google Business Profile, Ahrefs, and BrightLocal data from Drawer A, the Postgres database Bruno’s Cursor agent loads on a schedule, with read-only access. SEO Sally uses those reports to see which queries, pages, and locations are gaining or losing visibility, and which visits turn into qualified bookings. From that, SEO Sally recommends what to do next, both the larger choices and the specific fixes, and SEO Sally traces the cause of each problem SEO Sally finds.</li>
       <li>Watch Core Web Vitals from Search Console field data for the non-www property. Field data is the record of what real visitors experienced on their own phones and computers. A lab score is a single test on one machine, under conditions the tester chose. It can show a page worth opening. It cannot fill in for field data that Search Console does not have. When field data is missing, the ticket says it is missing.</li>
       <li>Test a fixed set of patient questions in search and in AI answers, and record what those answers say about Five Journeys. Report qualified bookings, attended visits, nonbrand clicks, and validated AI citations on the same scope each month. Unknowns stay visible.</li>
       <li>Recommend the new pages, page expansions, and link opportunities the KPIs need. Each recommendation names the query, the page, and the evidence. Who writes or earns them is Bruno's call.</li>
@@ -377,10 +369,10 @@
     <p>No sitewide rewrite. No bulk removal of noindex. No mass link disavow. No content calendar built straight from an audit. New pages are recommended one at a time, with evidence, and go through Bruno. SEO Sally does not invent medical claims or practice facts.</p>
 
     <h2>What the work needs</h2>
-    <p>SEO Sally can read the public site, the sitemap, and the rendered HTML. Google Business Profile access is required for hours, address, and clinicians at Boston, Newton, and any future Five Journeys locations. API access to GA4, Google Search Console, Ahrefs, and Semrush is required for the monthly report and for the recommendations that come out of it. A WordPress change happens only after Bruno approves that URL.</p>
+    <p>SEO Sally can read the public site, the sitemap, and the rendered HTML. Google Business Profile access is required for hours, address, and clinicians at Boston, Newton, and any future Five Journeys locations. Read-only access to Drawer A, where Bruno’s Cursor agent loads GA4, Google Search Console, Google Business Profile, Ahrefs, and BrightLocal data, is required for the monthly report and for the recommendations that come out of it. A WordPress change happens only after Bruno approves that URL.</p>
 
     <h2>What done looks like</h2>
-    <p>A priority page is done when the public page matches the facts sheet and the booking path still works. The indexable count is written down and is not a goal. The monthly report uses the same scope as the month before, and each recommendation points back to a number SEO Sally pulled from GA4, Search Console, Ahrefs, or Semrush.</p>
+    <p>A priority page is done when the public page matches the facts sheet and the booking path still works. The indexable count is written down and is not a goal. The monthly report uses the same scope as the month before, and each recommendation points back to a number SEO Sally pulled from GA4, Search Console, Google Business Profile, Ahrefs, or BrightLocal.</p>
   </div>
 </body>
 </html>
