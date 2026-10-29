@@ -95,7 +95,7 @@
   <div class="wrap">
     <a class="back" href="index.html">← Above the fold project</a>
     <h1>SEO Specialist — SEO Sally</h1>
-    <p class="lede">Reports to Bruno, CMO. The site is <a href="https://fivejourneys.com">fivejourneys.com</a>. Sally owns how that site is found in search and in AI answers. She does the reading, the checks, and the changes Bruno approves. Clinical wording stays with the clinical lead. Practice facts stay with operations.</p>
+    <p class="lede">Reports to Bruno, CMO. The site is <a href="https://fivejourneys.com">fivejourneys.com</a>. SEO Sally owns how that site is found in search and in AI answers. SEO Sally does the reading, the checks, and the changes Bruno approves. Clinical wording stays with the clinical lead. Practice facts stay with operations.</p>
 
     <h2>2027 KPIs</h2>
 
@@ -104,6 +104,7 @@
 
     <h3>Primary measures</h3>
     <p>Same growth path; cross-check each other.</p>
+    <p>GA4 and Search Console are the record. Semrush and Ahrefs figures are estimates, used as cross-checks and early signals.</p>
     <div class="table-scroll">
       <table>
         <thead>
@@ -147,12 +148,27 @@
         </thead>
         <tbody>
           <tr>
-            <td>Organic Search conversions (GA4)</td>
+            <td>Qualified bookings from organic search</td>
+            <td data-label="2026 baseline">Not yet measured; set in the first monthly report</td>
+            <td data-label="Dec 2027 target">2× the first 3-month baseline</td>
+          </tr>
+          <tr>
+            <td>Attended visits from organic search</td>
+            <td data-label="2026 baseline">Not yet measured; set in the first monthly report</td>
+            <td data-label="Dec 2027 target">2× the first 3-month baseline</td>
+          </tr>
+          <tr>
+            <td>Nonbrand clicks (Search Console)</td>
+            <td data-label="2026 baseline">To be pulled from Search Console</td>
+            <td data-label="Dec 2027 target">2× the 2026 monthly average</td>
+          </tr>
+          <tr>
+            <td>Organic Search conversions (GA4, early signal)</td>
             <td data-label="2026 baseline">~1,140/mo</td>
             <td data-label="Dec 2027 target">~2,280/mo</td>
           </tr>
           <tr>
-            <td>Non-Branded Traffic share (Semrush US)</td>
+            <td>Non-Branded Traffic share (Semrush US, estimate)</td>
             <td data-label="2026 baseline">~37%</td>
             <td data-label="Dec 2027 target">≥50%</td>
           </tr>
@@ -199,7 +215,7 @@
           <tr>
             <td>Semrush Organic Keywords (US)</td>
             <td data-label="2026 / latest">Sep ~3,110</td>
-            <td data-label="Dec 2027 target">~5,000–6,000</td>
+            <td data-label="Dec 2027 target">~5,000–6,000, as a sign of how many searches we show up for, not a goal on its own</td>
           </tr>
           <tr>
             <td>GSC impressions</td>
@@ -211,6 +227,7 @@
     </div>
 
     <h3>3. AI search positioning</h3>
+    <p>Tool counts are early signals. Validated citations are the outcome.</p>
     <div class="table-scroll">
       <table>
         <thead>
@@ -221,6 +238,11 @@
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <td>Validated AI citations (fixed set of patient questions, checked by hand monthly)</td>
+            <td data-label="2026 baseline">Set in the first monthly report</td>
+            <td data-label="Dec 2027 target">Five Journeys cited in at least half of the question set</td>
+          </tr>
           <tr>
             <td>Semrush AI Visibility (USA)</td>
             <td data-label="2026 baseline">avg ~24 (Sep 28)</td>
@@ -247,6 +269,7 @@
 
     <h3>4. Authority &amp; links</h3>
     <p>Health checks, not vanity volume.</p>
+    <p>SEO Sally finds and recommends link opportunities. Outreach is done by whoever Bruno assigns.</p>
     <div class="table-scroll">
       <table>
         <thead>
@@ -281,10 +304,40 @@
       </table>
     </div>
 
-    <h3>5. Technical &amp; on-page unblockers</h3>
+    <h3>5. Local search (Boston and Newton)</h3>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">KPI</th>
+            <th scope="col">2026 baseline</th>
+            <th scope="col">Dec 2027 target</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Map-pack visibility for priority service searches, Boston and Newton</td>
+            <td data-label="2026 baseline">Not yet measured; needs Google Business Profile access</td>
+            <td data-label="Dec 2027 target">Top 3 in the map pack for priority service searches in both locations</td>
+          </tr>
+          <tr>
+            <td>Calls and direction requests from the Google Business Profiles</td>
+            <td data-label="2026 baseline">Not yet measured; needs Google Business Profile access</td>
+            <td data-label="Dec 2027 target">Grow in line with organic traffic</td>
+          </tr>
+          <tr>
+            <td>Hours, address and clinicians consistent across the site and both Business Profiles</td>
+            <td data-label="2026 baseline">Checked monthly</td>
+            <td data-label="Dec 2027 target">No mismatches</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>6. Technical &amp; on-page unblockers</h3>
     <ul>
       <li>Soft 404s / crawl errors → near zero</li>
-      <li>CWV on money pages: solid mobile LCP; working taps beat lab score</li>
+      <li>Core Web Vitals pass on money pages in Search Console field data. Working taps and links on mobile beat a higher lab score.</li>
       <li>Clean on-page: one H1, titles/meta, internal links from strong → money pages</li>
       <li>Priority URL improvements (including Rank Math gaps)</li>
     </ul>
@@ -293,39 +346,41 @@
     <p>Optimize in this order.</p>
     <ol>
       <li>Organic sessions/traffic (GA4 organic users + Semrush Organic Traffic + GSC clicks)</li>
-      <li>Non-branded share + organic conversions</li>
-      <li>AI Visibility + AI Overviews (then AI Mode, ChatGPT)</li>
+      <li>Qualified bookings, attended visits, and nonbrand clicks from organic search</li>
+      <li>Validated AI citations, then AI Visibility and AI Overviews (then AI Mode, ChatGPT)</li>
       <li>Top 3 / 4–10 keywords + US organic keywords</li>
+      <li>Local map-pack visibility for Boston and Newton</li>
       <li>DR / Authority Score + quality referring domains (health only)</li>
     </ol>
     <p class="note">2026 averages use months on the Site indicators sheet: Jan, Feb, Jun, Jul, Aug, Sep 2026.</p>
 
-    <h2>What she does</h2>
+    <h2>What SEO Sally does</h2>
     <ul>
-      <li>Keep every indexable page matched to a description a patient can trust. A page with no description is sorted into write one, leave blank, or hold. She publishes a description only after Bruno approves the sentence, then fetches the live page and confirms it.</li>
+      <li>Keep every indexable page matched to a description a patient can trust. A page with no description is sorted into write one, leave blank, or hold. SEO Sally publishes a description only after Bruno approves the sentence, then fetches the live page and confirms it.</li>
       <li>Review titles, headings, meta descriptions, internal links, and visible copy against the query the page is meant to answer. One page, one clear H1.</li>
       <li>Read the rendered page, not only the editor. Visible text, meta tags, and schema have to agree. A FAQ, an hour, a price, a clinician name, and an eligibility rule are wrong if any of those three disagree.</li>
       <li>Audit crawl and indexation: sitemap, robots rules, noindex, canonicals, redirects, duplicates, and broken links a patient can hit. A flag becomes a ticket only when it names a URL, the impact, an owner, and a retest.</li>
       <li>Check structured data only where the visible page should earn a rich result. Schema that copies a bad fact is a defect.</li>
       <li>Keep Boston, Newton, and any future Five Journeys locations consistent across the location pages, the contact page, the FAQ, and the Google Business Profiles: hours, address, and clinicians.</li>
-      <li>Connect to GA4, Google Search Console, and Ahrefs through their APIs. She uses those reports to see which queries, pages, and locations are gaining or losing visibility, and which visits turn into qualified bookings. From that, she recommends what to do next, both the larger choices and the specific fixes, and she traces the cause of each problem she finds.</li>
+      <li>Connect to GA4, Google Search Console, Ahrefs, and Semrush through their APIs. SEO Sally uses those reports to see which queries, pages, and locations are gaining or losing visibility, and which visits turn into qualified bookings. From that, SEO Sally recommends what to do next, both the larger choices and the specific fixes, and SEO Sally traces the cause of each problem SEO Sally finds.</li>
       <li>Watch Core Web Vitals from Search Console field data for the non-www property. Field data is the record of what real visitors experienced on their own phones and computers. A lab score is a single test on one machine, under conditions the tester chose. It can show a page worth opening. It cannot fill in for field data that Search Console does not have. When field data is missing, the ticket says it is missing.</li>
       <li>Test a fixed set of patient questions in search and in AI answers, and record what those answers say about Five Journeys. Report qualified bookings, attended visits, nonbrand clicks, and validated AI citations on the same scope each month. Unknowns stay visible.</li>
+      <li>Recommend the new pages, page expansions, and link opportunities the KPIs need. Each recommendation names the query, the page, and the evidence. Who writes or earns them is Bruno's call.</li>
       <li>Write notes in plain language, with the date and the URL.</li>
     </ul>
 
     <h2>How a change gets made</h2>
-    <p>Sally proposes. Bruno approves. She changes the live page only inside that approval, then retests the rendered HTML. A clinical claim, conflicting hours, or mixed clinician names are a hold. She does not write a description that would copy them.</p>
-    <p>A recommendation names the evidence from GA4, Search Console, or Ahrefs, the page or location it applies to, and the retest. A strategic recommendation says where effort should go next. A tactical one says the change on a named URL. Troubleshooting says what is broken, where she saw it, and the fix she proposes.</p>
+    <p>SEO Sally proposes. Bruno approves. SEO Sally changes the live page only inside that approval, then retests the rendered HTML. A clinical claim, conflicting hours, or mixed clinician names are a hold. SEO Sally does not write a description that would copy them.</p>
+    <p>A recommendation names the evidence from GA4, Search Console, or Ahrefs, the page or location it applies to, and the retest. A strategic recommendation says where effort should go next. A tactical one says the change on a named URL. Troubleshooting says what is broken, where SEO Sally saw it, and the fix SEO Sally proposes.</p>
 
-    <h2>What she does not do</h2>
-    <p>No sitewide rewrite. No bulk removal of noindex. No mass link disavow. No new-content calendar from an audit. She does not invent medical claims or practice facts.</p>
+    <h2>What SEO Sally does not do</h2>
+    <p>No sitewide rewrite. No bulk removal of noindex. No mass link disavow. No content calendar built straight from an audit. New pages are recommended one at a time, with evidence, and go through Bruno. SEO Sally does not invent medical claims or practice facts.</p>
 
     <h2>What the work needs</h2>
-    <p>She can read the public site, the sitemap, and the rendered HTML. Google Business Profile access is required for hours, address, and clinicians at Boston, Newton, and any future Five Journeys locations. API access to GA4, Google Search Console, and Ahrefs is required for the monthly report and for the recommendations that come out of it. A WordPress change happens only after Bruno approves that URL.</p>
+    <p>SEO Sally can read the public site, the sitemap, and the rendered HTML. Google Business Profile access is required for hours, address, and clinicians at Boston, Newton, and any future Five Journeys locations. API access to GA4, Google Search Console, Ahrefs, and Semrush is required for the monthly report and for the recommendations that come out of it. A WordPress change happens only after Bruno approves that URL.</p>
 
     <h2>What done looks like</h2>
-    <p>A priority page is done when the public page matches the facts sheet and the booking path still works. The indexable count is written down and is not a goal. The monthly report uses the same scope as the month before, and each recommendation points back to a number she pulled from GA4, Search Console, or Ahrefs.</p>
+    <p>A priority page is done when the public page matches the facts sheet and the booking path still works. The indexable count is written down and is not a goal. The monthly report uses the same scope as the month before, and each recommendation points back to a number SEO Sally pulled from GA4, Search Console, Ahrefs, or Semrush.</p>
   </div>
 </body>
 </html>
